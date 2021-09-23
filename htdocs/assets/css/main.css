@@ -527,4 +527,8 @@ nav .brand-logo {
   display: none;
 }
 
+select {
+  display: block;
+}
+
 /*# sourceMappingURL=main.css.map */

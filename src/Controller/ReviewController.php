@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Review;
 use App\Form\ReviewType;
+use App\Repository\CategoryRepository;
 use App\Repository\ReviewRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,17 +19,18 @@ class ReviewController extends AbstractController
     /**
      * @Route("/", name="review_index", methods={"GET"})
      */
-    public function index(ReviewRepository $reviewRepository): Response
+    public function index(ReviewRepository $reviewRepository, CategoryRepository $categoryRepository): Response
     {
         return $this->render('review/index.html.twig', [
             'reviews' => $reviewRepository->findAll(),
+            'category' => $categoryRepository,
         ]);
     }
 
     /**
      * @Route("/new", name="review_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, CategoryRepository $categoryRepository): Response
     {
         $review = new Review();
         $form = $this->createForm(ReviewType::class, $review);
@@ -45,6 +47,7 @@ class ReviewController extends AbstractController
         return $this->render('review/new.html.twig', [
             'review' => $review,
             'form' => $form->createView(),
+            'category' => $categoryRepository,
         ]);
     }
 

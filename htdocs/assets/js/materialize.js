@@ -11,4 +11,9 @@ $(document).ready(function(){
     });
     //COLLAPSIBLE (ACCORDION)
     $('.collapsible').collapsible();
+    //SELECT
+    // $(document).ready(function(){
+    //     $('select').formSelect();
+    //   });
+          
 });

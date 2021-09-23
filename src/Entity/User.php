@@ -162,4 +162,10 @@ class User implements UserInterface
 
         return $this;
     }
+
+    // TO CLEAR "Object of class App\Entity\User could not be converted to string" ERROR
+    public function __toString(): string
+    {
+        return $this->getId();
+    }
 }

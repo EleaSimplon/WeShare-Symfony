@@ -42,4 +42,9 @@ class Category
         return $this;
     }
 
+    // TO CLEAR "Object of class App\Entity\Category could not be converted to string" ERROR
+    public function __toString(): string
+    {
+        return $this->getName();
+    }
 }

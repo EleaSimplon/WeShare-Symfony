@@ -3,9 +3,38 @@
 {% block title %}New Review{% endblock %}
 
 {% block body %}
-    <h1>Create new Review</h1>
 
-    {{ include('review/_form.html.twig') }}
+    <section class="share-page">
 
-    <a href="{{ path('review_index') }}">back to list</a>
+        <div class="header-img">
+
+            <div class="row">
+                <div class="col s12 m6 l4 right">
+                    <h1><span>SHARE</span><br>your experience</h1>
+                </div>
+            </div>
+        </div> 
+        
+        
+        <!-- ********** FORM TO SHARE EXPERIENCE ********** -->
+        <div class="container share-container">
+            <!--   Form Section   -->
+            <div class="card">
+                <div class="card-content">
+                    {{ include('review/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    {# <a href="{{ path('review_index') }}">back to list</a> #}
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var simplemde = new SimpleMDE({ element: document.getElementById("review_description") });
+    </script>
 {% endblock %}

@@ -1,4 +1,76 @@
-{{ form_start(form) }}
+    {{ form_start(form) }}
+
+        <!-- ********** NICK NAME **********-->
+        <div class="row">
+            <div class="input-field col s12 l12">
+                <i class="material-icons prefix">account_circle</i>
+                <input type="text" id="autocomplete-input" class="autocomplete" disabled="true">
+                <label for="autocomplete-input">Nick name User</label>
+            </div>
+        </div> 
+        <!-- ********** RATE RANGE **********-->
+        <div class="row">
+            <div class="input-field col s12 l12">
+                <h5><i class="material-icons prefix">star_half</i> Rate</h5>
+                <p class="range-field">
+                    {# <input type="range" name="review[rate]" id="review_rate" min="0" max="5" /> #}
+                    {{ form_widget(form.rate, {'attr' : {'type' : 'range'}}) }}
+                </p>
+            </div>
+        </div>
+        <!-- ********** CHECK SWITCH **********-->
+        <h5><i class="material-icons prefix">check</i> Choose a category</h5>
+        <div class="row switch-choice">
+            
+            <div class="col s12 l12">
+                    {{ form_label(form.category)}}
+                    {{ form_widget(form.category)}}
+                
+            </div>
+        </div>
+        <!-- ********** TITLE **********-->
+        <div class="row">
+            <div class="input-field col s12 l12">
+                <i class="material-icons prefix">title</i>
+                {{ form_label(form.title, 'Title') }}
+                {{ form_widget(form.title, {'attr' : {'class' : 'validate', 'id' : 'last_name'}}) }}
+                {# <input id="last_name" type="text" class="validate"> #}
+            </div>
+        </div>
+        <!-- ********** DESCRIPTION **********-->
+        <div class="input-field col s12">
+            {{ form_label(form.description, 'Description')}}
+            {{ form_widget(form.description, {'attr' : {'class' : 'materialize-textarea', 'placeholder' : 'Share your experience with the community !', 'id' : 'description'}}) }}
+        </div>
+        <!-- ********** UPLOAD PHOTO **********-->
+        <div class="row">
+            <h5><i class="material-icons prefix">vertical_align_bottom</i> Upload a picture</h5>
+            <div class="input-field col s12 l12">    
+                <div class="file-field input-field">
+                    <div class="btn brown darken-1">
+                        <span>Upload</span>
+                        <input type="file" />
+                    </div>
+                    
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" placeholder="Upload file" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ********** BTN **********-->
+        <div class="row">
+            <div class="input-field col s12 l12">    
+            <button class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
+                {{ button_label|default('Save') }}
+                <i class="material-icons right">send</i>
+            </button>
+            </div>
+        </div>
+
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+    {# <button class="btn">{{ button_label|default('Save') }}</button> #}
+
+
 {{ form_end(form) }}
