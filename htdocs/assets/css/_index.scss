@@ -1,0 +1,134 @@
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+/* HEADER PARALLAX EFFECT SCROLL*/
+
+.header-section {
+    
+    @include header-img;
+    
+    .header-img {
+        background: url(/images/header1.png) no-repeat;
+        padding-top: 110px;
+    }
+    
+    .mouse {
+        display: block;
+        margin: 0 auto;
+        width: 26px;
+        height: 46px;
+        border-radius: 13px;
+        border: 2px solid #E4BFAD;
+        position: absolute;
+        right: 16%;
+    
+        span {
+            display: block;
+            margin: 6px auto;
+            width: 2px;
+            height: 2px;
+            border-radius: 4px;
+            background: #6e4835;
+            border: 1px solid transparent;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-name: scroll;
+            animation-name: scroll;
+        }
+    }
+}
+
+
+// ********** SECTION 3 SHARE OR FIND **********
+
+.share-find {
+
+    margin-top: 5rem;
+
+    img {
+        width: 25rem;
+        @include d-flex-center;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 50px;
+        margin: 0;
+        font-family: 'Abril Fatface', cursive;
+
+        span {
+            @include span-h;
+            color: #E4BFAD;
+            border-color: #e8f380;
+        }
+    }
+}
+
+// ********** SECTION 2 TOP RATED **********
+
+// ********** CAROUSEL **********
+.top-rated {
+    
+    text-align: center;
+    background-color: #e4bfad9d;
+    margin-top: 5rem;
+
+    .carousel {
+        height: 100%;
+        
+
+        .carousel-cell {
+            width: 28%;
+            height: auto;
+            margin-right: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card-rating {
+            @include d-flex-center;
+        }
+    }
+}
+
+
+/* MEDIAS  HEADER */
+
+@-webkit-keyframes scroll {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+  
+  

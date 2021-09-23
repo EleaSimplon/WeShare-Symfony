@@ -1,0 +1,56 @@
+@import 'mixin';
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap');
+
+.header-tr {
+
+    padding: 0;
+
+    img {
+        width: 28rem;
+    }
+    
+    @include header-img;
+    
+    .header-img {
+        background: url(/images/bg.png) no-repeat;
+    }
+
+    h5 span {
+        font-weight: bold;
+    }
+
+}
+.categories {
+    margin-top: 3rem;
+
+    h2 {
+        font-family: 'Abril Fatface', cursive;
+        color: #B9685D;
+    }
+
+    h3 {
+        span {
+            @include span-h;
+            border-color: #e8f380;
+        }
+    }
+        
+    img {
+        height: 15rem;
+        border-radius: 50%;
+        width: 16rem;
+    }
+
+    img:hover {
+        height: 18rem;
+        width: 20rem;
+        opacity: 0.6;
+    }
+}
+
+.top-10 {
+    h5 {
+        margin-top: 5rem;
+        font-weight: bold
+    }
+}

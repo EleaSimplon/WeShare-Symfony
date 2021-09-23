@@ -1,0 +1,530 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+/* HEADER PARALLAX EFFECT SCROLL*/
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap");
+.header-section .header-img {
+  position: relative;
+  text-align: center;
+  color: #B8685D;
+  min-height: 500px;
+  letter-spacing: 2px;
+}
+.header-section .header-img h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  font-family: "Abril Fatface", cursive;
+}
+.header-section .header-img h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  color: #E4BFAD;
+  border-color: #e8f380;
+}
+.header-section .header-img {
+  background: url(/assets/images/header1.png) no-repeat;
+  padding-top: 110px;
+}
+.header-section .mouse {
+  display: block;
+  margin: 0 auto;
+  width: 26px;
+  height: 46px;
+  border-radius: 13px;
+  border: 2px solid #E4BFAD;
+  position: absolute;
+  right: 16%;
+}
+.header-section .mouse span {
+  display: block;
+  margin: 6px auto;
+  width: 2px;
+  height: 2px;
+  border-radius: 4px;
+  background: #6e4835;
+  border: 1px solid transparent;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: scroll;
+  animation-name: scroll;
+}
+
+.share-find {
+  margin-top: 5rem;
+}
+.share-find img {
+  width: 25rem;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.share-find h1 {
+  text-align: center;
+  font-size: 50px;
+  margin: 0;
+  font-family: "Abril Fatface", cursive;
+}
+.share-find h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  color: #E4BFAD;
+  border-color: #e8f380;
+}
+
+.top-rated {
+  text-align: center;
+  background-color: #e4bfad9d;
+  margin-top: 5rem;
+}
+.top-rated .carousel {
+  height: 100%;
+}
+.top-rated .carousel .carousel-cell {
+  width: 28%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.top-rated .carousel .card-rating {
+  display: flex;
+  justify-content: center;
+}
+
+/* MEDIAS  HEADER */
+@-webkit-keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+.about-header .header-img {
+  position: relative;
+  text-align: center;
+  color: #B8685D;
+  min-height: 500px;
+  letter-spacing: 2px;
+}
+.about-header .header-img h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  font-family: "Abril Fatface", cursive;
+}
+.about-header .header-img h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  color: #E4BFAD;
+  border-color: #e8f380;
+}
+.about-header .header-img {
+  background: url(/assets/images/header.png) no-repeat;
+  padding-top: 110px;
+}
+
+.about {
+  text-align: center;
+}
+.about img {
+  width: 5rem;
+}
+.about p {
+  font-size: 1.5em;
+}
+.about .about-who h1 {
+  margin: 0;
+}
+.about .about-who h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  border-color: #e8f380;
+}
+.about .about-who p span {
+  font-size: 20px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-color: #eb85dd;
+}
+.about .about-what h1 {
+  margin: 0;
+}
+.about .about-what h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  border-color: #e8f380;
+}
+.about .about-what p span {
+  font-size: 20px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-color: #eb85dd;
+}
+.about .row {
+  margin-bottom: 0;
+}
+
+.about-numbers {
+  background-color: #e4bfad;
+}
+.about-numbers .numbers img {
+  width: 5rem;
+}
+.about-numbers .numbers .row {
+  margin-bottom: auto;
+}
+.about-numbers .numbers h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  border-color: #ffffff;
+}
+.about-numbers .numbers p {
+  font-size: 1.5em;
+}
+
+.about-find img {
+  width: 30rem;
+}
+.about-find .find-what {
+  text-align: center;
+  margin-top: 1rem;
+}
+.about-find .find-what h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  border-color: #e4bfad;
+}
+.about-find .row {
+  margin-bottom: 0;
+}
+
+.about-share .row {
+  margin-bottom: 0;
+}
+
+.share-page .header-img {
+  position: relative;
+  text-align: center;
+  color: #B8685D;
+  min-height: 500px;
+  letter-spacing: 2px;
+}
+.share-page .header-img h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  font-family: "Abril Fatface", cursive;
+}
+.share-page .header-img h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  color: #E4BFAD;
+  border-color: #e8f380;
+}
+.share-page .header-img {
+  background: url(/assets/images/header-share.png) no-repeat;
+  padding-top: 110px;
+}
+.share-page .share-container {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+.share-page .share-container h5 {
+  padding: 2rem;
+  text-align: center;
+}
+.share-page .share-container p .range-field {
+  margin: auto;
+  text-align: center;
+}
+.share-page .share-container input[type=range]::-webkit-slider-thumb {
+  background-color: #563428;
+}
+.share-page .share-container input[type=range] + .thumb.active {
+  background-color: #563428;
+}
+.share-page .share-container input[type=range] {
+  border: 1px solid;
+}
+
+.search-bar {
+  background-color: #e3f1fd;
+}
+.search-bar .container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/********** INDEX PAGE **********/
+@media (max-width: 700px) {
+  .header-img h1 {
+    font-size: 40px;
+  }
+  .header-img h1 span {
+    font-size: 32px;
+  }
+  .header-img .mouse {
+    right: 20%;
+  }
+}
+@media (max-width: 599px) {
+  .header-img {
+    text-align: right;
+  }
+  .header-img h1 {
+    font-size: 40px;
+    color: #303030;
+  }
+  .header-img h1 span {
+    font-size: 50px;
+    color: #303030;
+  }
+}
+@media (max-width: 530px) {
+  .header-img h1 {
+    font-size: 30px;
+  }
+  .header-img span {
+    font-size: 40px;
+  }
+  .header-img .mouse {
+    right: 22%;
+  }
+}
+@media (max-width: 413px) {
+  .header-img h1 {
+    font-size: 40px;
+    color: #303030;
+  }
+  .header-img h1 span {
+    font-size: 50px;
+    color: #303030;
+  }
+}
+@media (max-width: 1099px) {
+  .top-rated .carousel .carousel-cell {
+    width: 40%;
+  }
+}
+@media (max-width: 690px) {
+  .top-rated .carousel .carousel-cell {
+    width: 80%;
+  }
+}
+/******* SECTION SHARE & FIND *******/
+@media (max-width: 768px) {
+  .share-find img {
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+}
+.header-tr {
+  padding: 0;
+}
+.header-tr img {
+  width: 28rem;
+}
+.header-tr .header-img {
+  position: relative;
+  text-align: center;
+  color: #B8685D;
+  min-height: 500px;
+  letter-spacing: 2px;
+}
+.header-tr .header-img h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  font-family: "Abril Fatface", cursive;
+}
+.header-tr .header-img h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  color: #E4BFAD;
+  border-color: #e8f380;
+}
+.header-tr .header-img {
+  background: url(/assets/images/bg.png) no-repeat;
+}
+.header-tr h5 span {
+  font-weight: bold;
+}
+
+.categories {
+  margin-top: 3rem;
+}
+.categories h2 {
+  font-family: "Abril Fatface", cursive;
+  color: #B9685D;
+}
+.categories h3 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  border-color: #e8f380;
+}
+.categories img {
+  height: 15rem;
+  border-radius: 50%;
+  width: 16rem;
+}
+.categories img:hover {
+  height: 18rem;
+  width: 20rem;
+  opacity: 0.6;
+}
+
+.top-10 h5 {
+  margin-top: 5rem;
+  font-weight: bold;
+}
+
+.header-find {
+  padding: 0;
+}
+.header-find img {
+  width: 28rem;
+}
+.header-find .header-img {
+  position: relative;
+  text-align: center;
+  color: #B8685D;
+  min-height: 500px;
+  letter-spacing: 2px;
+}
+.header-find .header-img h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  font-family: "Abril Fatface", cursive;
+}
+.header-find .header-img h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  color: #E4BFAD;
+  border-color: #e8f380;
+}
+.header-find .header-img {
+  background: url(/assets/images/bg.png) no-repeat;
+  background-size: cover;
+}
+.header-find h5 span {
+  font-weight: bold;
+}
+
+.categories {
+  margin-top: 3rem;
+}
+.categories .inspi {
+  margin-top: 5rem;
+  font-weight: bold;
+}
+.categories h3 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  border-color: #e8f380;
+}
+.categories img {
+  height: 15rem;
+  border-radius: 50%;
+  width: 16rem;
+}
+.categories img:hover {
+  height: 18rem;
+  width: 20rem;
+  opacity: 0.6;
+}
+
+.user-profile {
+  margin-top: 5rem;
+}
+.user-profile .tabs {
+  display: flex;
+  justify-content: center;
+}
+.user-profile .container .row {
+  text-align: center;
+}
+
+body p, body h5, body input {
+  font-family: "Catamaran", sans-serif;
+}
+body h3 {
+  font-family: "Abril Fatface", cursive;
+}
+
+/**************** NAV *************/
+nav .brand-logo {
+  font-family: "Abril Fatface", cursive;
+  color: #B8685D;
+  margin-left: 1rem;
+}
+
+/**************** FOOTER *************/
+.page-footer {
+  background-color: #241A12;
+}
+.page-footer .footer-copyright {
+  background-color: #3d2d20;
+}
+
+/**************** BACK TO TOP BTN *************/
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+}
+
+/*# sourceMappingURL=main.css.map */

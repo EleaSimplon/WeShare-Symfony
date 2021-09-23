@@ -1,0 +1,100 @@
+@import 'mixin';
+
+
+/********** INDEX PAGE **********/
+
+// ********** SECTION HEADER **********
+
+@media (max-width: 700px) {
+    .header-img {
+
+        h1 {
+            font-size: 40px;
+        }
+
+        h1 span {
+            font-size: 32px;
+        }
+
+        .mouse{
+            right: 20%;
+        }
+    }
+}
+
+@media (max-width: 599px) {
+    .header-img {
+        text-align: right;
+
+        h1 {
+            font-size: 40px;
+            color: #303030;
+        }
+
+        h1 span {
+            font-size: 50px;
+            color: #303030;
+        }
+    }
+}
+
+@media (max-width: 530px) {
+    .header-img {
+    
+        h1 {
+            font-size: 30px;
+        }
+
+        span {
+            font-size: 40px;
+        }
+
+        .mouse{
+            right: 22%;
+        }
+    }  
+}
+
+@media (max-width: 413px) {
+    .header-img {
+        h1 {
+            font-size: 40px;
+            color: #303030;
+        }
+
+        h1 span {
+            font-size: 50px;
+            color: #303030;
+        }
+    }
+}
+
+
+
+// ********** SECTION TOP RATED **********
+
+@media (max-width: 1099px) {
+    .top-rated .carousel .carousel-cell {
+        width: 40%;
+    }
+}
+
+@media (max-width: 690px) {
+    .top-rated .carousel .carousel-cell {
+        width: 80%;
+    }
+}
+
+
+/******* SECTION SHARE & FIND *******/
+
+@media (max-width: 768px) {
+    .share-find {
+        img {
+            width: 20rem; 
+            @include d-flex-center;
+            margin: auto;
+        }
+        
+    }
+}

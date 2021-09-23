@@ -1,0 +1,60 @@
+@mixin d-flex-center() {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin span-h() {
+    font-size: 50px;
+    padding-bottom: 12px;
+    line-height: 3;
+    border-bottom: 2px solid;
+}
+
+
+@mixin span-p() {
+    font-size: 20px;
+    line-height: 3;
+    border-bottom: 2px solid;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+@mixin about-who-what() {
+    h1 {
+        margin: 0;
+        span {
+            @include span-h;
+            border-color: #e8f380;
+        }
+    }
+   
+    p {
+        span {
+            @include span-p;
+            border-color: #eb85dd;
+        }
+    }
+}
+
+@mixin header-img() {
+
+    .header-img {
+        position: relative;
+        text-align: center;
+        color: #B8685D;
+        min-height: 500px;
+        letter-spacing: 2px;
+    
+        h1 {
+            font-size: 50px;
+            line-height: 1.3;
+            font-family: 'Abril Fatface', cursive;
+    
+            span {
+                @include span-h;
+                color: #E4BFAD;
+                border-color: #e8f380;
+            }
+        }
+    }
+}

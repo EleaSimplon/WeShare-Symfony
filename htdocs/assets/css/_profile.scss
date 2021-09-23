@@ -1,0 +1,13 @@
+@import 'mixin';
+
+.user-profile {
+    margin-top: 5rem;
+
+    .tabs {
+        @include d-flex-center;
+    }
+
+    .container .row {
+        text-align: center;
+    }
+}

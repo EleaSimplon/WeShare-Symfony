@@ -1,0 +1,50 @@
+@import 'index';
+@import 'mixin';
+@import 'about';
+@import 'share';
+@import 'media';
+@import 'topRated';
+@import 'find';
+@import 'profile';
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap');
+
+body {
+    p, h5, input {
+        font-family: 'Catamaran', sans-serif;
+    }
+
+    h3 {
+        font-family: 'Abril Fatface', cursive;
+    }
+}
+
+/**************** NAV *************/
+
+nav {
+    .brand-logo {
+        font-family: 'Abril Fatface', cursive;
+        color: #B8685D;
+        margin-left: 1rem;
+    }
+}
+
+/**************** FOOTER *************/
+
+.page-footer {
+    background-color: #241A12;
+
+    .footer-copyright {
+        background-color: #3d2d20;
+
+    }
+}
+
+/**************** BACK TO TOP BTN *************/
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+  }

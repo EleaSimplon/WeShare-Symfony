@@ -3,17 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{% block title %}Demo{% endblock %}</title>
+        <title>{% block title %}We Share{% endblock %}</title>
+
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+
+            <!-- ***** MATERIALIZE FRAMEWORK CSS ***** -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <!-- ***** MATERIALIZE ICON ***** -->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+            <!-- ***** FLICKITY CAROUSEL ***** -->
+            <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+            <!-- ***** MARKDOWN EDITOR DESCRIPTION ***** -->
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+
+            <!-- ***** STAR RATING SVG ***** -->
+            <!-- <link rel="stylesheet" type="text/css" href="star-rating-svg.css"> -->
+            
+            <!-- ********* FONT AWESOME LINK ********* -->
+            <script src="https://kit.fontawesome.com/92add67b23.js" crossorigin="anonymous"></script>
+            
+            <!-- ***** URL ICON LINK ***** -->
+            <link rel="icon" href="{{asset('assets/images/share.png')}}"/>
+
+            <!-- ***** LINK CSS ***** -->
+            <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.css')}}">
+
         {% endblock %}
     </head>
     <body>
          
+        {#*********** NAV BAR **********#}
+        <nav class="transparent">
+            <div class="nav-wrapper">
+                <a href="{{ path ('home') }}" class="brand-logo">We Share®</a>   
+                <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="material-icons">menu</i></a>
+                <ul class="hide-on-med-and-down right" id="nav-mobile">
+                    <li><a href="{{ path ('about') }}" class="black-text">About</a></li>
+                    <li><a href="/pages/share.php" class="black-text">Share</a></li>
+                    <li><a href="{{ path ('find') }}" class="black-text">Find</a></li>
+                    <li><a href="{{ path ('top_ten') }}" class="black-text">Top Rated</a></li>
+
+                    {# IF CONNECTED LOGOUT ELSE LOGIN #}
+                    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    
+                        <li>
+                            <a class="waves-effect waves-light btn-small red lighten-2" href="{{ path('app_logout') }}">Logout</a>
+                        </li>
+
+                        <li>
+                            <a class="btn-floating btn-medium waves-effect waves-light blue lighten-4" href="{{ path('my_profile') }}"><i class="material-icons">account_circle</i></a>
+                        </li>
+
+                        {% else %}
+
+                        <li>
+                            <a class="btn-floating btn-medium waves-effect waves-light blue lighten-4" href="{{ path('app_login') }}"><i class="material-icons">account_circle</i></a>
+                        </li>
+
+                    {% endif %}
+
+                    {# IF NOT CONNECTED REGISTER BTN APPEARS #}
+                    {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+
+                        <li>
+                            <a class="waves-effect waves-light btn deep-orange accent-2" href="{{ path('app_register') }}">Register</a>
+                        </li>
+                        
+                    {% endif %}
+
+                </ul>
+            </div>
+        </nav> 
+
+        <!-- ***** BLOCK BODY ***** -->
+        {% block body %}{% endblock %}
+
+
+        {#*********** FOOTER **********#}
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h4 class="white-text">We Share®</h4>
+                        <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo.</p>
+                    </div>
+                    <div class="col l3 s12 offset-l3">
+                        <h5 class="white-text">Liens <i class="material-icons">link</i></h5>
+                        <ul class="footer-links">
+                            <li><a class="white-text" href="#!">Comment ça marche ?</a></li>
+                            <li><a class="white-text" href="">Voir les campagnes</a></li>
+                            <li><a class="white-text" href="">Créer une campagne</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Made with love by Eléa<i class="material-icons">copyright</i></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- ***** JQUERY CDN ***** -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- ***** MATERIALIZE CDN SCRIPT ***** -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <!-- ***** FLICKITY CAROUSEL ***** -->
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+        <!-- ***** BOXICON ICON ***** -->
+        <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+
+        <!-- ***** MARKDOWN EDITOR DESCRIPTION ***** -->
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+        <script>
+            var simplemde = new SimpleMDE({ element: document.getElementById("description") });
+        </script>
+
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
         {% endblock %}
+
+        <!--JavaScript at end of body for optimized loading-->
+        <!-- ***** JS SCRIPT ***** -->
+        <script src="{{asset('assets/js/carousel-index.js')}}"></script>
+        <script src="{{asset('assets/js/materialize.js')}}"></script>
+
     </body>
 </html>

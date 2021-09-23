@@ -1,0 +1,138 @@
+@import 'mixin';
+
+.about-header {
+    @include header-img;
+    
+    .header-img {
+        background: url(/images/header.png) no-repeat;
+        padding-top: 110px;
+    }
+}
+
+.about {
+   
+    text-align: center;
+
+    img {
+        width: 5rem;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    .about-who {
+        @include about-who-what;
+    }
+
+    .about-what {
+        @include about-who-what;
+    } 
+
+    .row {
+        margin-bottom: 0;
+    }
+}
+
+.about-numbers {
+    background-color: #e4bfad;
+
+    .numbers {
+
+        img {
+            width: 5rem;
+        }
+       
+        .row {
+            margin-bottom: auto;
+        }
+
+        h1 {
+            span {
+                @include span-h;
+                border-color: #ffffff;
+            }
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    }
+}
+
+.about-find {
+    
+    img {
+        width: 30rem;
+    }
+
+    .find-what {
+        text-align: center;
+        margin-top: 1rem;
+        
+        h1 {
+            span {
+                @include span-h;
+                border-color: #e4bfad;
+            }
+        }
+    }
+
+    .row {
+        margin-bottom: 0;
+    }
+}
+
+.about-share {
+    .row {
+        margin-bottom: 0;
+    }
+}
+
+
+// SECTION 4
+
+// .marketing-site-content-section {
+//     display: flex;
+//     flex-wrap: wrap;
+  
+//     .button.round {
+//       border-radius: 5000px;
+//       text-transform: uppercase;
+//     }
+  
+//     .marketing-site-content-section-img {
+//       align-self: center;
+//       flex: 1 0 100%;
+  
+//       img {
+//         width: 100%;
+//       }
+  
+//       @media screen and (min-width: 40em) {
+//         flex: 1 0 50%;
+//       }
+//     }
+  
+//     .marketing-site-content-section-block {
+//       flex: 1 0 100%;
+//       align-self: stretch;
+//       display: flex;
+//       flex-direction: column;
+//       justify-content: center;
+//       align-items: flex-start;
+  
+//         @media screen and (min-width: 40em) {
+//             flex: 1 0 50%;
+//             padding: 2rem;
+//         }
+//     }
+// }
+  
+//   .marketing-site-content-section-block-header {
+//     font-size: 24px;
+//   }
+  
+//   .marketing-site-content-section-block-subheader {
+//     font-size: 13px;
+//   }
