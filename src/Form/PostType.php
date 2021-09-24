@@ -2,32 +2,39 @@
 
 namespace App\Form;
 
-use App\Entity\Review;
-use App\Entity\Category;
+use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\RangeType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\RangeType;
 
 
-class ReviewType extends AbstractType
+class PostType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('rate', RangeType::class, [
-                'attr' => [
-                    'min' => 0,
-                    'max' => 5
-                ]
-            ])
-            ->add('title')
-            ->add('description',TextareaType::class, [
-                'required' => false,
+        ->add('rate', RangeType::class, [
+            'attr' => [
+                'min' => 0,
+                'max' => 5
+            ]
+        ])
+            ->add('name')
+            ->add('address')
+            ->add('phone_number')
+            ->add('description')
+            ->add('city')
+            ->add('country')
+            ->add('categories', ChoiceType::class, [
+                'choices'  => [
+                    'Restaurant' => 'Restaurant',
+                    'Activity' => 'Activity',
+                    'Destination' => 'Destination',
+                ],
             ])
             ->add('picture', FileType::class, [
                 'mapped' => false,
@@ -43,13 +50,13 @@ class ReviewType extends AbstractType
                     ])
                 ],
             ]);
-            
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Review::class,
+            'data_class' => Post::class,
         ]);
     }
 }

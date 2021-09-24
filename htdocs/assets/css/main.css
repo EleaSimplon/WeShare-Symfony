@@ -489,12 +489,27 @@
 .user-profile {
   margin-top: 5rem;
 }
+.user-profile img {
+  width: 10rem;
+}
 .user-profile .tabs {
   display: flex;
   justify-content: center;
 }
-.user-profile .container .row {
+.user-profile .container {
   text-align: center;
+}
+.user-profile .row {
+  text-align: center;
+}
+.user-profile input[type=email] {
+  width: 50%;
+  text-align: center;
+}
+.user-profile .collapsible .collapsible-header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 body p, body h5, body input {

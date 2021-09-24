@@ -3,11 +3,28 @@
 .user-profile {
     margin-top: 5rem;
 
+    img {
+        width: 10rem;
+    }
+
     .tabs {
         @include d-flex-center;
     }
 
-    .container .row {
+    .container {
         text-align: center;
+    }    
+    .row {
+        text-align: center;
+    }
+
+    input[type=email] {
+        width: 50%;
+        text-align: center;
+    }
+    
+    .collapsible .collapsible-header {
+        text-align: center;
+        @include d-flex-center;
     }
 }

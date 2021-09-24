@@ -7,6 +7,7 @@ parameters:
     #****** PARAM STOCKER IMAGES DANS DOSSIER IMAGES DANS HTDOCS *******#
     #****** PARAM ACCES DEPUIS CONTROLLER *******#
     photo_directory: '%kernel.project_dir%/htdocs/assets/images/picture-review'
+    picture_directory: '%kernel.project_dir%/htdocs/assets/images/picture-review'
 
 services:
     # default configuration for services in *this* file

@@ -10,18 +10,18 @@
 
             <div class="row">
                 <div class="col s12 m6 l4 right">
-                    <h1><span>Review</span><br>an experience</h1>
+                    <h1><span>SHARE</span><br>your experience</h1>
                 </div>
             </div>
         </div> 
         
         
-        <!-- ********** FORM REVIEW AN ALREADY EXISTING EXPERIENCE ********** -->
+        <!-- ********** FORM TO SHARE EXPERIENCE ********** -->
         <div class="container share-container">
             <!--   Form Section   -->
             <div class="card">
                 <div class="card-content">
-                    {{ include('review/_form.html.twig') }}
+                    {{ include('post/_form.html.twig') }}
                 </div>
             </div>
         </div>
@@ -32,7 +32,9 @@
 {% endblock %}
 
 {% block javascripts %}
-    {# <script>
-        var simplemde = new SimpleMDE({ element: document.getElementById("review_description") });
-    </script> #}
+
+    <script>
+        var simplemde = new SimpleMDE({ element: document.getElementById("post_description") });
+    </script>
+
 {% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ReviewRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,17 +44,20 @@ class Review
      */
     private $posted_at;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="reviews")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $category;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $user;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Post::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $post;
+
+
 
     public function getId(): ?int
     {
@@ -119,17 +124,7 @@ class Review
         return $this;
     }
 
-    public function getCategory(): ?Category
-    {
-        return $this->category;
-    }
 
-    public function setCategory(?Category $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
 
     public function getUser(): ?User
     {
@@ -139,6 +134,18 @@ class Review
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getPost(): ?Post
+    {
+        return $this->post;
+    }
+
+    public function setPost(?Post $post): self
+    {
+        $this->post = $post;
 
         return $this;
     }

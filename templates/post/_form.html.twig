@@ -1,3 +1,4 @@
+
 {{ form_start(form) }}
 
     <!-- ********** NICK NAME **********-->
@@ -17,18 +18,58 @@
             </p>
         </div>
     </div>
-    <!-- ********** TITLE **********-->
+    <!-- ********** SELECT CATEGORY **********-->
+    <h5><i class="material-icons prefix">check</i> Choose a category</h5>
+    <div class="col s12 l12">
+        {{ form_widget(form.categories)}}
+    </div>
+  
+    <!-- ********** NAME OF **********-->
     <div class="row">
         <div class="input-field col s12 l12">
-            <i class="material-icons prefix">title</i>
-            {{ form_label(form.title, 'Title') }}
-            {{ form_widget(form.title, {'attr' : {'class' : 'validate', 'id' : 'last_name'}}) }}
+            <i class="material-icons prefix">Name</i>
+            {{ form_label(form.name, 'Name') }}
+            {{ form_widget(form.name) }}
+        </div>
+    </div>
+    <!-- ********** ADDRESS **********-->
+    <div class="row">
+        <div class="input-field col s12 l12">
+            <i class="material-icons prefix">address</i>
+            {{ form_label(form.address) }}
+            {{ form_widget(form.address) }}
+        </div>
+    </div>
+    <!-- ********** PHONE NUMBER **********-->
+    <div class="row">
+        <div class="input-field col s12 l12">
+            <i class="material-icons prefix">phone</i>
+            {{ form_label(form.phone_number) }}
+            {{ form_widget(form.phone_number) }}
+        </div>
+    </div>
+    <!-- ********** CITY **********-->
+    <div class="row">
+        <div class="input-field col s12 l12">
+            <i class="material-icons prefix">place</i>
+            {{ form_label(form.city) }}
+            {{ form_widget(form.city) }}
+        </div>
+    </div>
+    <!-- ********** COUNTRY **********-->
+    <div class="row">
+        <div class="input-field col s12 l12">
+            <i class="material-icons prefix">place</i>
+            {{ form_label(form.country) }}
+            {{ form_widget(form.country) }}
         </div>
     </div>
     <!-- ********** DESCRIPTION **********-->
     <div class="input-field col s12">
-        {{ form_widget(form.description, {'attr' : {'class' : 'materialize-textarea', 'placeholder' : 'Share your experience with the community !'}}) }}
+        {{ form_widget(form.description, {'attr' : {'class' : 'materialize-textarea', 'id' :  'post_description', 'placeholder' : 'Share your experience with the community !'}}) }}
     </div>
+
+ 
     <!-- ********** UPLOAD PHOTO **********-->
     <div class="row">
         <h5><i class="material-icons prefix">vertical_align_bottom</i> Upload a picture</h5>
@@ -47,15 +88,15 @@
         </div>
     </div>
     <!-- ********** BTN **********-->
-    <div class="row">
+    {# <div class="row">
         <div class="input-field col s12 l12">    
         <button class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
-            {{ button_label|default('Save') }}
             <i class="material-icons right">send</i>
         </button>
+        {{ button_label|default('Save') }}
         </div>
-    </div>
+    </div> #}
 
-    {{ form_widget(form) }}
+<button class="btn" type="submit">{{ button_label|default('Save') }}</button>
 
 {{ form_end(form) }}
