@@ -6,31 +6,30 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{% block title %}We Share{% endblock %}</title>
-
         
-
-            <!-- ***** MATERIALIZE FRAMEWORK CSS ***** -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-            <!-- ***** MATERIALIZE ICON ***** -->
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-            <!-- ***** FLICKITY CAROUSEL ***** -->
-            <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
-            <!-- ***** MARKDOWN EDITOR DESCRIPTION ***** -->
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-            
-            <!-- ********* FONT AWESOME LINK ********* -->
-            <script src="https://kit.fontawesome.com/92add67b23.js" crossorigin="anonymous"></script>
-            
-            <!-- ***** URL ICON LINK ***** -->
-            <link rel="icon" href="{{asset('assets/images/share.png')}}"/>
-
-            <!-- ***** LINK CSS ***** -->
-            <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.css')}}">
-
         {% block stylesheets %}
         {% endblock %}
+
+        <!-- ***** MATERIALIZE FRAMEWORK CSS ***** -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- ***** MATERIALIZE ICON ***** -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- ***** FLICKITY CAROUSEL ***** -->
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+        <!-- ***** MARKDOWN EDITOR DESCRIPTION ***** -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+        
+        <!-- ********* FONT AWESOME LINK ********* -->
+        <script src="https://kit.fontawesome.com/92add67b23.js" crossorigin="anonymous"></script>
+        
+        <!-- ***** URL ICON LINK ***** -->
+        <link rel="icon" href="{{asset('assets/images/share.png')}}"/>
+
+        <!-- ***** LINK CSS ***** -->
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.css')}}"/>
+
     </head>
     <body>
          
@@ -115,21 +114,17 @@
         <!-- ***** FLICKITY CAROUSEL ***** -->
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-        <!-- ***** BOXICON ICON ***** -->
-        <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
-
         <!-- ***** MARKDOWN EDITOR DESCRIPTION ***** -->
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
+    
 
         <!--JavaScript at end of body for optimized loading-->
         <!-- ***** JS SCRIPT ***** -->
         <script src="{{asset('assets/js/carousel-index.js')}}"></script>
         <script src="{{asset('assets/js/materialize.js')}}"></script>
 
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
     </body>
 </html>

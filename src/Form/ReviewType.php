@@ -3,12 +3,16 @@
 namespace App\Form;
 
 use App\Entity\Review;
+use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\RangeType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Component\Form\Extension\Core\Type\RangeType;
-use App\Entity\Category;
+use Symfony\Component\Validator\Constraints\File;
+
 
 class ReviewType extends AbstractType
 {
@@ -22,13 +26,27 @@ class ReviewType extends AbstractType
                 ]
             ])
             ->add('title')
-            ->add('description')
-            ->add('picture')
-            ->add('user')
+            ->add('description',TextareaType::class, [
+                'required' => false,
+            ])
+            ->add('picture', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+                'label' => ' ',
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid PDF document',
+                    ])
+                ],
+            ])
             ->add('category', EntityType::class, [
                 'class'  => Category::class])
             ;
-            // ->add('posted_at')
+            
     }
 
     public function configureOptions(OptionsResolver $resolver)

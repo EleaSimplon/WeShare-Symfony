@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Review;
+use App\Entity\User;
 use App\Form\ReviewType;
 use App\Repository\CategoryRepository;
 use App\Repository\ReviewRepository;
@@ -10,6 +11,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+// UPLOAD PICTURE
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use DateTime;
+
 
 /**
  * @Route("/review")
@@ -30,24 +36,41 @@ class ReviewController extends AbstractController
     /**
      * @Route("/new", name="review_new", methods={"GET","POST"})
      */
-    public function new(Request $request, CategoryRepository $categoryRepository): Response
+    public function new(Request $request, CategoryRepository $categoryRepository, SluggerInterface $slugger): Response
     {
         $review = new Review();
         $form = $this->createForm(ReviewType::class, $review);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+       
+            $picture = $form->get('picture')->getData();
+
+            // SI PICTURE IS NOT NULL, PUT THE UPLOAD FILE FOLLOWING THE ROUTE 'PHOTO_DIRECTORY' IN SERVICES.YALM  
+            if ($picture !== null) {
+                $newFilename = $this->upload($picture, 'photo_directory', $slugger);
+                $review->setPicture($newFilename);
+            }
+
+            $review->setUser($this->getUser());
+            $date = new \DateTime;
+            $review->setPostedAt($date);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($review);
             $entityManager->flush();
 
-            return $this->redirectToRoute('review_index');
+            return $this->redirectToRoute('review_index', [
+                'id' => $this->getUser()->getId(),
+                'user'=>$this->getUser()
+            ]);
         }
 
         return $this->render('review/new.html.twig', [
             'review' => $review,
             'form' => $form->createView(),
             'category' => $categoryRepository,
+            'user'=>$this->getUser()
         ]);
     }
 
@@ -93,5 +116,26 @@ class ReviewController extends AbstractController
         }
 
         return $this->redirectToRoute('review_index');
+    }
+
+    // UPLOAD PICTURE IN NEW REVIEW
+    public function upload($file, $targetDirectory, $slugger)
+    {
+        $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeFilename = $slugger->slug($originalFilename);
+        $newFilename = $safeFilename.'-'.uniqid().'.'.$file->guessExtension();
+
+        try {
+
+            $file->move(
+                $this->getParameter($targetDirectory),
+                $newFilename
+            );
+            return $newFilename;
+        } catch (FileException $e) {
+            throw new \Exception($e->getMessage());
+            // ... handle exception if something happens during file upload
+        }
+
     }
 }

@@ -14,6 +14,6 @@ $(document).ready(function(){
     //SELECT
     // $(document).ready(function(){
     //     $('select').formSelect();
-    //   });
+    // });
           
 });
