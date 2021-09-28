@@ -32,7 +32,7 @@
 
     </head>
     <body>
-         
+        
         {#*********** NAV BAR **********#}
         <nav class="transparent">
             <div class="nav-wrapper">
@@ -111,6 +111,9 @@
         <!-- ***** MATERIALIZE CDN SCRIPT ***** -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+        <!-- ***** MATERIALIZE CDN SCRIPT ***** -->
+        <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
+
         <!-- ***** FLICKITY CAROUSEL ***** -->
         <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
@@ -122,6 +125,8 @@
         <!-- ***** JS SCRIPT ***** -->
         <script src="{{asset('assets/js/carousel-index.js')}}"></script>
         <script src="{{asset('assets/js/materialize.js')}}"></script>
+        <script src="{{asset('assets/js/display_password.js')}}"></script>
+        <script src="{{asset('assets/js/hidden-cat.js')}}"></script>
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}

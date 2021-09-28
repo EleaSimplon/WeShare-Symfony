@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,7 +13,7 @@ class MyProfileController extends AbstractController
     /**
      * @Route("my_profile", name="my_profile")
      */
-    public function index(ReviewRepository $reviewRepository): Response
+    public function index(ReviewRepository $reviewRepository, PostRepository $postRepository): Response
     {
         // RECUP FUNCTION FINDBY (ALREADY EXISTING) of REVIEW REPO
         // RECUP THE USER IN THE ARRAY
@@ -20,15 +21,21 @@ class MyProfileController extends AbstractController
             'user'=>$this->getUser()
         ]);
 
+        $allPost = $postRepository->findBy([
+            'user'=>$this->getUser()
+        ]);
+
         // dd($allReview);
 
         return $this->render('my_profile/index.html.twig', [
             'controller_name' => 'MyProfileController',
-            'allReview' => $allReview,
             'user'=>$this->getUser(),
+            'allReview' => $allReview,
             // count = Compte tous les éléments d'un tableau ou quelque chose d'un objet
             //count(ALL THE REVIEW OF A USER)
-            'countReview'=> count($allReview)
+            'countReview'=> count($allReview),
+            'allPost' => $allPost,
+            'countPost'=> count($allPost),
         ]);
     }
 }

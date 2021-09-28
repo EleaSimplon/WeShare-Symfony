@@ -38,12 +38,12 @@ class PostController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-       dd($post);
+            //dd($post);
             $picture = $form->get('picture')->getData();
 
             // SI PICTURE IS NOT NULL, PUT THE UPLOAD FILE FOLLOWING THE ROUTE 'PHOTO_DIRECTORY' IN SERVICES.YALM  
             if ($picture !== null) {
-                $newFilename = $this->upload($picture, 'picture_directory', $slugger);
+                $newFilename = $this->upload($picture, 'photo_directory', $slugger);
                 $post->setPicture($newFilename);
             }
 
@@ -53,9 +53,8 @@ class PostController extends AbstractController
             $entityManager->persist($post);
             $entityManager->flush();
 
-            return $this->redirectToRoute('post_index', [
-                'id' => $this->getUser()->getId(),
-                'user'=>$this->getUser()
+            return $this->redirectToRoute('post_show', [
+                'id' => $post->getId()
             ]);
         }
 
@@ -73,6 +72,7 @@ class PostController extends AbstractController
     {
         return $this->render('post/show.html.twig', [
             'post' => $post,
+            'user'=>$this->getUser()
         ]);
     }
 

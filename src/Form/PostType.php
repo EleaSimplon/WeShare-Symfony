@@ -28,13 +28,16 @@ class PostType extends AbstractType
             ->add('phone_number')
             ->add('description')
             ->add('city')
+            ->add('web_site')
             ->add('country')
             ->add('categories', ChoiceType::class, [
                 'choices'  => [
-                    'Restaurant' => 'Restaurant',
-                    'Activity' => 'Activity',
-                    'Destination' => 'Destination',
-                ],
+                    'Choose a category' => [
+                        'Restaurant' => 'Restaurant',
+                        'Activity' => 'Activity',
+                        'Destination' => 'Destination'
+                    ]
+                ]
             ])
             ->add('picture', FileType::class, [
                 'mapped' => false,

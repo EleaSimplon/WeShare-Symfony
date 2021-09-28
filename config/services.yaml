@@ -6,7 +6,7 @@
 parameters:
     #****** PARAM STOCKER IMAGES DANS DOSSIER IMAGES DANS HTDOCS *******#
     #****** PARAM ACCES DEPUIS CONTROLLER *******#
-    photo_directory: '%kernel.project_dir%/htdocs/assets/images/picture-review'
+    photo_directory: '%kernel.project_dir%/htdocs/assets/images/picture-post'
     picture_directory: '%kernel.project_dir%/htdocs/assets/images/picture-review'
 
 services:

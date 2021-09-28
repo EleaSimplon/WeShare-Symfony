@@ -18,14 +18,12 @@
             <div class="card">
                 <div class="card-content">
                     <div class="row">
-
                         {{ form_start(registrationForm) }}
                             {{ form_row(registrationForm.email) }}
                             {{ form_row(registrationForm.user_name) }}
                             {{ form_row(registrationForm.user_description) }}
-                            {{ form_row(registrationForm.plainPassword, {
-                                label: 'Password'
-                            }) }}
+                            {{ form_row(registrationForm.plainPassword, {'attr' : {'class' : 'validate', 'type' : 'password', 'name' : 'confirm-password', 'id' : 'confirm-password' }} ) }}
+                            <span toggle="#confirm-password" class="field-icon toggle-password"><span class="material-icons">visibility</span></span>
 
                             <div class="input-field col s12 l12">    
                                 <button class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
@@ -36,6 +34,9 @@
 
                         {{ form_end(registrationForm) }}
                             
+                        <div class="links center-align">
+                            <a href="{{ path ('app_login') }}">Already have an account? Click here</a>
+                        </div>
                     </div>
                 </div>
             </div>

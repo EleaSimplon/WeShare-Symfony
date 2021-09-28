@@ -512,6 +512,18 @@
   justify-content: center;
 }
 
+.card-post {
+  text-align: center;
+}
+.card-post .card .card-image img {
+  width: 40%;
+  display: flex;
+  margin: auto;
+}
+.card-post .material-icons {
+  color: #F3DE2C;
+}
+
 body p, body h5, body input {
   font-family: "Catamaran", sans-serif;
 }

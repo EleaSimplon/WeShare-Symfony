@@ -12,23 +12,23 @@
     <!-- ********** RATE RANGE **********-->
     <div class="row">
         <div class="input-field col s12 l12">
-            <h5><i class="material-icons prefix">star_half</i> Rate</h5>
+            <h5><box-icon type='solid' name='star-half'></box-icon> Rate</h5>
             <p class="range-field">
                 {{ form_widget(form.rate, {'attr' : {'type' : 'range'}}) }}
             </p>
         </div>
     </div>
     <!-- ********** SELECT CATEGORY **********-->
-    <h5><i class="material-icons prefix">check</i> Choose a category</h5>
+    <h5><box-icon name='check'></box-icon> Choose a category *</h5>
     <div class="col s12 l12">
         {{ form_widget(form.categories)}}
     </div>
-  
+    <h5><box-icon name='edit-location' type='solid' ></box-icon> Enter the place's informations</h5>
     <!-- ********** NAME OF **********-->
     <div class="row">
         <div class="input-field col s12 l12">
             <i class="material-icons prefix">Name</i>
-            {{ form_label(form.name, 'Name') }}
+            {{ form_label(form.name, 'Name *') }}
             {{ form_widget(form.name) }}
         </div>
     </div>
@@ -36,7 +36,7 @@
     <div class="row">
         <div class="input-field col s12 l12">
             <i class="material-icons prefix">address</i>
-            {{ form_label(form.address) }}
+            {{ form_label(form.address, 'Address *') }}
             {{ form_widget(form.address) }}
         </div>
     </div>
@@ -52,7 +52,7 @@
     <div class="row">
         <div class="input-field col s12 l12">
             <i class="material-icons prefix">place</i>
-            {{ form_label(form.city) }}
+            {{ form_label(form.city, 'City *') }}
             {{ form_widget(form.city) }}
         </div>
     </div>
@@ -60,19 +60,26 @@
     <div class="row">
         <div class="input-field col s12 l12">
             <i class="material-icons prefix">place</i>
-            {{ form_label(form.country) }}
+            {{ form_label(form.country, 'Country *') }}
             {{ form_widget(form.country) }}
         </div>
     </div>
-    <!-- ********** DESCRIPTION **********-->
-    <div class="input-field col s12">
-        {{ form_widget(form.description, {'attr' : {'class' : 'materialize-textarea', 'id' :  'post_description', 'placeholder' : 'Share your experience with the community !'}}) }}
+    <!-- ********** WEBSITE **********-->
+    <div class="input-field col s12 l12">
+        <i class="material-icons prefix">http</i>
+        {{ form_label(form.web_site) }}
+        {{ form_widget(form.web_site) }}
     </div>
-
- 
+    <h5><box-icon name='message-dots'></box-icon> Share your experience with the community !</h5>
+    <!-- ********** DESCRIPTION **********-->
+    <div class="input-field col s12 l12">
+        <i class="material-icons prefix">border_color</i>
+        {{ form_label(form.description, 'Description *') }}
+        {{ form_widget(form.description) }}
+    </div>
     <!-- ********** UPLOAD PHOTO **********-->
+    <h5><box-icon name='upload'></box-icon> Upload a picture</h5>
     <div class="row">
-        <h5><i class="material-icons prefix">vertical_align_bottom</i> Upload a picture</h5>
         <div class="input-field col s12 l12">    
             <div class="file-field input-field">
                 <div class="btn brown darken-1">
@@ -88,15 +95,17 @@
         </div>
     </div>
     <!-- ********** BTN **********-->
-    {# <div class="row">
+    <div class="row">
         <div class="input-field col s12 l12">    
         <button class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
+            {{ button_label|default('Save') }}
             <i class="material-icons right">send</i>
         </button>
-        {{ button_label|default('Save') }}
         </div>
-    </div> #}
-
-<button class="btn" type="submit">{{ button_label|default('Save') }}</button>
+    </div>
+    <!-- ********** INFOS **********-->
+    <div class="infos">
+        <h5>* All the fields that contains the asterisk are mandatory
+    </div>
 
 {{ form_end(form) }}

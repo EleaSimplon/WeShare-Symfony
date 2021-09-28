@@ -69,9 +69,9 @@ class Post
     private $picture;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $name_of;
+    private $web_site;
 
     public function getId(): ?int
     {
@@ -198,14 +198,14 @@ class Post
         return $this;
     }
 
-    public function getNameOf(): ?string
+    public function getWebSite(): ?string
     {
-        return $this->name_of;
+        return $this->web_site;
     }
 
-    public function setNameOf(string $name_of): self
+    public function setWebSite(?string $web_site): self
     {
-        $this->name_of = $name_of;
+        $this->web_site = $web_site;
 
         return $this;
     }
