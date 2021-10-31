@@ -1,9 +1,10 @@
-var clicked = 0;
+let clicked = 0;
 
 $(".toggle-password").click(function (e) {
     e.preventDefault();
 
     $(this).toggleClass("toggle-password");
+
     if (clicked == 0) {
         $(this).html('<span class="material-icons">visibility_off</span >');
         clicked = 1;
@@ -12,10 +13,27 @@ $(".toggle-password").click(function (e) {
         clicked = 0;
     }
 
-    var input = $($(this).attr("toggle"));
+    let input = $($(this).attr("toggle"));
+
     if (input.attr("type") == "password") {
     input.attr("type", "text");
     } else {
     input.attr("type", "password");
     }
+
 })
+
+// $(".toggle-password").click(function() {
+
+//     $(this).toggleClass("fa-eye fa-eye-slash");
+
+//     let input = $($(this).attr("toggle"));
+
+//     if (input.attr("type") == "password") {
+//       input.attr("type", "text");
+
+//     } else {
+//       input.attr("type", "password");
+//     }
+
+// });

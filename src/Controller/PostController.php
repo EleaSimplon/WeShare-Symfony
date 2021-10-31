@@ -12,6 +12,9 @@ use Symfony\Component\Routing\Annotation\Route;
 // UPLOAD PICTURE
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
+// ADD REVIEW
+use App\Entity\Review;
+use App\Form\ReviewType;
 
 /**
  * @Route("/post")
@@ -68,8 +71,9 @@ class PostController extends AbstractController
     /**
      * @Route("/{id}", name="post_show", methods={"GET"})
      */
-    public function show(Post $post): Response
+    public function show(Post $post, Request $request): Response
     {
+
         return $this->render('post/show.html.twig', [
             'post' => $post,
             'user'=>$this->getUser()

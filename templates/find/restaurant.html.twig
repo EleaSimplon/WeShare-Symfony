@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <!-- ********** SECTION 1 HEADER WITH TEXT **********-->
+    <section class="header-find">
+        <div class="header-img">
+            <div class="row">
+                <div class="col s12 m6 l3 left">
+                    <img src="{{asset('assets/images/cactus.png')}}" alt="">
+                </div>
+                <div class="col s12 m6 l9">
+                    <h1><span>Need Inspiration ?</span><br>View our rated categories ...</h1>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- ********** SECTION 2 SEARCH BAR **********-->
+    <section class="search-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col 6">
+                    <div class="nav-wrapper">
+                        <form>
+                            <div class="input-field">
+                            <input id="search" type="Search" placeholder="search" required>
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </section>
+    
+    <!-- ********** BUTTON BACK TO CATEGORIES **********-->
+    <a class="red lighten-2 btn" href="{{ path ('find') }}">Back to categories</a>
+
+    <!-- ********** SECTION 4 RESTAURANTS CATEGORY **********-->
+    <section class="hiden-categories">
+        <div id="divRestau" class="answer_list" >
+            <div class="card-post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m7 l12">
+                            {% for post in allRestau %}
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
+                                    </div>
+                                    <div class="card-title">
+                                        <h5>{{ post.categories }}</h5>
+                                        <h3>{{ post.name }}</h3>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>{{ post.description }}</p>
+                                        <h4>{{ post.rate }} / 5  <i class="material-icons">star</i></h4>
+                                        <div class="card-action">
+                                            <h5>{{ post.address }}</h5>
+                                            <div class="row">
+                                                <div class="col l6">
+                                                    <h5>{{ post.city }}</h5>
+                                                </div>
+                                                <div class="col l6">
+                                                    <h5>{{ post.country }}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    {% if post.webSite != "" %}
+                                        <div class="card-action">
+                                            <div class="row">
+                                                <div class="col l12">
+                                                    <a href="{{ post.webSite }}"><i class="material-icons">star</i>Link to website</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    {% if post.phoneNumber != "" %}
+                                        <div class="card-action">
+                                            <div class="row">
+                                                <div class="col l12">
+                                                    <h5><i class="material-icons">star</i>{{ post.phoneNumber }}</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <a class="red lighten-2 btn" href="{{ path('post_show', {'id': post.id}) }}">show</a>
+                                </div>
+
+                            {% endfor %}
+                            {{ knp_pagination_render(allRestau) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -464,6 +464,9 @@
 .categories {
   margin-top: 3rem;
 }
+.categories a {
+  color: black;
+}
 .categories .inspi {
   margin-top: 5rem;
   font-weight: bold;

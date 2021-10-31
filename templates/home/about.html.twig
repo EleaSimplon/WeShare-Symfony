@@ -55,7 +55,14 @@
                 <div class="col s12 m4 l4">
                     <div class="icon-block center">
                         <img src="{{asset('assets/images/users.png')}}">
-                        <h3 class="center">26 8512</h3>
+                        {# {% set totalUser = 0 %}
+
+                        {% for user in allUser %}
+
+                            {% set totalUser = totalUser + 1 %}
+
+                        {% endfor %} #}
+                        <h3 class="center count-animation">4567</h3>
                         <p class="light">Users</p>
                     </div>
                 </div>
@@ -63,16 +70,32 @@
                 <div class="col s12 m4 l4">
                 <div class="icon-block center">
                         <img src="{{asset('assets/images/story.png')}}">
-                        <h3 class="center">50 000</h3>
+                        {% set totalPost = 0 %}
+
+                        {% for post in allPost %}
+
+                            {% set totalPost = totalPost + 1 %}
+
+                        {% endfor %}
+                        <h3 class="center count-animation">{{ totalPost }}</h3>
                         <p class="light">Story shared</p>
                     </div>
                 </div>
 
+                
+
                 <div class="col s12 m4 l4">
                     <div class="icon-block center">
-                        <img src="{{asset('assets/images/users.png')}}">
-                        <h3 class="center">27 889</h3>
-                        <p class="light">Objectif</p>
+                        <img src="{{asset('assets/images/review.png')}}">
+                        {% set totalReview = 0 %}
+
+                        {% for review in allReview %}
+
+                            {% set totalReview = totalReview + 1 %}
+
+                        {% endfor %}
+                        <h3 class="center count-animation">{{ totalReview }}</h3>
+                        <p class="light">Reviews</p>
                     </div>
                 </div>
             </div>

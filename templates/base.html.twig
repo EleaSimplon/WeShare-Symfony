@@ -86,14 +86,16 @@
                 <div class="row">
                     <div class="col l6 s12">
                         <h4 class="white-text">We Share®</h4>
-                        <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo.</p>
+                        <p class="grey-text text-lighten-4">"The miracle is this: The more we share the more we have."
+                            <br>— Leonard Nimoy
+                        </p>
                     </div>
                     <div class="col l3 s12 offset-l3">
-                        <h5 class="white-text">Liens <i class="material-icons">link</i></h5>
+                        <h5 class="white-text">Links <i class="material-icons">link</i></h5>
                         <ul class="footer-links">
-                            <li><a class="white-text" href="#!">Comment ça marche ?</a></li>
-                            <li><a class="white-text" href="">Voir les campagnes</a></li>
-                            <li><a class="white-text" href="">Créer une campagne</a></li>
+                            <li><a class="white-text" href="{{ path('about') }}">About us</a></li>
+                            <li><a class="white-text" href="{{ path('find') }}">Find your next trip</a></li>
+                            <li><a class="white-text" href="{{ path('post_new') }}">Share your story</a></li>
                         </ul>
                     </div>
                 </div>
@@ -127,6 +129,7 @@
         <script src="{{asset('assets/js/materialize.js')}}"></script>
         <script src="{{asset('assets/js/display_password.js')}}"></script>
         <script src="{{asset('assets/js/hidden-cat.js')}}"></script>
+        <script src="{{asset('assets/js/count-animation.js')}}"></script>
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}

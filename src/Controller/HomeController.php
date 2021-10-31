@@ -5,6 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\PostRepository;
+use App\Repository\ReviewRepository;
+use App\Repository\UserRepository;
 
 class HomeController extends AbstractController
 {
@@ -23,12 +26,22 @@ class HomeController extends AbstractController
     /**
      * @Route("about", name="about")
      */
-    public function about(): Response
+    public function about(PostRepository $postRepository, ReviewRepository $reviewRepository, UserRepository $userRepository): Response
     {
-
         $user = $this->getUser();
+        // RECUP ALL POSTS TO DSPLAY THE COUNT
+        $allPost = $postRepository->findAll();
+
+        // RECUP ALL POSTS TO DSPLAY THE COUNT
+        $allReview = $reviewRepository->findAll();
+
+        //$allUser = $userRepository->findAll();
+
 
         return $this->render('home/about.html.twig', [
+            'allPost' => $allPost,
+            'allReview' => $allReview
+            //'user'=> $allUser
         ]);
     }
 

@@ -4,7 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Review;
 use App\Entity\User;
+use App\Entity\Post;
+use App\Form\PostType;
 use App\Form\ReviewType;
+use App\Repository\PostRepository;
 use App\Repository\ReviewRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -32,16 +35,18 @@ class ReviewController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="review_new", methods={"GET","POST"})
+     * @Route("/new/{id}", name="review_new", methods={"GET","POST"})
      */
-    public function new(Request $request, SluggerInterface $slugger): Response
+    public function new(Request $request, SluggerInterface $slugger, Post $post): Response
     {
         $review = new Review();
+        
         $form = $this->createForm(ReviewType::class, $review);
         $form->handleRequest($request);
+        //dd($post);
 
         if ($form->isSubmitted() && $form->isValid()) {
-       
+
             $picture = $form->get('picture')->getData();
 
             // SI PICTURE IS NOT NULL, PUT THE UPLOAD FILE FOLLOWING THE ROUTE 'PHOTO_DIRECTORY' IN SERVICES.YALM  
@@ -54,11 +59,14 @@ class ReviewController extends AbstractController
             $date = new \DateTime;
             $review->setPostedAt($date);
 
+            // RECUP LE POST POUR AVOIR SON ID DANS LA REVIEW
+            $review->setPost($post);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($review);
             $entityManager->flush();
 
-            return $this->redirectToRoute('review_index', [
+            return $this->redirectToRoute('review_show', [
                 'id' => $this->getUser()->getId(),
                 'user'=>$this->getUser()
             ]);
@@ -135,4 +143,5 @@ class ReviewController extends AbstractController
         }
 
     }
+
 }
