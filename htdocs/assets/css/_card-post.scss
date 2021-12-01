@@ -1,13 +1,35 @@
-.card-post {
-    text-align: center;
+.btn-bck-cat {
+    margin-top: 20px;
+    
+    a {
+        margin: 20px 0 20px 0;
+    }
+}
 
-    .card .card-image img {
-        width: 40%;
-        display: flex;
-        margin: auto;
+.card-test {
+    text-align: center;
+    height:100%;
+
+    .card {
+        height: 100%;
+
+        .card-image img {
+            object-fit: cover;
+            max-height: 17rem;
+        }
+
+        .card-action {
+            padding:0px;
+            padding-top: 16px;
+        }
     }
 
     .material-icons {
         color: #F3DE2C;
     }
+
+    .btn-show {
+        margin-bottom: 20px;
+    }
+
 }

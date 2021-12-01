@@ -29,9 +29,9 @@ class FindController extends AbstractController
     public function restaurant(Request $request, PostRepository $postRepository, PaginatorInterface $paginator): Response
     {
 
-          // TO DISPLAY ALL THE POST WITH THE CATEGORY "RESTAURANT"
+        // TO DISPLAY ALL THE POST WITH THE CATEGORY "RESTAURANT"
         // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
-        $allPostRestau = $postRepository->findBy([
+        $allPostRestau = $postRepository->findByIdDesc([
             'categories'=>'Restaurant'
         ]);
 

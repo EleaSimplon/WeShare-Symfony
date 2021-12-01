@@ -527,16 +527,33 @@
   padding: 0 12px;
 }
 
-.card-post {
+.btn-bck-cat {
+  margin-top: 20px;
+}
+.btn-bck-cat a {
+  margin: 20px 0 20px 0;
+}
+
+.card-test {
   text-align: center;
+  height: 100%;
 }
-.card-post .card .card-image img {
-  width: 40%;
-  display: flex;
-  margin: auto;
+.card-test .card {
+  height: 100%;
 }
-.card-post .material-icons {
+.card-test .card .card-image img {
+  object-fit: cover;
+  max-height: 17rem;
+}
+.card-test .card .card-action {
+  padding: 0px;
+  padding-top: 16px;
+}
+.card-test .material-icons {
   color: #F3DE2C;
+}
+.card-test .btn-show {
+  margin-bottom: 20px;
 }
 
 .show-btn .container {

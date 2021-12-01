@@ -19,6 +19,16 @@ class PostRepository extends ServiceEntityRepository
         parent::__construct($registry, Post::class);
     }
 
+    // TO FIND BY AND SORT BY ID DESC
+    // DISPLAY LAST FROM FIRST POST 
+    public function findByIdDesc()
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+        ;
+    }
+
+    
     // /**
     //  * @return Post[] Returns an array of Post objects
     //  */
@@ -47,4 +57,6 @@ class PostRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
 }
