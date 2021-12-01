@@ -26,5 +26,9 @@
     .collapsible .collapsible-header {
         text-align: center;
         @include d-flex-center;
+
+        h4 {
+            padding: 0 12px;
+        }
     }
 }

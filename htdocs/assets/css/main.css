@@ -427,6 +427,10 @@
   font-weight: bold;
 }
 
+.section-find {
+  overflow: hidden;
+}
+
 .header-find {
   padding: 0;
 }
@@ -456,6 +460,11 @@
 .header-find .header-img {
   background: url(/assets/images/bg.png) no-repeat;
   background-size: cover;
+  position: relative;
+}
+.header-find .header-img img {
+  position: absolute;
+  bottom: 1.5px;
 }
 .header-find h5 span {
   font-weight: bold;
@@ -514,6 +523,9 @@
   display: flex;
   justify-content: center;
 }
+.user-profile .collapsible .collapsible-header h4 {
+  padding: 0 12px;
+}
 
 .card-post {
   text-align: center;
@@ -525,6 +537,11 @@
 }
 .card-post .material-icons {
   color: #F3DE2C;
+}
+
+.show-btn .container {
+  display: flex;
+  justify-content: center;
 }
 
 body p, body h5, body input {

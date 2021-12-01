@@ -2,43 +2,47 @@
 
 {% block body %}
 
-    <!-- ********** SECTION 1 HEADER WITH TEXT **********-->
-    <section class="header-find">
-        <div class="header-img">
-            <div class="row">
-                <div class="col s12 m6 l3 left">
-                    <img src="{{asset('assets/images/cactus.png')}}" alt="">
+    <section class="section-find">
+    
+        <!-- ********** SECTION 1 HEADER WITH TEXT **********-->
+        <section class="header-find">
+            <div class="header-img">
+                <div class="row">
+                    <div class="col s12 m6 l3 left">
+                        <img src="{{asset('assets/images/cactus.png')}}" alt="">
+                    </div>
+                    <div class="col s12 m6 l9">
+                        <h1><span>Need Inspiration ?</span><br>View our rated categories ...</h1>
+                    </div>
                 </div>
-                <div class="col s12 m6 l9">
-                    <h1><span>Need Inspiration ?</span><br>View our rated categories ...</h1>
-                </div>
-            </div>
-        </div> 
-    </section>
+            </div> 
+        </section>
 
-    <!-- ********** SECTION 3 CATEGORIES + IMG LIKE TO PAGES **********-->
-    <section class="categories">
-        <div class="row center">
-            <h3>Click on the category to discover !</h3>
-            <div class="col s12 m6 l4">
-                <a href="{{ path ('restaurant') }}">
-                    <h3 id="btnRestau" name="answer" onclick="ShowDivRestau()"><span>Restaurants</span><box-icon name='pointer'></box-icon></h3>
-                </a>
-                <img src="{{asset('assets/images/1.jpg')}}" alt="">
+        <!-- ********** SECTION 3 CATEGORIES + IMG LIKE TO PAGES **********-->
+        <section class="categories">
+            <div class="row center">
+                <h3>Click on the category to discover !</h3>
+                <div class="col s12 m6 l4">
+                    <a href="{{ path ('restaurant') }}">
+                        <h3 id="btnRestau" name="answer" onclick="ShowDivRestau()"><span>Restaurants</span><box-icon name='pointer'></box-icon></h3>
+                    </a>
+                    <img src="{{asset('assets/images/1.jpg')}}" alt="">
+                </div>
+                <div class="col s12 m6 l4">
+                    <a href="{{ path ('activity') }}">
+                        <h3 id="btnActiv" name="answer" onclick="ShowDivActiv()"><span>Activities</span><box-icon name='pointer'></box-icon></h3>
+                    </a>
+                    <img src="{{asset('assets/images/quad.jpg')}}" alt="">
+                </div>
+                <div class="col s12 m6 l4">
+                    <a href="{{ path ('destination') }}">
+                        <h3 id="btnDesti" name="answer" onclick="ShowDivDesti()"><span>Destinations</span><box-icon name='pointer'></box-icon></h3>
+                    </a>
+                    <img src="{{asset('assets/images/about.jpg')}}" alt="">
+                </div>
             </div>
-            <div class="col s12 m6 l4">
-                <a href="{{ path ('activity') }}">
-                    <h3 id="btnActiv" name="answer" onclick="ShowDivActiv()"><span>Activities</span><box-icon name='pointer'></box-icon></h3>
-                </a>
-                <img src="{{asset('assets/images/quad.jpg')}}" alt="">
-            </div>
-            <div class="col s12 m6 l4">
-                <a href="{{ path ('destination') }}">
-                    <h3 id="btnDesti" name="answer" onclick="ShowDivDesti()"><span>Destinations</span><box-icon name='pointer'></box-icon></h3>
-                </a>
-                <img src="{{asset('assets/images/about.jpg')}}" alt="">
-            </div>
-        </div>
+        </section>
+    
     </section>
 
 {% endblock %}

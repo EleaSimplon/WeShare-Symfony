@@ -1,6 +1,9 @@
 @import 'mixin';
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap');
 
+.section-find {
+    overflow: hidden;
+}
 
 .header-find {
 
@@ -15,6 +18,12 @@
     .header-img {
         background: url(/assets/images/bg.png) no-repeat;
         background-size: cover;
+        position: relative;
+
+        img {
+            position: absolute;
+            bottom: 1.5px;
+        }
     }
 
     h5 span {

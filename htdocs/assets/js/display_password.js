@@ -13,27 +13,15 @@ $(".toggle-password").click(function (e) {
         clicked = 0;
     }
 
-    let input = $($(this).attr("toggle"));
+    let inputPassword = $('#registration_form_plainPassword');
+    let inputAttr = inputPassword.attr("type");
 
-    if (input.attr("type") == "password") {
-    input.attr("type", "text");
+    if (inputAttr == "password") {
+
+        inputPassword.attr("type", "text");
+
     } else {
-    input.attr("type", "password");
+        inputPassword.attr("type", "password");
     }
 
 })
-
-// $(".toggle-password").click(function() {
-
-//     $(this).toggleClass("fa-eye fa-eye-slash");
-
-//     let input = $($(this).attr("toggle"));
-
-//     if (input.attr("type") == "password") {
-//       input.attr("type", "text");
-
-//     } else {
-//       input.attr("type", "password");
-//     }
-
-// });

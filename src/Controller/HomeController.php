@@ -35,13 +35,13 @@ class HomeController extends AbstractController
         // RECUP ALL POSTS TO DSPLAY THE COUNT
         $allReview = $reviewRepository->findAll();
 
-        //$allUser = $userRepository->findAll();
+        $allUser = $userRepository->findAll();
 
 
         return $this->render('home/about.html.twig', [
             'allPost' => $allPost,
-            'allReview' => $allReview
-            //'user'=> $allUser
+            'allReview' => $allReview,
+            'allUser'=> $allUser
         ]);
     }
 

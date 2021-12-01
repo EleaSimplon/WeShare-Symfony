@@ -55,14 +55,14 @@
                 <div class="col s12 m4 l4">
                     <div class="icon-block center">
                         <img src="{{asset('assets/images/users.png')}}">
-                        {# {% set totalUser = 0 %}
+                        {% set totalUser = 0 %}
 
                         {% for user in allUser %}
 
                             {% set totalUser = totalUser + 1 %}
 
-                        {% endfor %} #}
-                        <h3 class="center count-animation">4567</h3>
+                        {% endfor %}
+                        <h3 class="center count-animation">{{ totalUser }}</h3>
                         <p class="light">Users</p>
                     </div>
                 </div>
