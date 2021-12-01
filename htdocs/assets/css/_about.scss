@@ -1,17 +1,25 @@
 @import 'mixin';
 
-.about-header {
-    @include header-img;
+.parallax-img {
+    /* @include header-img;
     
     .header-img {
         background: url(/assets/images/header.png) no-repeat;
         padding-top: 110px;
-    }
+    }*/
+    .parallax-container {
+        height:450px;
+
+        img {
+            width: 200px;
+        }
+    } 
 }
 
 .about {
    
     text-align: center;
+    padding: 45px 0 45px 0;
 
     img {
         width: 5rem;

@@ -71,13 +71,13 @@
                     {# IF CONNECTED -> SHARE // ELSE -> LOGIN #}
                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                         <a href="{{ path ('post_new', {'id': app.user.id}) }}">
-                            <img src="{{asset('assets/images/round.png')}}">
+                            <img src="{{asset('assets/images/share-img.png')}}">
                             <h1><span>SHARE</span></h1>
                         </a>
                         {% else %}
                             <a href="{{ path ('app_login') }}">
-                                <img src="{{asset('assets/images/find-img.jpg')}}">
-                                <h1><span>CONNECT</br> TO SHARE</span></h1>
+                                <img src="{{asset('assets/images/connect-share.png')}}">
+                                <h1 class="center-align"><span>CONNECT TO SHARE</span></h1>
                             </a>
                     {% endif %} 
                 </div>

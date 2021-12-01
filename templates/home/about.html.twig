@@ -4,15 +4,14 @@
 
     <!-- ********** SECTION 1 HEADER IMG PARALLAX EFFECT  **********-->
     <section class="about-header">
-        <div class="header-img">
-
-            <div class="row">
-                <div class="col s12 m6 l4 right">
-                    <h1>About<br><span>WE SHARE</span></h1>
+        <!-- ********** PARALLAX IMAGE SECTION **********-->
+        <div class="parallax-img">
+            <div class="parallax-container">
+                <div class="parallax">
+                    <img src="{{asset('assets/images/plx-about.jpg')}}">
                 </div>
             </div>
-
-        </div> 
+        </div>
     </section>
 
     <!-- ********** SECTION 2 TEXT ABOUT THIS WEBSITE **********-->
@@ -20,6 +19,7 @@
 
         <div class="container">
             <div class="row">
+            <h1>About<span>WE SHARE</span></h1>
                 <div class="about-who col s12 m12 l6">
                     <img src="{{asset('assets/images/who.png')}}">
                     <h1><span>Who we are ?</span></h1>
@@ -40,6 +40,13 @@
         </div>
         
     </section>
+
+    <!-- ********** PARALLAX IMAGE SECTION **********-->
+    <div class="parallax-img">
+        <div class="parallax-container">
+            <div class="parallax"><img src="{{asset('assets/images/plx-about-2.jpg')}}"></div>
+        </div>
+    </div>
 
     <!-- ********** SECTION 3 SHARE AN EXPERIENCE **********-->
     <section class="about-numbers">
