@@ -18,7 +18,7 @@
                         <h3>My profile :</h3>
                         <div class="row">
                             {% if user.profilePicture %}
-                                <img src="{{asset('assets/images/user-picture/' ~ user.profilePicture) }}">
+                                <img class="circle" src="{{asset('assets/images/user-picture/' ~ user.profilePicture) }}">
                                 {% else %}
                                 <img src="{{asset('assets/images/round.png')}}">
                             {% endif %}

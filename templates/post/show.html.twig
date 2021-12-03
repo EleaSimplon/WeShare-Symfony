@@ -5,7 +5,7 @@
 {% block body %}
 
     <!-- ********** SECTION 1 HEADER IMG PARALLAX EFFECT  **********-->
-    <section class="about-header">
+    <section class="about-header" style="position:relative;">
         <!-- ********** PARALLAX IMAGE SECTION **********-->
         <div class="parallax-img">
             <div class="parallax-container">
@@ -13,11 +13,13 @@
                     <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
                 </div>
                 <div class="title-post center-align">
-                    <h3 style="color:#BCAAA4; font-size:5rem;">{{ post.categories }}</h3>
-                    <h3 style="color:#BCAAA4; font-size:7rem;">{{ post.name }}</h3>
+                    <h3 style="color:#F5F5F5; font-size:5rem;">{{ post.categories }}</h3>
+                    <h3 style="color:#F5F5F5; font-size:7rem;">{{ post.name }}</h3>
                 </div>
             </div>
         </div>
+        {# Div Overlay color #}
+        <div style="position:absolute;top:0; right:0; left:0; bottom:0; z-index:1;opacity:0.33;" class="header-overlay brown lighten-4"></div>
     </section>
 
     <!-- ********** BUTTON ADD REVIEW **********-->
@@ -86,37 +88,13 @@
     <section class="reviews-container">
         <div class="container">
             <h3 class="center-align">Reviews</h3>
+            <!-- FOR REVIEWS IN REVIEW -->
             <ul class="collection">
                 <li class="collection-item avatar">
-                <img src="images/yuna.jpg" alt="" class="circle">
-                <span class="title">Title</span>
-                <p>First Line <br>
-                    Second Line
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                </li>
-                <li class="collection-item avatar">
-                <i class="material-icons circle">folder</i>
-                <span class="title">Title</span>
-                <p>First Line <br>
-                    Second Line
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                </li>
-                <li class="collection-item avatar">
-                <i class="material-icons circle green">insert_chart</i>
-                <span class="title">Title</span>
-                <p>First Line <br>
-                    Second Line
-                </p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-                </li>
-                <li class="collection-item avatar">
-                <i class="material-icons circle red">play_arrow</i>
-                <span class="title">Title</span>
-                <p>First Line <br>
-                    Second Line
-                </p>
+                <img src="{{asset('assets/images/jean.jpeg')}}" alt="" class="circle">
+                <span class="title">Jean</span>
+                <p>Review Title</p>
+                <p>Description</p>
                 <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
                 </li>
             </ul>
