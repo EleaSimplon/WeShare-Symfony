@@ -7,6 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\ReviewRepository;
+use Symfony\Component\HttpFoundation\Request;
+use App\Form\RegistrationFormType;
+use App\Entity\User;
 
 class MyProfileController extends AbstractController
 {
@@ -28,7 +31,6 @@ class MyProfileController extends AbstractController
         // dd($allReview);
 
         return $this->render('my_profile/index.html.twig', [
-            'controller_name' => 'MyProfileController',
             'user'=>$this->getUser(),
             'allReview' => $allReview,
             // count = Compte tous les éléments d'un tableau ou quelque chose d'un objet
@@ -38,4 +40,5 @@ class MyProfileController extends AbstractController
             'countPost'=> count($allPost),
         ]);
     }
+
 }

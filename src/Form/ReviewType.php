@@ -35,10 +35,6 @@ class ReviewType extends AbstractType
                 'label' => ' ',
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-
-                        ],
                         'mimeTypesMessage' => 'Please upload a valid PDF document',
                     ])
                 ],

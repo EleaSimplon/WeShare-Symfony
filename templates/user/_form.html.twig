@@ -1,0 +1,54 @@
+{{ form_start(form) }}
+    <!-- ********** SECTION 1 TABS USER PROFILE  **********-->
+
+    <section style="margin-top:5rem" class="user-profile">
+        <div class="row">
+            <div class="col s12">
+                <ul class="tabs">
+                    <li class="tab"><a class="active" href="#infos">Informations</a></li>
+                </ul>
+            </div>
+            <!-- ****** TABS 1 PROFILE INFOS  ******-->
+            <div id="infos" class="col s12">
+                <div class="container">
+                    <div class="card my-profile">
+                        <h3>Edit my profile :</h3>
+                        <div class="row">
+                            <h4><box-icon name='upload'></box-icon> Add a profile picture</h4>
+                            <div class="input-field col s12 l12">    
+                                <div class="file-field input-field">
+                                    <div class="btn brown darken-1">
+                                        <span>Upload</span>
+                                        {{ form_widget(form.profile_picture) }}
+                                        {{ form_label(form.profile_picture) }}
+                                    </div>
+                                        {{ form_errors(form.profile_picture) }}
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Upload file" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h4>Name</h4>
+                            {{ form_row(form.user_name) }}
+                        </div>
+                        <div class="row">
+                            <h4>Password</h4>
+                            {{ form_row(form.password) }}
+                        </div>
+                        <div class="row">
+                            <h4>About me</h4>
+                            {{ form_row(form.user_description) }}
+                        </div>
+                        <div class="row">
+                            <h4>Email</h4>
+                            {{ form_row(form.email) }}
+                        </div>
+                        <button class="btn">{{ button_label|default('Save') }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ form_end(form) }}

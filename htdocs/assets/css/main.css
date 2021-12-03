@@ -145,7 +145,21 @@
 
 .about {
   text-align: center;
-  padding: 45px 0 45px 0;
+  padding: 0 0 45px 0;
+}
+.about h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  font-family: "Abril Fatface", cursive;
+  color: #B8685D;
+}
+.about h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  color: #E4BFAD;
+  border-color: #e8f380;
 }
 .about img {
   width: 5rem;
@@ -403,14 +417,8 @@
   border-color: #e8f380;
 }
 .categories img {
-  height: 15rem;
-  border-radius: 50%;
+  height: auto;
   width: 16rem;
-}
-.categories img:hover {
-  height: 18rem;
-  width: 20rem;
-  opacity: 0.6;
 }
 
 .top-10 h5 {
@@ -477,16 +485,6 @@
   line-height: 3;
   border-bottom: 2px solid;
   border-color: #e8f380;
-}
-.categories img {
-  height: 15rem;
-  border-radius: 50%;
-  width: 16rem;
-}
-.categories img:hover {
-  height: 18rem;
-  width: 20rem;
-  opacity: 0.6;
 }
 
 .user-profile {
@@ -565,6 +563,9 @@ nav .brand-logo {
   color: #B8685D;
   margin-left: 1rem;
 }
+nav ul a:hover {
+  background-color: #b8685d2b !important;
+}
 
 /**************** FOOTER *************/
 .page-footer {
@@ -580,10 +581,6 @@ nav .brand-logo {
   bottom: 25px;
   right: 25px;
   display: none;
-}
-
-select {
-  display: block;
 }
 
 /*# sourceMappingURL=main.css.map */

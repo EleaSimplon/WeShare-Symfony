@@ -53,39 +53,21 @@
                                 </div>
                                 <div class="card-title">
                                     <h5>{{ post.categories }}</h5>
-                                    <a class="btn-show red lighten-2 btn" href="{{ path('post_show', {'id': post.id}) }}">show</a>
                                     <h3>{{ post.name }}</h3>
                                 </div>
                                 <div class="card-content">
-                                    <p>{{ post.description }}</p>
+                                    <p class="truncate">{{ post.description }}</p>
                                     <h4>{{ post.rate }} / 5  <i class="material-icons">star</i></h4>
                                     <div class="card-action">
                                         <div class="row">
                                             <div class="col l12">
-                                                <h5>{{ post.address }}, {{ post.city }}, {{ post.country }}</h5>
+                                                <h5>{{ post.city }}, {{ post.country }}</h5>
+                                                <a class="btn-show red lighten-2 btn" href="{{ path('post_show', {'id': post.id}) }}">show</a>
                                             </div>
                                         </div>
                                     </div>
                                     
                                 </div>
-                                {% if post.webSite != "" %}
-                                    <div class="card-action">
-                                        <div class="row">
-                                            <div class="col l12">
-                                                <a href="{{ post.webSite }}"><i class="material-icons">star</i>Link to website</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                                {% if post.phoneNumber != "" %}
-                                    <div class="card-action">
-                                        <div class="row">
-                                            <div class="col l12">
-                                                <h5><i class="material-icons">star</i>{{ post.phoneNumber }}</h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endif %}
                             </div>
                         </div>
                     </div>

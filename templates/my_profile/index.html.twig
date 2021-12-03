@@ -1,10 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <!-- ********** SECTION 1 TABS USER PROFILE  **********-->
     <section style="margin-top:5rem" class="user-profile">
-
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
@@ -19,10 +17,14 @@
                     <div class="card my-profile">
                         <h3>My profile :</h3>
                         <div class="row">
-                            <img src="{{asset('assets/images/round.png')}}">
+                            {% if user.profilePicture %}
+                                <img src="{{asset('assets/images/user-picture/' ~ user.profilePicture) }}">
+                                {% else %}
+                                <img src="{{asset('assets/images/round.png')}}">
+                            {% endif %}
                         </div>
                         <div class="row">
-                            <h3>{{ user.username }}</h3>
+                            <h3>{{ user.userName }}</h3>
                         </div>
                         <div class="row">
                             <h3>About me</h3>
@@ -30,7 +32,7 @@
                         </div>
                         <div class="row">
                             <h3>Email</h3>
-                            <input type="email" value="{{ app.user.email }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required disabled autofocus>
+                            <input type="email" value="{{ user.email }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required disabled autofocus>
                         </div>
                         <div class="row">
                         {# IF POST = 1 WRITE POST W/OUT AN "S" #}
@@ -43,15 +45,16 @@
                         {% endif %}
                         </div>
                         <div class="row">
-                        {# IF REVIEW = 1 WRITE REVIEW W/OUT AN "S" #}
-                        {% if countReview <= 1 %}
-                            <h3>Review</h3>
-                            <h4>{{ countReview }}</h4>
-                            {% else %}
-                            <h3>Reviews</h3>
-                            <h4>{{ countReview }}</h4>
-                        {% endif %}
+                            {# IF REVIEW = 1 WRITE REVIEW W/OUT AN "S" #}
+                            {% if countReview <= 1 %}
+                                <h3>Review</h3>
+                                <h4>{{ countReview }}</h4>
+                                {% else %}
+                                <h3>Reviews</h3>
+                                <h4>{{ countReview }}</h4>
+                            {% endif %}
                         </div>
+                        <a class="waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Edit my profile</a>
                     </div>
                 </div>
             </div>
@@ -94,7 +97,6 @@
                     {% endfor %}
                 </div>
             </div>
-            
         </div>
     </section>
 

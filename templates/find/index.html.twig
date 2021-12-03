@@ -18,30 +18,76 @@
             </div> 
         </section>
 
-        <!-- ********** SECTION 3 CATEGORIES + IMG LIKE TO PAGES **********-->
+        <!-- ********** SECTION 2 CATEGORIES + IMG LIKE TO PAGES **********-->
         <section class="categories">
             <div class="row center">
                 <h3>Click on the category to discover !</h3>
                 <div class="col s12 m6 l4">
                     <a href="{{ path ('restaurant') }}">
-                        <h3 id="btnRestau" name="answer" onclick="ShowDivRestau()"><span>Restaurants</span><box-icon name='pointer'></box-icon></h3>
+                        <h3 id="btnRestau" name="answer"><span>Restaurants</span><box-icon name='pointer'></box-icon></h3>
+                        <img src="{{asset('assets/images/restaurant.png')}}" alt="restaurant">
                     </a>
-                    <img src="{{asset('assets/images/1.jpg')}}" alt="">
                 </div>
                 <div class="col s12 m6 l4">
                     <a href="{{ path ('activity') }}">
-                        <h3 id="btnActiv" name="answer" onclick="ShowDivActiv()"><span>Activities</span><box-icon name='pointer'></box-icon></h3>
+                        <h3 id="btnActiv" name="answer"><span>Activities</span><box-icon name='pointer'></box-icon></h3>
+                        <img src="{{asset('assets/images/activity.png')}}" alt="activity">
                     </a>
-                    <img src="{{asset('assets/images/quad.jpg')}}" alt="">
                 </div>
                 <div class="col s12 m6 l4">
                     <a href="{{ path ('destination') }}">
-                        <h3 id="btnDesti" name="answer" onclick="ShowDivDesti()"><span>Destinations</span><box-icon name='pointer'></box-icon></h3>
+                        <h3 id="btnDesti" name="answer"><span>Destinations</span><box-icon name='pointer'></box-icon></h3>
+                        <img src="{{asset('assets/images/destination.png')}}" alt="destination">
                     </a>
-                    <img src="{{asset('assets/images/about.jpg')}}" alt="">
                 </div>
             </div>
         </section>
+
+        <!-- ********** CHANGE FAKE SECTION **********-->
+        <section class="about-numbers">
+            <div class="container">
+                <div class="numbers">
+                    <div class="row">
+                        <div class="col s12 center">
+                            <h1><span>We already shared about...</span></h1>
+                        </div>
+                    </div>
+                    <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <div class="icon-block center">
+                            <img src="{{asset('assets/images/restau.png')}}">
+                            
+                            <h3 class="center count-animation">1500</h3>
+                            <p class="light">Restaurants</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l4">
+                    <div class="icon-block center">
+                            <img src="{{asset('assets/images/acti.png')}}">
+            
+                            <h3 class="center count-animation">5600</h3>
+                            <p class="light">Activities</p>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col s12 m4 l4">
+                        <div class="icon-block center">
+                            <img src="{{asset('assets/images/desti.png')}}">
+                        
+                            <h3 class="center count-animation">600</h3>
+                            <p class="light">Destinations</p>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </section>
+
     
     </section>
 

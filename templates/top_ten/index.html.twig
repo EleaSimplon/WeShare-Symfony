@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<!-- ********** SECTION 1 HEADER WITH TEXT **********-->
+    <!-- ********** SECTION 1 HEADER WITH TEXT **********-->
     <section class="header-tr">
 
         <div class="header-img">
@@ -13,106 +13,162 @@
                 </div>
                 <div class="col s12 m6 l9 right">
                     <h1><span>WE SHARE</span><br>The best places</h1>
-                    <h5>
-                    Travel in 2020 looked different, to say the least.</br>
-                    </br>
-                    We stayed a little closer to home, hit the open road, took to the great outdoors, and saw our own hometowns in a new light.</br>And thousands of travelers everywhere shared reviews and opinions based on those places and moments that left an impression.</br>
-                    </br>
-                    Our <span>Travelers’ Choice Best of the Best</span> list is drawn from the experiences of the best experts possible: Real travelers who’ve been there before.</br>
-                    </br>
-                    Here, the most popular, most loved destinations, hotels, restaurants, things to do, and beyond.
-                </h5>
                 </div>
             </div>
             
         </div> 
     </section>
 
-    <!-- ********** SECTION 2 CATEGORIES + IMG LIKE TO PAGES **********-->
-    <section class="categories">
-        
-        <div class="row center">
-            <h2>The best of the best - Top 10</h2>
-            <div class="col s12 m6 l4">
-                <h3><span>Restaurants</span></h3>
-                <img src="{{asset('assets/images/1.jpg')}}" alt="">
-            </div>
-            <div class="col s12 m6 l4">
-                <h3><span>Activities</span></h3>
-                <img src="{{asset('assets/images/quad.jpg')}}" alt="">
-            </div>
-            <div class="col s12 m6 l4">
-                <h3><span>Destinations</span></h3>
-                <img src="{{asset('assets/images/about.jpg')}}" alt="">
-            </div>
-        </div>
-
-    </section>
-
-    <!-- ********** SECTION 2 CATEGORIES + IMG LIKE TO PAGES **********-->
-    <section class="top-10">
-        <h5 class="center inspi">Need inspiration? See more Travelers’ Choice Awards. . .</h5>
-        <div class="row">        
-            <h3 class="center inspi">Restaurants</h3>
-            {# <?php for ($i=0; $i < 10; $i++) { ?>     #}
-                <div class="col s12 m8 l6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="{{asset('assets/images/1.jpg')}}">
-                            <span class="card-title">Card Title</span>
-                            </div>
-                            <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
+    <!-- ********** SECTION 2 : EXPLICATIONS **********-->
+    <section class="about-numbers">
+        <div class="container">
+            <div class="numbers">
+                <div class="row">
+                    <div class="col s12 center">
+                        <h5>
+                            Travel in 2020 looked different, to say the least.</br>
+                            </br>
+                            We stayed a little closer to home, hit the open road, took to the great outdoors, and saw our own hometowns in a new light.</br>And thousands of travelers everywhere shared reviews and opinions based on those places and moments that left an impression.</br>
+                            </br>
+                            Our <span>Travelers’ Choice Best of the Best</span> list is drawn from the experiences of the best experts possible: Real travelers who’ve been there before.</br>
+                            </br>
+                            Here, the most popular, most loved destinations, hotels, restaurants, things to do, and beyond.
+                        </h5>
                     </div>
                 </div>
-            <?php    } ?>
+            </div>
         </div>
+    </section>
 
-        <div class="row">        
-            <h3 class="center inspi">Activities</h3>
-            {# <?php for ($i=0; $i < 10; $i++) { ?>     #}
-                <div class="col s12 m8 l6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="{{asset('assets/images/quad.jpg')}}">
-                            <span class="card-title">Card Title</span>
+    <!-- ********** SECTION 3 CATEGORY RESTAU **********-->
+    <section class="categories">
+        <div class="row center">
+            <h2>The best of the best - Top 10</h2>
+            <div class="col s12 m12 l12">
+                <h3><span>Restaurants</span></h3>
+                <img src="{{asset('assets/images/restaurant.png')}}" alt="restaurant">
+            </div>
+        </div>
+    </section>
+
+    <!-- ********** SECTION 3 CAROUSEL CARDS RESTAU LIMIT 10 **********-->
+    <section class="top-10-restaurant top-rated">
+        <!-- **** CAROUSEL ****-->
+        <div class="carousel" data-flickity='{ "groupCells": true }'>
+
+            {# <?php for ($i=0; $i < 9; $i++) { ?>  #}
+
+                <div class="carousel-cell">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="{{asset('assets/images/boat.jpg')}}">
+                                </div>
+                                <div class="card-content">
+                                    <h5>TITLE</h5>
+                                    <p>I am a very simple card. I am good at containing small bits of information.
+                                        I am convenient because I require little markup to use effectively.</p>
+                                </div>
+                                <div class="card-rating">
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star_half</i>
+                                    <i class="material-icons">star_border</i>
+                                </div>
                             </div>
-                            <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
                         </div>
                     </div>
                 </div>
             {# <?php    } ?> #}
         </div>
+    </section>
 
-        <div class="row">        
-            <h3 class="center inspi">Destinations</h3>
-            {# <?php for ($i=0; $i < 10; $i++) { ?>     #}
-                <div class="col s12 m8 l6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="{{asset('assets/images/boat.jpg')}}">
-                            <span class="card-title">Card Title</span>
+    <!-- ********** SECTION 4 CATEGORY ACTIVITY **********-->
+    <section class="categories">
+        <div class="row center">
+            <div class="col s12 m12 l12">
+                <h3><span>Activities</span></h3>
+                <img src="{{asset('assets/images/activity.png')}}" alt="activity">
+            </div>
+        </div>
+    </section>
+    
+    <!-- ********** SECTION 4 CAROUSEL CARDS ACTIVITY LIMIT 10 **********-->
+    <section class="top-10-activity top-rated">
+        <!-- **** CAROUSEL ****-->
+        <div class="carousel" data-flickity='{ "groupCells": true }'>
+
+            {# <?php for ($i=0; $i < 9; $i++) { ?>  #}
+
+                <div class="carousel-cell">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="{{asset('assets/images/boat.jpg')}}">
+                                </div>
+                                <div class="card-content">
+                                    <h5>TITLE</h5>
+                                    <p>I am a very simple card. I am good at containing small bits of information.
+                                        I am convenient because I require little markup to use effectively.</p>
+                                </div>
+                                <div class="card-rating">
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star_half</i>
+                                    <i class="material-icons">star_border</i>
+                                </div>
                             </div>
-                            <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
                         </div>
                     </div>
                 </div>
-            <?php    } ?>
+            {# <?php    } ?> #}
+        </div>
+    </section>
+    <!-- ********** SECTION 5 CATEGORY DESTINATION **********-->
+    <section class="categories">
+        <div class="row center">
+            <div class="col s12 m12 l12">
+                <h3><span>Destinations</span></h3>
+                <img src="{{asset('assets/images/activity.png')}}" alt="activity">
+            </div>
+        </div>
+    </section>
+    
+    <!-- ********** SECTION 5 CAROUSEL CARDS DESTINATION LIMIT 10 **********-->
+    <section class="top-10-destination top-rated">
+        <!-- **** CAROUSEL ****-->
+        <div class="carousel" data-flickity='{ "groupCells": true }'>
+
+            {# <?php for ($i=0; $i < 9; $i++) { ?>  #}
+
+                <div class="carousel-cell">
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="{{asset('assets/images/boat.jpg')}}">
+                                </div>
+                                <div class="card-content">
+                                    <h5>TITLE</h5>
+                                    <p>I am a very simple card. I am good at containing small bits of information.
+                                        I am convenient because I require little markup to use effectively.</p>
+                                </div>
+                                <div class="card-rating">
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star_half</i>
+                                    <i class="material-icons">star_border</i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {# <?php    } ?> #}
         </div>
     </section>
 

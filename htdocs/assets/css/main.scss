@@ -30,6 +30,9 @@ nav {
         color: #B8685D;
         margin-left: 1rem;
     }
+    ul a:hover {
+        background-color: #b8685d2b!important;
+    }
 }
 
 /**************** FOOTER *************/
@@ -49,8 +52,4 @@ nav {
     bottom: 25px;
     right: 25px;
     display: none;
-  }
-
-select {
-    display: block;
 }

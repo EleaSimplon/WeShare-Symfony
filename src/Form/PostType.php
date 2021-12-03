@@ -17,12 +17,12 @@ class PostType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('rate', RangeType::class, [
-            'attr' => [
-                'min' => 0,
-                'max' => 5
-            ]
-        ])
+            ->add('rate', RangeType::class, [
+                'attr' => [
+                    'min' => 0,
+                    'max' => 5
+                ]
+            ])
             ->add('name')
             ->add('address')
             ->add('phone_number')
@@ -45,10 +45,6 @@ class PostType extends AbstractType
                 'label' => ' ',
                 'constraints' => [
                     new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-
-                        ],
                         'mimeTypesMessage' => 'Please upload a valid PDF document',
                     ])
                 ],
