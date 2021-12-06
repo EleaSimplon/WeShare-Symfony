@@ -66,8 +66,8 @@ class ReviewController extends AbstractController
             $entityManager->persist($review);
             $entityManager->flush();
 
-            return $this->redirectToRoute('review_show', [
-                'id' => $this->getUser()->getId(),
+            return $this->redirectToRoute('post_show', [
+                'id' => $post->getId(),
                 'user'=>$this->getUser()
             ]);
         }

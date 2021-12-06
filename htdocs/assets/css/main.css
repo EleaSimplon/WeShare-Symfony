@@ -294,6 +294,9 @@
 .share-page .share-container input[type=range] {
   border: 1px solid;
 }
+.share-page .select-post select {
+  display: block;
+}
 
 .search-bar {
   background-color: #e3f1fd;
@@ -493,6 +496,9 @@
 .user-profile img {
   width: 10rem;
 }
+.user-profile .my-profile h3 {
+  padding-top: 30px;
+}
 .user-profile .tabs {
   display: flex;
   justify-content: center;
@@ -514,6 +520,12 @@
 }
 .user-profile .collapsible .collapsible-header h4 {
   padding: 0 12px;
+}
+.user-profile .btn-edit {
+  margin-bottom: 30px;
+}
+.user-profile .empty-post h3 {
+  padding-top: 30px;
 }
 
 .btn-bck-cat {

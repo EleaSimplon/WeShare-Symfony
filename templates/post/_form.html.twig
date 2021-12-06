@@ -20,7 +20,7 @@
     </div>
     <!-- ********** SELECT CATEGORY **********-->
     <h5><box-icon name='check'></box-icon> Choose a category *</h5>
-    <div class="col s12 l12">
+    <div class="col s12 l12 select-post">
         {{ form_widget(form.categories)}}
     </div>
     <h5><box-icon name='edit-location' type='solid' ></box-icon> Enter the place's informations</h5>
@@ -97,10 +97,16 @@
     <!-- ********** BTN **********-->
     <div class="row">
         <div class="input-field col s12 l12">    
-        <button class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
-            {{ button_label|default('Save') }}
-            <i class="material-icons right">send</i>
-        </button>
+            {# {% if post.name is defined %}
+                <button href="{{ path ('post_show', {'id': post.id}) }}" class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
+                    Go to post
+                    <i class="material-icons right">send</i>
+                </button>
+            {% endif %} #}
+            <button class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
+                {{ button_label|default('Save') }}
+                <i class="material-icons right">send</i>
+            </button>
         </div>
     </div>
     <!-- ********** INFOS **********-->

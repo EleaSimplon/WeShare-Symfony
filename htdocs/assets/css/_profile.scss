@@ -7,6 +7,12 @@
         width: 10rem;
     }
 
+    .my-profile {
+        h3 {
+            padding-top: 30px;
+        }
+    }
+
     .tabs {
         @include d-flex-center;
     }
@@ -29,6 +35,16 @@
 
         h4 {
             padding: 0 12px;
+        }
+    }
+
+    .btn-edit {
+        margin-bottom: 30px;
+    }
+
+    .empty-post {
+        h3 {
+            padding-top: 30px;
         }
     }
 }

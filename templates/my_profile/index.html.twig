@@ -7,7 +7,6 @@
             <div class="col s12">
                 <ul class="tabs">
                     <li class="tab col s3"><a class="active" href="#infos">Informations</a></li>
-                    <li class="tab col s3"><a href="#posts">Posts</a></li>
                     <li class="tab col s3"><a href="#reviews">Reviews</a></li>
                 </ul>
             </div>
@@ -20,7 +19,8 @@
                             {% if user.profilePicture %}
                                 <img class="circle" src="{{asset('assets/images/user-picture/' ~ user.profilePicture) }}">
                                 {% else %}
-                                <img src="{{asset('assets/images/round.png')}}">
+                                <img class="circle" src="{{asset('assets/images/avatar-picture.png')}}">
+                                <p>* Personnalize your profile picture</p>
                             {% endif %}
                         </div>
                         <div class="row">
@@ -35,16 +35,6 @@
                             <input type="email" value="{{ user.email }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required disabled autofocus>
                         </div>
                         <div class="row">
-                        {# IF POST = 1 WRITE POST W/OUT AN "S" #}
-                        {% if countPost <= 1 %}
-                            <h3>Post</h3>
-                            <h4>{{ countPost }}</h4>
-                            {% else %}
-                            <h3>Posts</h3>
-                            <h4>{{ countPost }}</h4>
-                        {% endif %}
-                        </div>
-                        <div class="row">
                             {# IF REVIEW = 1 WRITE REVIEW W/OUT AN "S" #}
                             {% if countReview <= 1 %}
                                 <h3>Review</h3>
@@ -54,36 +44,21 @@
                                 <h4>{{ countReview }}</h4>
                             {% endif %}
                         </div>
-                        <a class="waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Edit my profile</a>
+                        <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Edit my profile</a>
                     </div>
-                </div>
-            </div>
-            <!-- ****** TABS 2 USER'S POSTS  ******-->
-            <div id="posts" class="col s12">
-                <div class="container">
-                    {% for post in allPost %}
-                        <ul class="collapsible">
-                            <li>
-                                <div class="collapsible-header">
-                                    <div class="row">
-                                        <div class="col 6">
-                                            <h4> {{post.name}} </h4>
-                                        </div>
-                                        <div class="col 6">
-                                            <h4> {{post.rate}} / 5 <i class="material-icons">star</i></h4>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="collapsible-body"><span>{{post.description}}</span></div>
-                            </li>
-                        </ul>
-                    {% endfor %}
                 </div>
             </div>
             <!-- ****** TABS 3 USER'S REVIEWS  ******-->
             <div id="reviews" class="col s12">
                 <div class="container">
+                    {# IF USER HAS NO REVIEW POSTED YET #}
+                    {% if allReview is null or allReview is empty %}
+                        <div class="card empty-post">
+                            <h3>Share your first story with the community !</h3>
+                            <p>You've experienced a great moment ? Or a bad one ? We want to know everything about it </p>
+                            <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Share !</a>
+                        </div>
+                    {% endif %}
                     {% for review in allReview %}
                         <ul class="collapsible">
                             <li>
@@ -99,5 +74,47 @@
             </div>
         </div>
     </section>
+<!-- ****** POST  ******-->
+{# <li class="tab col s3"><a href="#posts">Posts</a></li> #}
+{# <div class="row"> #}
+    {# IF POST = 1 WRITE POST W/OUT AN "S" #}
+    {# {% if countPost <= 1 %}
+    <h3>Post</h3>
+    <h4>{{ countPost }}</h4>
+    {% else %}
+    <h3>Posts</h3>
+    <h4>{{ countPost }}</h4>
+    {% endif %}
+</div> #}
+<!-- ****** TABS 2 USER'S POSTS  ******-->
+{# <div id="posts" class="col s12">
+    <div class="container">
+        {% if allPost is null or allPost is empty %}
+            <div class="card empty-post">
+                <h3>Share your first story with the community !</h3>
+                <p>You've experienced a great moment ? Or a bad one ? We want to know everything about it </p>
+                <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Share !</a>
+            </div>
+        {% endif %}
+        {% for post in allPost %}
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header">
+                        <div class="row">
+                            <div class="col 6">
+                                <h4> {{post.name}} </h4>
+                            </div>
+                            <div class="col 6">
+                                <h4> {{post.rate}} / 5 <i class="material-icons">star</i></h4>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="collapsible-body"><span>{{post.description}}</span></div>
+                </li>
+            </ul>
+        {% endfor %}
+    </div>
+</div> #}
 
 {% endblock %}
