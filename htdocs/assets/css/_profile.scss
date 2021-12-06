@@ -48,3 +48,23 @@
         }
     }
 }
+
+.edit-user-profile {
+    margin-top:5rem;
+
+    .container {
+        text-align: center;
+    }    
+    .row {
+        text-align: center;
+    }
+
+    .card.edit-profile {
+        padding: 40px 90px;
+
+        h3 {
+            margin-bottom: 60px;
+        }
+    }
+    
+}

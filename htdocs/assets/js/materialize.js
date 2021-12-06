@@ -15,5 +15,9 @@ $(document).ready(function(){
     // $(document).ready(function(){
     //     $('select').formSelect();
     // });
+
+    $(document).ready(function(){
+        $('#post_categories').formSelect();
+    });
    
 });

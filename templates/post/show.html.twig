@@ -37,7 +37,6 @@
     
     </section>
        
-
     <!-- ********** SECTION 2 HEADER IMG PARALLAX EFFECT  **********-->
     <section>
         <div class="card-post">
@@ -87,16 +86,22 @@
     <!-- ********** SECTION 3 REVIEWS  **********-->
     <section class="reviews-container">
         <div class="container">
-            <h3 class="center-align">Reviews</h3>
+            {% if countReview <= 1 %}
+                    <h3 class="center-align">Review</h3>
+                {% else %}
+                    <h3 class="center-align">Reviews</h3>
+            {% endif %}
             <!-- FOR REVIEWS IN REVIEW -->
             <ul class="collection">
+            {% for review in reviewByPost %}
                 <li class="collection-item avatar">
-                <img src="{{asset('assets/images/jean.jpeg')}}" alt="" class="circle">
-                <span class="title">Jean</span>
-                <p>Review Title</p>
-                <p>Description</p>
-                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+                    <img src="{{asset('assets/images/user-picture/' ~ review.user.profilePicture) }}" alt="" class="circle">
+                    <span class="title">{{ review.user.userName }}</span>
+                    <p>{{ review.title }}</p>
+                    <p>{{ review.description }}</p>
+                    <p class="secondary-content black-text" style="display:flex; align-items:center;">{{ review.rate }}<i class="material-icons yellow-text">grade</i></p>
                 </li>
+            {% endfor %}
             </ul>
         </div>
     </section>

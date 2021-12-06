@@ -2,7 +2,7 @@
 
 {% block body %}
     <!-- ********** SECTION 1 TABS USER PROFILE  **********-->
-    <section style="margin-top:5rem" class="user-profile">
+    <section class="user-profile">
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
@@ -59,6 +59,7 @@
                             <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Share !</a>
                         </div>
                     {% endif %}
+                    {# LOOP IF USER HAS REVIEW POSTED #}
                     {% for review in allReview %}
                         <ul class="collapsible">
                             <li>

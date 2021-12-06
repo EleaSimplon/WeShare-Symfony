@@ -1,7 +1,6 @@
 {{ form_start(form) }}
-    <!-- ********** SECTION 1 TABS USER PROFILE  **********-->
-
-    <section style="margin-top:5rem" class="user-profile">
+    <!-- ********** SECTION 1 TABS EDIT USER PROFILE  **********-->
+    <section class="edit-user-profile">
         <div class="row">
             <div class="col s12">
                 <ul class="tabs">
@@ -11,7 +10,7 @@
             <!-- ****** TABS 1 PROFILE INFOS  ******-->
             <div id="infos" class="col s12">
                 <div class="container">
-                    <div class="card my-profile">
+                    <div class="card edit-profile">
                         <h3>Edit my profile :</h3>
                         <div class="row">
                             <h4><box-icon name='upload'></box-icon> Add a profile picture</h4>
@@ -31,21 +30,36 @@
                         </div>
                         <div class="row">
                             <h4>Name</h4>
-                            {{ form_row(form.user_name) }}
+                            {{ form_label(form.user_name, ' ') }}
+                            {{ form_widget(form.user_name) }}
                         </div>
                         <div class="row">
                             <h4>Password</h4>
-                            {{ form_row(form.password) }}
+                            {{ form_label(form.password, ' ') }}
+                            {{ form_widget(form.password) }}
                         </div>
                         <div class="row">
                             <h4>About me</h4>
-                            {{ form_row(form.user_description) }}
+                            {{ form_label(form.user_description, ' ') }}
+                            {{ form_widget(form.user_description) }}
                         </div>
                         <div class="row">
                             <h4>Email</h4>
-                            {{ form_row(form.email) }}
+                            {{ form_label(form.email, ' ') }}
+                            {{ form_widget(form.email) }}
                         </div>
-                        <button class="btn">{{ button_label|default('Save') }}</button>
+                        
+                        <div class="row">
+                            <div class="col l4">
+                                <a class="btn brown" href="{{ path('my_profile') }}">back to your profile</a>
+                            </div>
+                            <div class="col l4">
+                                <button class="btn green lighten-2">{{ button_label|default('Save') }}</button>
+                            </div>
+                            <div class="col l4">
+                                {{ include('user/_delete_form.html.twig') }}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

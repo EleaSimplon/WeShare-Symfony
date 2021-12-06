@@ -15,6 +15,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 // ADD REVIEW
 use App\Entity\Review;
 use App\Form\ReviewType;
+use App\Repository\ReviewRepository;
 
 /**
  * @Route("/post")
@@ -71,12 +72,21 @@ class PostController extends AbstractController
     /**
      * @Route("/{id}", name="post_show", methods={"GET"})
      */
-    public function show(Post $post, Request $request): Response
+    public function show(Post $post, Request $request, ReviewRepository $reviewRepository): Response
     {
+
+        $reviewByPost = $reviewRepository->findBy([
+            'post' => $post->getId(),
+            'user'=>$this->getUser()
+        ]);
+
+        //dd($reviewByPost);
 
         return $this->render('post/show.html.twig', [
             'post' => $post,
-            'user'=>$this->getUser()
+            'reviewByPost' => $reviewByPost,
+            'user'=>$this->getUser(),
+            'countReview'=> count($reviewByPost),
         ]);
     }
 
