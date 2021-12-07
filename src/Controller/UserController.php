@@ -70,6 +70,7 @@ class UserController extends AbstractController
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
+        // dd($form, $user);
         if ($form->isSubmitted() && $form->isValid()) {
             
             $picture = $form->get('profile_picture')->getData();

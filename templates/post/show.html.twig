@@ -49,7 +49,7 @@
                             </div>
                             <div class="card-content center-align">
                                 <p>{{ post.description }}</p>
-                                <h4>Moyenne Reviews / 5  <i class="material-icons">star</i></h4>
+                                <h4> {{rateAvg|number_format(1)}} / 5  <i class="material-icons">star</i></h4>
                                 <div class="card-action">
                                     <h5>{{ post.address }}, {{ post.city }}, {{ post.country }}</h5>
                                 </div>
@@ -90,23 +90,26 @@
             {% endif %}
             <!-- LOOP FOR EVERY REVIEW ON POST -->
             <ul class="collection">
-            {% for review in reviewByPost %}
-                <li class="collection-item avatar">
-                    <div class="row">
-                        <div class="col l6">
-                            <img src="{{asset('assets/images/user-picture/' ~ review.user.profilePicture) }}" alt="" class="circle">
-                            <span class="title">{{ review.user.userName }}</span>
-                            <p class="flow-text" style="margin-bottom: 20px;">{{ review.title }}</p>
-                            <p>{{ review.description }}</p>
+                {% for review in reviewByPost %}
+                    <li class="collection-item avatar">
+                        <div class="row">
+                            <div class="col l6">
+                                <img src="{{asset('assets/images/user-picture/' ~ review.user.profilePicture) }}" alt="" class="circle">
+                                <span class="title">{{ review.user.userName }}</span>
+                                <p class="flow-text" style="margin-bottom: 20px;">{{ review.title }}</p>
+                                <p>{{ review.description }}</p>
+                            </div>
+                            <div class="col l6">
+                                <p class="secondary-content black-text flow-text" style="display:flex; align-items:center;">{{ review.rate }}<i class="material-icons yellow-text">grade</i></p>
+                                {% if review.picture is not empty %}
+                                    <img style="width:15rem; border-radius: 30px;" src="{{asset('assets/images/picture-review/' ~ review.picture) }}">
+                                {% endif %}
+                            </div>
                         </div>
-                        <div class="col l6">
-                            <p class="secondary-content black-text flow-text" style="display:flex; align-items:center;">{{ review.rate }}<i class="material-icons yellow-text">grade</i></p>
-                            <img style="width:15rem; border-radius: 30px;" src="{{asset('assets/images/picture-review/' ~ review.picture) }}">
-                        </div>
-                    </div>
-                </li>
-            {% endfor %}
+                    </li>
+                {% endfor %}
             </ul>
+            {{ knp_pagination_render(reviewByPost) }}
         </div>
     </section>
 

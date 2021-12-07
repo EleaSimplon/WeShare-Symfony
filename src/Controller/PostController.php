@@ -6,7 +6,6 @@ use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 // UPLOAD PICTURE
@@ -14,8 +13,12 @@ use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
 // ADD REVIEW
 use App\Entity\Review;
+use App\Entity\User;
 use App\Form\ReviewType;
 use App\Repository\ReviewRepository;
+// PAGINATOR
+use Knp\Component\Pager\PaginatorInterface; // Nous appelons le bundle KNP Paginator
+use Symfony\Component\HttpFoundation\Request; // Nous avons besoin d'accéder à la requête pour obtenir le numéro de page
 
 /**
  * @Route("/post")
@@ -72,21 +75,33 @@ class PostController extends AbstractController
     /**
      * @Route("/{id}", name="post_show", methods={"GET"})
      */
-    public function show(Post $post, Request $request, ReviewRepository $reviewRepository): Response
+    public function show(Post $post, Request $request, ReviewRepository $reviewRepository, PaginatorInterface $paginator): Response
     {
-
         $reviewByPost = $reviewRepository->findBy([
-            'post' => $post->getId(),
-            'user'=>$this->getUser()
+            'post' => $post->getId()
         ]);
 
+        // TO PAGINATE ALL RESTAU CATEGORY
+        $reviewByPost = $paginator->paginate(
+            $reviewByPost, /* query NOT result */// REQUEST CONTAINS DATA TO PAGINATE (OFFRES) //
+            $request->query->getInt('page', 1),// NUM PAGE EN COURS(URL) OU 1 SI AUCUNE PAGE
+            4 // NUM DE RESULT PAR PAGE
+        );
+
+        $rateAvg = $reviewRepository->findByAvgReviewRate(
+            $post->getId()
+        );
+        
         //dd($reviewByPost);
+        // POUR REGLER LE PROBLEM "ARRAY CONVERT TO STRING"
+        $rateAvg = implode($rateAvg[0]);
 
         return $this->render('post/show.html.twig', [
             'post' => $post,
             'reviewByPost' => $reviewByPost,
             'user'=>$this->getUser(),
             'countReview'=> count($reviewByPost),
+            'rateAvg' => $rateAvg
         ]);
     }
 

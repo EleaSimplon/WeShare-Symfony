@@ -25,10 +25,9 @@
                         </div>
                         <div class="row">
                             <h3>{{ user.userName }}</h3>
-                            {{dump(user.roles)}}
-                            {# {% if user.roles == true %}
+                            {% if is_granted('ROLE_ADMIN') %}
                                 <p>You are Admin.</p>
-                            {% endif %} #}
+                            {% endif %}
                         </div>
                         <div class="row">
                             <h3>About me</h3>
@@ -60,7 +59,9 @@
                         <div class="card empty-post">
                             <h3>Share your first story with the community !</h3>
                             <p>You've experienced a great moment ? Or a bad one ? We want to know everything about it </p>
-                            <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Share !</a>
+                            <p> Wonder around to find a place you've been to share your experience </p>
+                            <p> Or Wonder around and plan your next trip according to the community reviews !</p>
+                            <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('find') }}">Share !</a>
                         </div>
                     {% endif %}
                     {# LOOP IF USER HAS REVIEW POSTED #}

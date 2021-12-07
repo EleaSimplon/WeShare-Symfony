@@ -47,4 +47,26 @@ class ReviewRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    // TO DISPLAY AVG RATE OF POST
+    // SELECT AVG(rate) FROM review GROUP BY post_id
+
+    public function findByAvgReviewRate($post)
+    {
+        $entityManager = $this->getEntityManager();
+        $query = $entityManager->createQuery(
+            'SELECT 
+                avg(review.rate)
+            FROM 
+                App\Entity\Review review
+
+            WHERE
+                review.post = :post
+            '
+        )->setParameter('post', $post);
+        
+        return $query->getResult();
+
+    }
+
 }

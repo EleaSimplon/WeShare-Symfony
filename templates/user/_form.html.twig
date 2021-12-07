@@ -31,24 +31,29 @@
                         <div class="row">
                             <h4>Name</h4>
                             {{ form_label(form.user_name, ' ') }}
+                            {{ form_errors(form.user_name) }}
                             {{ form_widget(form.user_name) }}
                         </div>
                         <div class="row">
                             <h4>Password</h4>
                             {{ form_label(form.password, ' ') }}
+                            {{ form_errors(form.password) }}
                             {{ form_widget(form.password) }}
                         </div>
                         <div class="row">
                             <h4>About me</h4>
                             {{ form_label(form.user_description, ' ') }}
+                            {{ form_errors(form.user_description) }}
                             {{ form_widget(form.user_description) }}
                         </div>
                         <div class="row">
                             <h4>Email</h4>
                             {{ form_label(form.email, ' ') }}
+                            {{ form_errors(form.email) }}
                             {{ form_widget(form.email) }}
                         </div>
-                        
+                        {# TO OVERPASS PROBLEM OF UNVALID FORM #}
+                        {{ form_row(form._token) }}
                         <div class="row">
                             <div class="col l4">
                                 <a class="btn brown" href="{{ path('my_profile') }}">back to your profile</a>
