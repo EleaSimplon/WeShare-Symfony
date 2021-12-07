@@ -25,6 +25,10 @@
                         </div>
                         <div class="row">
                             <h3>{{ user.userName }}</h3>
+                            {{dump(user.roles)}}
+                            {# {% if user.roles == true %}
+                                <p>You are Admin.</p>
+                            {% endif %} #}
                         </div>
                         <div class="row">
                             <h3>About me</h3>
@@ -48,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <!-- ****** TABS 3 USER'S REVIEWS  ******-->
+            <!-- ****** TABS 2 USER'S REVIEWS  ******-->
             <div id="reviews" class="col s12">
                 <div class="container">
                     {# IF USER HAS NO REVIEW POSTED YET #}
@@ -75,47 +79,5 @@
             </div>
         </div>
     </section>
-<!-- ****** POST  ******-->
-{# <li class="tab col s3"><a href="#posts">Posts</a></li> #}
-{# <div class="row"> #}
-    {# IF POST = 1 WRITE POST W/OUT AN "S" #}
-    {# {% if countPost <= 1 %}
-    <h3>Post</h3>
-    <h4>{{ countPost }}</h4>
-    {% else %}
-    <h3>Posts</h3>
-    <h4>{{ countPost }}</h4>
-    {% endif %}
-</div> #}
-<!-- ****** TABS 2 USER'S POSTS  ******-->
-{# <div id="posts" class="col s12">
-    <div class="container">
-        {% if allPost is null or allPost is empty %}
-            <div class="card empty-post">
-                <h3>Share your first story with the community !</h3>
-                <p>You've experienced a great moment ? Or a bad one ? We want to know everything about it </p>
-                <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Share !</a>
-            </div>
-        {% endif %}
-        {% for post in allPost %}
-            <ul class="collapsible">
-                <li>
-                    <div class="collapsible-header">
-                        <div class="row">
-                            <div class="col 6">
-                                <h4> {{post.name}} </h4>
-                            </div>
-                            <div class="col 6">
-                                <h4> {{post.rate}} / 5 <i class="material-icons">star</i></h4>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="collapsible-body"><span>{{post.description}}</span></div>
-                </li>
-            </ul>
-        {% endfor %}
-    </div>
-</div> #}
 
 {% endblock %}

@@ -51,7 +51,7 @@ class ReviewController extends AbstractController
 
             // SI PICTURE IS NOT NULL, PUT THE UPLOAD FILE FOLLOWING THE ROUTE 'PHOTO_DIRECTORY' IN SERVICES.YALM  
             if ($picture !== null) {
-                $newFilename = $this->upload($picture, 'photo_directory', $slugger);
+                $newFilename = $this->upload($picture, 'picture_directory', $slugger);
                 $review->setPicture($newFilename);
             }
 

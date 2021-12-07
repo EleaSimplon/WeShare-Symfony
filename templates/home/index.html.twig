@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    {#********** SECTION 3 SHARE OR FIND **********#}
+    {#********** SECTION 3 BEST OR FIND **********#}
     <section class="share-find">
 
         <div class="container">
@@ -75,9 +75,9 @@
                 <div class="col s12 m6 l6 share">
                     {# IF CONNECTED -> SHARE // ELSE -> LOGIN #}
                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                        <a href="{{ path ('post_new', {'id': app.user.id}) }}">
+                        <a href="{{ path ('top_ten') }}">
                             <img src="{{asset('assets/images/share-img.png')}}">
-                            <h1><span>SHARE</span></h1>
+                            <h1><span>TOP RATED</span></h1>
                         </a>
                         {% else %}
                             <a href="{{ path ('app_login') }}">

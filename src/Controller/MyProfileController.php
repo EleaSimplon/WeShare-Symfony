@@ -28,8 +28,6 @@ class MyProfileController extends AbstractController
             'user'=>$this->getUser()
         ]);
 
-        // dd($allReview);
-
         return $this->render('my_profile/index.html.twig', [
             'user'=>$this->getUser(),
             'allReview' => $allReview,

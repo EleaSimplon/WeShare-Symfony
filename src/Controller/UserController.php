@@ -66,21 +66,21 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user, SluggerInterface $slugger, ReviewRepository $reviewRepository, PostRepository $postRepository): Response
+    public function edit(Request $request, User $user, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-        // dd($form);
         if ($form->isSubmitted() && $form->isValid()) {
-
+            
             $picture = $form->get('profile_picture')->getData();
             // SI PICTURE IS NOT NULL, PUT THE UPLOAD FILE FOLLOWING THE ROUTE 'PHOTO_DIRECTORY' IN SERVICES.YAML  
-        
+            
+            //dd($picture);
             if ($picture !== null) {
                 $newFilename = $this->upload($picture, 'profile_picture', $slugger);
                 $user->setProfilePicture($newFilename);
             }
-
+            
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('my_profile', [

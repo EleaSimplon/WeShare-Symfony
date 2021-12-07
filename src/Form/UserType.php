@@ -25,7 +25,7 @@ class UserType extends AbstractType
                 'label' => ' ',
                 'constraints' => [
                     new File([
-                        'mimeTypesMessage' => 'Please upload a valid PDF document',
+                        'mimeTypesMessage' => 'Please upload a valid document',
                     ])
                 ],
             ]);

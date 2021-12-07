@@ -18,11 +18,6 @@ class Post
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $rate;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $name;
@@ -76,18 +71,6 @@ class Post
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getRate(): ?int
-    {
-        return $this->rate;
-    }
-
-    public function setRate(int $rate): self
-    {
-        $this->rate = $rate;
-
-        return $this;
     }
 
     public function getName(): ?string
