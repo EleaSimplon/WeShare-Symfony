@@ -36,69 +36,45 @@
     </section>
 
     <!-- ********** BUTTON BACK TO CATEGORIES **********-->
-    <a class="red lighten-2 btn" href="{{ path ('find') }}">Back to categories</a>
+    <div class="btn-bck-cat center-align">
+        <a class="btn red lighten-2 btn" href="{{ path ('find') }}">Back to categories</a>
+    </div>
 
-    <!-- ********** SECTION 3 HIDDEN CATEGORIES **********-->
-    <section class="hiden-categories">
-        <!-- ********** DESTINATIONS **********-->
-        <div id="divDesti" class="answer_list" >
-            <div class="card-post">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m7 l12">
-                            {% for post in allDesti %}
-                            
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
-                                    </div>
-                                    <div class="card-title">
-                                        <h5>{{ post.categories }}</h5>
-                                        <h3>{{ post.name }}</h3>
-                                    </div>
-                                    <div class="card-content">
-                                        <p>{{ post.description }}</p>
-                                        <h4>Moyenne / 5  <i class="material-icons">star</i></h4>
-                                        <div class="card-action">
-                                            <h5>{{ post.address }}</h5>
-                                            <div class="row">
-                                                <div class="col l6">
-                                                    <h5>{{ post.city }}</h5>
-                                                </div>
-                                                <div class="col l6">
-                                                    <h5>{{ post.country }}</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    {% if post.webSite != "" %}
-                                        <div class="card-action">
-                                            <div class="row">
-                                                <div class="col l12">
-                                                    <a href="{{ post.webSite }}"><i class="material-icons">star</i>Link to website</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    {% endif %}
-                                    {% if post.phoneNumber != "" %}
-                                        <div class="card-action">
-                                            <div class="row">
-                                                <div class="col l12">
-                                                    <h5><i class="material-icons">star</i>{{ post.phoneNumber }}</h5>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    {% endif %}
+    <!-- ********** SECTION 3 DESTINATION CATEGORY **********-->
+    <section class="card-restaurant">
+        <div class="container">
+            <div class="row">
+                {% for post in allDesti %}
+                    <div class="col s12 m12 l6">
+                        <div class="card-test">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
                                 </div>
-
-                            {% endfor %}
+                                <div class="card-title">
+                                    <h5>{{ post.categories }}</h5>
+                                    <h3>{{ post.name }}</h3>
+                                </div>
+                                <div class="card-content">
+                                    <p class="truncate">{{ post.description }}</p>
+                                    <h4> Moyenne / 5<i class="material-icons">star</i></h4>
+                                    <div class="card-action">
+                                        <div class="row">
+                                            <div class="col l12">
+                                                <h5>{{ post.city }}, {{ post.country }}</h5>
+                                                <a class="btn-show red lighten-2 btn" href="{{ path('post_show', {'id': post.id}) }}">show</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
+            {{ knp_pagination_render(allDesti) }}
         </div>
-
     </section>
 
 {% endblock %}

@@ -8,6 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface; // Nous appelons le bundle KNP Paginator
 use Symfony\Component\HttpFoundation\Request; // Nous avons besoin d'accéder à la requête pour obtenir le numéro de page
 use App\Repository\PostRepository;
+//AVG RATE
+use App\Entity\Post;
+use App\Repository\ReviewRepository;
 
 
 class FindController extends AbstractController
@@ -15,11 +18,27 @@ class FindController extends AbstractController
     /**
      * @Route("find", name="find")
      */
-    public function index(Request $request, PostRepository $postRepository, PaginatorInterface $paginator): Response
+    public function index(Request $request, PostRepository $postRepository): Response
     {
 
+        $allPostRestau = $postRepository->findBy([
+            'categories'=>'Restaurant'
+        ]);
+
+        $allActiv = $postRepository->findBy([
+            'categories'=>'Activity'
+        ]);
+
+        $allDesti = $postRepository->findBy([
+            'categories'=>'Destination'
+        ]);
+
         return $this->render('find/index.html.twig', [
-            'controller_name' => 'FindController'
+            'controller_name' => 'FindController',
+            'allRestau' => $allPostRestau,
+            'allActiv' => $allActiv,
+            'allDesti' => $allDesti
+
         ]);
     }
 
@@ -31,7 +50,7 @@ class FindController extends AbstractController
 
         // TO DISPLAY ALL THE POST WITH THE CATEGORY "RESTAURANT"
         // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
-        $allPostRestau = $postRepository->findByIdDesc([
+        $allPostRestau = $postRepository->findBy([
             'categories'=>'Restaurant'
         ]);
 
@@ -79,16 +98,16 @@ class FindController extends AbstractController
     {
 
        // TO DISPLAY ALL THE POST WITH THE CATEGORY "DESTINATION"
-       $allDesti = $postRepository->findBy([
-        'categories'=>'Destination'
-    ]);
+        $allDesti = $postRepository->findBy([
+            'categories'=>'Destination'
+        ]);
 
-    // TO PAGINATE ALL DESTINATION CATEGORY
-    $allDesti = $paginator->paginate(
-        $allDesti,
-        $request->query->getInt('page', 1),
-        5
-    );
+        // TO PAGINATE ALL DESTINATION CATEGORY
+        $allDesti = $paginator->paginate(
+            $allDesti,
+            $request->query->getInt('page', 1),
+            5
+        );
 
         return $this->render('find/destination.html.twig', [
             'controller_name' => 'FindController',

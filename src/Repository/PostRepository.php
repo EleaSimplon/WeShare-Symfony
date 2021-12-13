@@ -21,12 +21,13 @@ class PostRepository extends ServiceEntityRepository
 
     // TO FIND BY AND SORT BY ID DESC
     // DISPLAY LAST FROM FIRST POST 
-    public function findByIdDesc()
-    {
-        return $this->createQueryBuilder('p')
-            ->orderBy('p.id', 'DESC')
-        ;
-    }
+    // public function findByIdDesc()
+    // {
+    //     return $this->createQueryBuilder('p')
+    //         ->orderBy('p.id', 'DESC')
+    //         ->andWhere('p.categories = :restaurant')
+    //     ;
+    // }
 
     
     // /**

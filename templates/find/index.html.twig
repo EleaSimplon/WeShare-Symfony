@@ -3,7 +3,6 @@
 {% block body %}
 
     <section class="section-find">
-    
         <!-- ********** SECTION 1 HEADER WITH TEXT **********-->
         <section class="header-find">
             <div class="header-img">
@@ -53,42 +52,58 @@
                         </div>
                     </div>
                     <!--   Icon Section   -->
-                <div class="row">
-                    <div class="col s12 m4 l4">
-                        <div class="icon-block center">
-                            <img src="{{asset('assets/images/restau.png')}}">
+                    <div class="row">
+                        <div class="col s12 m4 l4">
+                            <div class="icon-block center">
+                                <img src="{{asset('assets/images/restau.png')}}">
+
+                                {% set totalPostRestau = 0 %}
+
+                                {% for postRestau in allRestau %}
+
+                                    {% set totalPostRestau = totalPostRestau + 1 %}
+
+                                {% endfor %}
+                                
+                                <h3 class="center count-animation">{{totalPostRestau}}</h3>
+                                <p class="light">Restaurants</p>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <div class="icon-block center">
+                                <img src="{{asset('assets/images/acti.png')}}">
+                
+                                {% set totalPostActi = 0 %}
+
+                                {% for postActi in allActiv %}
+
+                                    {% set totalPostActi = totalPostActi + 1 %}
+
+                                {% endfor %}
+                                <h3 class="center count-animation">{{totalPostActi}}</h3>
+                                <p class="light">Activities</p>
+                            </div>
+                        </div>
+                        <div class="col s12 m4 l4">
+                            <div class="icon-block center">
+                                <img src="{{asset('assets/images/desti.png')}}">
+
+                                {% set totalPostDesti = 0 %}
+
+                                {% for postDesti in allDesti %}
+
+                                    {% set totalPostDesti = totalPostDesti + 1 %}
+
+                                {% endfor %}
                             
-                            <h3 class="center count-animation">1500</h3>
-                            <p class="light">Restaurants</p>
+                                <h3 class="center count-animation">{{totalPostDesti}}</h3>
+                                <p class="light">Destinations</p>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col s12 m4 l4">
-                    <div class="icon-block center">
-                            <img src="{{asset('assets/images/acti.png')}}">
-            
-                            <h3 class="center count-animation">5600</h3>
-                            <p class="light">Activities</p>
-                        </div>
-                    </div>
-
-                    
-
-                    <div class="col s12 m4 l4">
-                        <div class="icon-block center">
-                            <img src="{{asset('assets/images/desti.png')}}">
-                        
-                            <h3 class="center count-animation">600</h3>
-                            <p class="light">Destinations</p>
-                        </div>
-                    </div>
-                </div>
-
                 </div>
             </div>
         </section>
-
-    
     </section>
 
 {% endblock %}

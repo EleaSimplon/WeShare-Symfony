@@ -28,7 +28,6 @@ class HomeController extends AbstractController
      */
     public function about(PostRepository $postRepository, ReviewRepository $reviewRepository, UserRepository $userRepository): Response
     {
-        $user = $this->getUser();
         // RECUP ALL POSTS TO DSPLAY THE COUNT
         $allPost = $postRepository->findAll();
 

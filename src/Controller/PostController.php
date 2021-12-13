@@ -12,9 +12,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
 // ADD REVIEW
-use App\Entity\Review;
-use App\Entity\User;
-use App\Form\ReviewType;
 use App\Repository\ReviewRepository;
 // PAGINATOR
 use Knp\Component\Pager\PaginatorInterface; // Nous appelons le bundle KNP Paginator

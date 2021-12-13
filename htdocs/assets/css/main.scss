@@ -9,6 +9,8 @@
 @import 'card-post';
 @import 'sign';
 @import 'show-post';
+@import 'admin';
+
 
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap');
 
@@ -19,6 +21,18 @@ body {
 
     h3 {
         font-family: 'Abril Fatface', cursive;
+    }
+
+    a {
+        color: #B8685D;
+        outline: none;
+        cursor: pointer;
+        text-decoration: none;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
     }
 }
 
