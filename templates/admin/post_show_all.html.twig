@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin All Post{% endblock %}
+
+{% block body %}
+
+    <section class="admin-posts">
+        {# HEADER NAV BAR #}
+        <header class='main-nav'>
+            <ul>
+                <li>
+                <i class='fa fa-tachometer'></i>
+                <span>Dashboard</span>
+                </li>
+                <li>
+                <i class='fa fa-file-text'></i>
+                <span>Pages</span>
+                </li>
+                <li>
+                <i class='fa fa-bars'></i>
+                <span>Menus</span>
+                </li>
+                <li>
+                <i class='fa fa-users'></i>
+                <span>Users</span>
+                </li>
+                <li>
+                <i class='fa fa-sliders'></i>
+                <span>Settings</span>
+                </li>
+                <li>
+                <i class='fa fa-sign-out'></i>
+                <span>Log Out</span>
+                </li>
+            </ul>
+        </header>
+        {# TABLE SHOW ALL POST #}
+        <div class="container content">
+            <table class="responsive-table highlight">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Country</th>
+                        <th>Picture</th>
+                        <th>Web Site</th>
+                        <th>Phone Number</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for post in posts %}
+                        <tr>
+                            <td>{{ post.categories }}</td>
+                            <td>{{ post.name }}</td>
+                            <td>{{ post.description }}</td>
+                            <td>{{ post.address }}</td>
+                            <td>{{ post.city }}</td>
+                            <td>{{ post.country }}</td>
+                            <td>{{ post.picture }}</td>
+                            <td>{{ post.webSite }}</td>
+                            <td>{{ post.phoneNumber }}</td>
+                            <td>
+                                {# <a style="width:14rem" class="btn brown lighten-2" href="{{ path('admin_customer_show', {'id': client.id}) }}">show more</a>
+                                <a style="width:14rem" class="btn brown lighten-1" href="{{ path('client_edit', {'id': client.id}) }}">edit</a> #}
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="8">no records found</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+    
+{% endblock %}

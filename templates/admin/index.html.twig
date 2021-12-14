@@ -5,7 +5,7 @@
 {% block body %}
 
     <section class="admin-index">
-        <!-- Page Header-->
+        {# HEADER NAV BAR #}
         <header class='main-nav'>
             <ul>
                 <li>
@@ -37,6 +37,7 @@
 
         <main class="content">
             <div class="row">
+                {# POSTS #}
                 <div class="col s12 l6">
                     <div style="padding: 35px;" align="center" class="card">
                         <div class="row">
@@ -44,7 +45,6 @@
                                 <b>Post</b>
                             </div>
                         </div>
-
                         <div class="row">
                             <a href="{{ path ('admin_post_new')}}">
                             <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
@@ -55,7 +55,7 @@
                             <div class="col s1">&nbsp;</div>
                             <div class="col s1">&nbsp;</div>
 
-                            <a href="#!">
+                            <a href="{{ path ('admin_post_show_all')}}">
                             <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
                                 <i class="indigo-text text-lighten-1 large material-icons">remove_red_eye</i>
                                 <span class="indigo-text text-lighten-1"><h5>Show</h5></span>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-
+                {# REVIEWS #}
                 <div class="col s12 l6">
                     <div style="padding: 35px;" align="center" class="card">
                         <div class="row">
@@ -73,13 +73,12 @@
                             </div>
                         </div>
                         <div class="row">
-                            <a href="#!">
+                            <a href="{{ path ('admin_review_show_all')}}">
                             <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-                                <i class="indigo-text text-lighten-1 large material-icons">delete_forever</i>
-                                <span class="indigo-text text-lighten-1"><h5>Delete</h5></span>
+                                <i class="indigo-text text-lighten-1 large material-icons">remove_red_eye</i>
+                                <span class="indigo-text text-lighten-1"><h5>Show</h5></span>
                             </div>
                             </a>
-
                             <div class="col s1">&nbsp;</div>
                             <div class="col s1">&nbsp;</div>
 

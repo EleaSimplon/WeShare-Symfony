@@ -104,6 +104,7 @@
                                 {% if review.picture is not empty %}
                                     <img style="width:15rem; border-radius: 30px;" src="{{asset('assets/images/picture-review/' ~ review.picture) }}">
                                 {% endif %}
+                                <p class="right">{{ review.postedAt ? review.postedAt|date('Y-m-d') : '' }}</p>
                             </div>
                         </div>
                     </li>

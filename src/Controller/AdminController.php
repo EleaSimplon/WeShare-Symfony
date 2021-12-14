@@ -5,10 +5,14 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-// NEW POST
+use App\Entity\User;
+// POST
 use App\Entity\Post;
 use App\Form\PostType;
-use App\Entity\User;
+use App\Repository\PostRepository;
+// POST
+use App\Entity\Review;
+use App\Repository\ReviewRepository;
 // UPLOAD PICTURE
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
@@ -34,7 +38,7 @@ class AdminController extends AbstractController
     /**
      * @Route("admin/post/new", name="admin_post_new", methods={"GET","POST"})
      */
-    public function new(Request $request, SluggerInterface $slugger): Response
+    public function newPost(Request $request, SluggerInterface $slugger): Response
     {
         $post = new Post();
         $form = $this->createForm(PostType::class, $post);
@@ -87,6 +91,30 @@ class AdminController extends AbstractController
             // ... handle exception if something happens during file upload
         }
 
+    }
+
+    /**
+    * @Route("admin/post/show/all", name="admin_post_show_all")
+    */
+    public function postShowAll(PostRepository $customer)
+    {
+        $post= $this->getDoctrine()->getRepository(Post::class);
+
+        return $this->render('admin/post_show_all.html.twig', [
+            'posts' => $post->findAll()
+        ]);
+    }
+
+    /**
+    * @Route("admin/review/show/all", name="admin_review_show_all")
+    */
+    public function reviewShowAll(ReviewRepository $customer)
+    {
+        $review= $this->getDoctrine()->getRepository(Review::class);
+
+        return $this->render('admin/review_show_all.html.twig', [
+            'reviews' => $review->findAll()
+        ]);
     }
     
 }
