@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Review{% endblock %}
+
+{% block body %}
+
+    <section class="share-page">
+
+        <div class="header-img">
+            <div class="row">
+                <div class="col s12 m6 l4 right">
+                    <h1><span>SHARE</span><br>your experience</h1>
+                </div>
+            </div>
+        </div> 
+        <!-- ********** FORM TO SHARE EXPERIENCE ********** -->
+        <div class="container share-container">
+            <!--   Form Section   -->
+            <div class="card">
+                <div class="card-content">
+                    {{ form_start(form) }}
+
+                        <!-- ********** NICK NAME **********-->
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input type="text" id="autocomplete-input" class="autocomplete" disabled="true">
+                                <label for="autocomplete-input">{{user.userName}}</label>
+                            </div>
+                        </div> 
+                        <!-- ********** SELECT CATEGORY **********-->
+                        <h5><box-icon name='check'></box-icon> Choose a category *</h5>
+                        <div class="col s12 l12 select-post">
+                            {{ form_widget(form.categories)}}
+                        </div>
+                        <h5><box-icon name='edit-location' type='solid' ></box-icon> Enter the place's informations</h5>
+                        <!-- ********** NAME OF **********-->
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <i class="material-icons prefix">Name</i>
+                                {{ form_label(form.name, 'Name *') }}
+                                {{ form_widget(form.name) }}
+                            </div>
+                        </div>
+                        <!-- ********** ADDRESS **********-->
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <i class="material-icons prefix">address</i>
+                                {{ form_label(form.address, 'Address *') }}
+                                {{ form_widget(form.address) }}
+                            </div>
+                        </div>
+                        <!-- ********** PHONE NUMBER **********-->
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <i class="material-icons prefix">phone</i>
+                                {{ form_label(form.phone_number) }}
+                                {{ form_widget(form.phone_number) }}
+                            </div>
+                        </div>
+                        <!-- ********** CITY **********-->
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <i class="material-icons prefix">place</i>
+                                {{ form_label(form.city, 'City *') }}
+                                {{ form_widget(form.city) }}
+                            </div>
+                        </div>
+                        <!-- ********** COUNTRY **********-->
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                <i class="material-icons prefix">place</i>
+                                {{ form_label(form.country, 'Country *') }}
+                                {{ form_widget(form.country) }}
+                            </div>
+                        </div>
+                        <!-- ********** WEBSITE **********-->
+                        <div class="input-field col s12 l12">
+                            <i class="material-icons prefix">http</i>
+                            {{ form_label(form.web_site) }}
+                            {{ form_widget(form.web_site) }}
+                        </div>
+                        <h5><box-icon name='message-dots'></box-icon> Add a description !</h5>
+                        <!-- ********** DESCRIPTION **********-->
+                        <div class="input-field col s12 l12">
+                            <i class="material-icons prefix">border_color</i>
+                            {{ form_label(form.description, 'Description *') }}
+                            {{ form_widget(form.description) }}
+                        </div>
+                        <!-- ********** UPLOAD PHOTO **********-->
+                        <h5><box-icon name='upload'></box-icon> Upload a picture</h5>
+                        <div class="row">
+                            <div class="input-field col s12 l12">    
+                                <div class="file-field input-field">
+                                    <div class="btn brown darken-1">
+                                        <span>Upload</span>
+                                        {{ form_widget(form.picture) }}
+                                        {{ form_label(form.picture) }}
+                                    </div>
+                                    
+                                    <div class="file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Upload file" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ********** BTN **********-->
+                        <div class="row">
+                            <div class="input-field col s12 l12">    
+                                <button class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
+                                    {{ button_label|default('Save') }}
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- ********** INFOS **********-->
+                        <div class="infos">
+                            <h5>* All the fields that contains the asterisk are mandatory</h5>
+                        </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+{% endblock %}

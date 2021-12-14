@@ -5,7 +5,9 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+// NEW POST
 use App\Entity\Post;
+use App\Form\PostType;
 use App\Entity\User;
 // UPLOAD PICTURE
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -30,7 +32,7 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("admin/post/new", name="post_new", methods={"GET","POST"})
+     * @Route("admin/post/new", name="admin_post_new", methods={"GET","POST"})
      */
     public function new(Request $request, SluggerInterface $slugger): Response
     {
@@ -59,7 +61,7 @@ class AdminController extends AbstractController
             ]);
         }
 
-        return $this->render('admin/post_new.html.twig', [
+        return $this->render('admin/new_post.html.twig', [
             'post' => $post,
             'form' => $form->createView(),
             'user'=>$this->getUser()

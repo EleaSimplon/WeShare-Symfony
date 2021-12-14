@@ -1,25 +1,101 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Admin Index{% endblock %}
 
 {% block body %}
 
     <section class="admin-index">
         <!-- Page Header-->
-        <section class="page-title page-index-admin fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="white-text">Admin space</h2>
-                        <span class="white-text">Administer the Customer & Users informations</span>
-                        <ol class="breadcrumb">
-                            <li><a href="{{ path ('home') }}">Home</a></li>
-                            <li class="active">Admin Index</li>
-                        </ol>
+        <header class='main-nav'>
+            <ul>
+                <li>
+                <i class='fa fa-tachometer'></i>
+                <span>Dashboard</span>
+                </li>
+                <li>
+                <i class='fa fa-file-text'></i>
+                <span>Pages</span>
+                </li>
+                <li>
+                <i class='fa fa-bars'></i>
+                <span>Menus</span>
+                </li>
+                <li>
+                <i class='fa fa-users'></i>
+                <span>Users</span>
+                </li>
+                <li>
+                <i class='fa fa-sliders'></i>
+                <span>Settings</span>
+                </li>
+                <li>
+                <i class='fa fa-sign-out'></i>
+                <span>Log Out</span>
+                </li>
+            </ul>
+        </header>
+
+        <main class="content">
+            <div class="row">
+                <div class="col s12 l6">
+                    <div style="padding: 35px;" align="center" class="card">
+                        <div class="row">
+                            <div class="center-align card-title">
+                                <b>Post</b>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <a href="{{ path ('admin_post_new')}}">
+                            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+                                <i class="indigo-text text-lighten-1 large material-icons">library_add</i>
+                                <span class="indigo-text text-lighten-1"><h5>Create</h5></span>
+                            </div>
+                            </a>
+                            <div class="col s1">&nbsp;</div>
+                            <div class="col s1">&nbsp;</div>
+
+                            <a href="#!">
+                            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+                                <i class="indigo-text text-lighten-1 large material-icons">remove_red_eye</i>
+                                <span class="indigo-text text-lighten-1"><h5>Show</h5></span>
+                            </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
+
+                <div class="col s12 l6">
+                    <div style="padding: 35px;" align="center" class="card">
+                        <div class="row">
+                            <div class="center-align card-title">
+                            <b>Review</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <a href="#!">
+                            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+                                <i class="indigo-text text-lighten-1 large material-icons">delete_forever</i>
+                                <span class="indigo-text text-lighten-1"><h5>Delete</h5></span>
+                            </div>
+                            </a>
+
+                            <div class="col s1">&nbsp;</div>
+                            <div class="col s1">&nbsp;</div>
+
+                            <a href="#!">
+                            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
+                                <i class="indigo-text text-lighten-1 large material-icons">mode_edit</i>
+                                <span class="indigo-text text-lighten-1"><h5>Edit</h5></span>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
             </div>
-        </section>
+        </main>
+
     </section>
 
 {% endblock %}
