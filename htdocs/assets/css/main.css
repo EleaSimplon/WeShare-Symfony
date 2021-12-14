@@ -615,7 +615,7 @@
   margin-top: 1em;
 }
 .admin-index .content, .admin-reviews .content, .admin-posts .content {
-  width: 90%;
+  width: 100%;
   height: auto;
   background: #fff;
   margin: 0 auto;
@@ -628,6 +628,9 @@
   margin: 0;
   padding-bottom: 0.4em;
   border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+}
+.admin-index .content i, .admin-reviews .content i, .admin-posts .content i {
+  font-size: 3.5em;
 }
 
 body p, body h5, body input {
