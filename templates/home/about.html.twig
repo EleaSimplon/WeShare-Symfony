@@ -6,7 +6,8 @@
     <section class="about-header">
         <!-- ********** PARALLAX IMAGE SECTION **********-->
         <div class="parallax-img">
-            <div class="parallax-container">
+            <div class="parallax-container header-img">
+                <h1>About</br><span>WE SHARE</span></h1>
                 <div class="parallax">
                     <img src="{{asset('assets/images/plx-about.jpg')}}">
                 </div>
@@ -19,9 +20,6 @@
 
         <div class="container">
             <div class="row">
-                <div class="header-img">
-                    <h1>About</br><span>WE SHARE</span></h1>
-                </div>
                 <div class="about-who col s12 m12 l6">
                     <img src="{{asset('assets/images/who.png')}}">
                     <h1><span>Who we are ?</span></h1>
@@ -107,20 +105,56 @@
         <div class="container">
             <h1 class="center-align"><span>FAQ</span></h1>
             <div class="row" style="display:flex; justify-content: center;">
-                <div class="col l10" style="margin: 0 auto;">
+                <div class="col s12 l10" style="margin: 0 auto;">
                     <div class="collapse-faq center-align">
                         <ul class="collapsible">
+                            {# QUESTION #}
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                <div class="collapsible-header">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    How can share my story ?
+                                </div>
+                                <div class="collapsible-body">
+                                    <span>First of all, you can only share your story if you are register.
+                                        </br>Second you have to go to the <a href="{{ path('find') }}" target="_blank">Find</a> page.</br>
+                                        We have 3 categories of post :</br>
+                                        <a href="{{ path ('restaurant') }}" target="_blank">Restaurants</a></br>
+                                        <a href="{{ path ('activity') }}" target="_blank">Activities</a></br>
+                                        <a href="{{ path ('destination') }}" target="_blank">Destinations</a></br>
+                                        Then search for the place you're looking for and click on "Add a review" button. Fill the form and you're good !</br>
+                                        <b>Juste a quick remimder, the Admin can delete your review if it is inappropriate, such as including bullying or harassment, hate speech or graphic violence...</b>
+                                    </span>
+                                </div>
                             </li>
+                            {# QUESTION #}
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                <div class="collapsible-header">
+                                    <i class="fas fa-search-location"></i>
+                                    Where can I find the reviews that I posted ?
+                                </div>
+                                <div class="collapsible-body">
+                                    <span>You'll find all the reviews you posted on your <b>profile page</b> in the "reviews" tab next to your "informations"</span>
+                                </div>
                             </li>
+                            {# QUESTION #}
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-                                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                                <div class="collapsible-header">
+                                    <i class="fas fa-user-circle"></i>
+                                    Where can I change my personnal informations ?
+                                </div>
+                                <div class="collapsible-body">
+                                    <span>Go to your <b>profile page</b> and click on the "edit my profile" button.</span>
+                                </div>
+                            </li>
+                            {# QUESTION #}
+                            <li>
+                                <div class="collapsible-header">
+                                    <i class="far fa-trash-alt"></i>
+                                    Why my reveiw has been deleted ?
+                                </div>
+                                <div class="collapsible-body">
+                                    <span><b>The Admin can delete your review if it is inappropriate, such as including bullying or harassment, hate speech or graphic violence...</b></span>
+                                </div>
                             </li>
                         </ul>
                     </div>

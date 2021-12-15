@@ -49,6 +49,20 @@ nav {
     }
 }
 
+/**************** PARALLAX *************/
+
+.parallax-img {
+
+    .parallax-container {
+        height:450px;
+
+        img {
+            width: 200px;
+            object-fit: cover;
+        }
+    } 
+}
+
 /**************** FOOTER *************/
 
 .page-footer {

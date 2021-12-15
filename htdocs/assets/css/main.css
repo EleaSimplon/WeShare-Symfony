@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
-/* HEADER PARALLAX EFFECT SCROLL*/
+/* HEADER */
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap");
@@ -24,8 +24,14 @@
   border-color: #e8f380;
 }
 .header-section .header-img {
-  background: url(/assets/images/header1.png) no-repeat;
-  padding-top: 110px;
+  background: url(/assets/images/bk-header-home.jpg) no-repeat;
+  background-size: cover;
+}
+.header-section .header-img .row {
+  display: flex;
+}
+.header-section .header-img .row .col {
+  margin: 0 auto;
 }
 .header-section .mouse {
   display: block;
@@ -34,8 +40,6 @@
   height: 46px;
   border-radius: 13px;
   border: 2px solid #E4BFAD;
-  position: absolute;
-  right: 16%;
 }
 .header-section .mouse span {
   display: block;
@@ -53,6 +57,27 @@
   animation-iteration-count: infinite;
   -webkit-animation-name: scroll;
   animation-name: scroll;
+}
+
+.top-rated {
+  text-align: center;
+  margin-top: 5rem;
+}
+.top-rated .carousel {
+  height: 100%;
+}
+.top-rated .carousel .carousel-cell {
+  width: 28%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.top-rated .carousel .card-rating {
+  display: flex;
+  justify-content: center;
 }
 
 .share-find {
@@ -79,29 +104,7 @@
   border-color: #e8f380;
 }
 
-.top-rated {
-  text-align: center;
-  background-color: #e4bfad9d;
-  margin-top: 5rem;
-}
-.top-rated .carousel {
-  height: 100%;
-}
-.top-rated .carousel .carousel-cell {
-  width: 28%;
-  height: auto;
-  margin-right: 10px;
-  border-radius: 5px;
-  text-align: center;
-  margin-top: 5rem;
-  margin-bottom: 3rem;
-}
-.top-rated .carousel .card-rating {
-  display: flex;
-  justify-content: center;
-}
-
-/* MEDIAS  HEADER */
+/* KEYFRAMES HEADER */
 @-webkit-keyframes scroll {
   0% {
     opacity: 1;
@@ -128,24 +131,33 @@
     transform: translateY(20px);
   }
 }
-.parallax-img {
-  /* @include header-img;
-
-  .header-img {
-      background: url(/assets/images/header.png) no-repeat;
-      padding-top: 110px;
-  }*/
+.about-header .header-img {
+  position: relative;
+  text-align: center;
+  color: #B8685D;
+  min-height: 500px;
+  letter-spacing: 2px;
 }
-.parallax-img .parallax-container {
-  height: 450px;
+.about-header .header-img h1 {
+  font-size: 50px;
+  line-height: 1.3;
+  font-family: "Abril Fatface", cursive;
 }
-.parallax-img .parallax-container img {
-  width: 200px;
+.about-header .header-img h1 span {
+  font-size: 50px;
+  padding-bottom: 12px;
+  line-height: 3;
+  border-bottom: 2px solid;
+  color: #E4BFAD;
+  border-color: #e8f380;
+}
+.about-header h1 {
+  padding-top: 105px;
 }
 
 .about {
   text-align: center;
-  padding: 0 0 45px 0;
+  padding: 90px 0 90px 0;
 }
 .about h1 {
   font-size: 50px;
@@ -308,51 +320,6 @@
 }
 
 /********** INDEX PAGE **********/
-@media (max-width: 700px) {
-  .header-img h1 {
-    font-size: 40px;
-  }
-  .header-img h1 span {
-    font-size: 32px;
-  }
-  .header-img .mouse {
-    right: 20%;
-  }
-}
-@media (max-width: 599px) {
-  .header-img {
-    text-align: right;
-  }
-  .header-img h1 {
-    font-size: 40px;
-    color: #303030;
-  }
-  .header-img h1 span {
-    font-size: 50px;
-    color: #303030;
-  }
-}
-@media (max-width: 530px) {
-  .header-img h1 {
-    font-size: 30px;
-  }
-  .header-img span {
-    font-size: 40px;
-  }
-  .header-img .mouse {
-    right: 22%;
-  }
-}
-@media (max-width: 413px) {
-  .header-img h1 {
-    font-size: 40px;
-    color: #303030;
-  }
-  .header-img h1 span {
-    font-size: 50px;
-    color: #303030;
-  }
-}
 @media (max-width: 1099px) {
   .top-rated .carousel .carousel-cell {
     width: 40%;
@@ -662,6 +629,15 @@ nav .brand-logo {
 }
 nav ul a:hover {
   background-color: #b8685d2b !important;
+}
+
+/**************** PARALLAX *************/
+.parallax-img .parallax-container {
+  height: 450px;
+}
+.parallax-img .parallax-container img {
+  width: 200px;
+  object-fit: cover;
 }
 
 /**************** FOOTER *************/

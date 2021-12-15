@@ -1,15 +1,22 @@
 @import 'mixin';
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 
-/* HEADER PARALLAX EFFECT SCROLL*/
-
+/* HEADER */
 .header-section {
     
     @include header-img;
     
     .header-img {
-        background: url(/assets/images/header1.png) no-repeat;
-        padding-top: 110px;
+        background: url(/assets/images/bk-header-home.jpg) no-repeat;
+        background-size: cover;
+
+        .row {
+            display: flex;
+
+            .col {
+                margin: 0 auto;
+            }
+        }
     }
     
     .mouse {
@@ -19,8 +26,6 @@
         height: 46px;
         border-radius: 13px;
         border: 2px solid #E4BFAD;
-        position: absolute;
-        right: 16%;
     
         span {
             display: block;
@@ -41,6 +46,35 @@
         }
     }
 }
+
+// ********** SECTION 2 TOP RATED **********
+
+// ********** CAROUSEL **********
+.top-rated {
+    
+    text-align: center;
+    margin-top: 5rem;
+
+    .carousel {
+        height: 100%;
+        
+
+        .carousel-cell {
+            width: 28%;
+            height: auto;
+            margin-right: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card-rating {
+            @include d-flex-center;
+        }
+    }
+}
+
 
 
 // ********** SECTION 3 SHARE OR FIND **********
@@ -68,38 +102,8 @@
         }
     }
 }
-
-// ********** SECTION 2 TOP RATED **********
-
-// ********** CAROUSEL **********
-.top-rated {
-    
-    text-align: center;
-    background-color: #e4bfad9d;
-    margin-top: 5rem;
-
-    .carousel {
-        height: 100%;
-        
-
-        .carousel-cell {
-            width: 28%;
-            height: auto;
-            margin-right: 10px;
-            border-radius: 5px;
-            text-align: center;
-            margin-top: 5rem;
-            margin-bottom: 3rem;
-        }
-
-        .card-rating {
-            @include d-flex-center;
-        }
-    }
-}
  
-/* MEDIAS  HEADER */
-
+/* KEYFRAMES HEADER */
 @-webkit-keyframes scroll {
     0% {
         opacity: 1;
@@ -129,5 +133,3 @@
         transform: translateY(20px);
     }
 }
-  
-  
