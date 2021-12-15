@@ -641,11 +641,33 @@ nav ul a:hover {
 }
 
 /**************** FOOTER *************/
-.page-footer {
+.section-footer {
   background-color: #241A12;
+  text-align: center;
 }
-.page-footer .footer-copyright {
+.section-footer .container {
+  padding: 20px;
+}
+.section-footer .container .footer-links {
+  margin-bottom: 2px;
+}
+.section-footer .container .footer-links .row {
+  margin-bottom: 0;
+}
+.section-footer .container .footer-links .row span {
+  display: inline-block;
+  height: 13px;
+  border-right: 2px solid white;
+  margin: 0 10px 0 10px;
+}
+.section-footer .container .footer-social-net i {
+  font-size: 30px;
+  margin-right: 10px;
+}
+.section-footer .footer-copyright {
   background-color: #3d2d20;
+  color: white;
+  margin: 0 auto;
 }
 
 /**************** BACK TO TOP BTN *************/

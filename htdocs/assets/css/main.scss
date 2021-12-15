@@ -65,11 +65,37 @@ nav {
 
 /**************** FOOTER *************/
 
-.page-footer {
+.section-footer {
     background-color: #241A12;
+    text-align: center;
+    
+    .container {
+        padding: 20px;
 
+        .footer-links {
+            margin-bottom: 2px;
+
+            .row{
+                margin-bottom: 0;
+                span {
+                    display: inline-block;
+                    height: 13px;
+                    border-right: 2px solid white;
+                    margin: 0 10px 0 10px;
+                }
+            }
+        }
+        .footer-social-net {
+            i{
+                font-size: 30px;
+                margin-right: 10px;
+            }
+        }
+    }
     .footer-copyright {
         background-color: #3d2d20;
+        color: white;
+        margin: 0 auto;
     }
 }
 
