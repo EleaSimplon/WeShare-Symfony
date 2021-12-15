@@ -585,6 +585,9 @@
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
+.admin-index .main-nav h2, .admin-reviews .main-nav h2, .admin-posts .main-nav h2 {
+  color: white;
+}
 .admin-index .main-nav ul, .admin-reviews .main-nav ul, .admin-posts .main-nav ul {
   margin: 0;
   padding: 0;

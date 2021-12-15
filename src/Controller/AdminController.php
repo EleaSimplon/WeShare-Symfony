@@ -24,14 +24,21 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin", name="admin")
      */
-    public function index(): Response
+    public function index(PostRepository $postRepository, ReviewRepository $reviewRepository): Response
     {
         $user = $this->getDoctrine()->getRepository(User::class);
+        // RECUP ALL POSTS TO DSPLAY THE COUNT
+        $allPost = $postRepository->findAll();
+
+        // RECUP ALL POSTS TO DSPLAY THE COUNT
+        $allReview = $reviewRepository->findAll();
 
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
             'user' => $this->getUser(),
-            'users' => $user->findAll(),
+            'allPost' => $allPost,
+            'allReview' => $allReview,
+            'users' => $user->findAll()
         ]);
     }
 
@@ -69,6 +76,26 @@ class AdminController extends AbstractController
             'post' => $post,
             'form' => $form->createView(),
             'user'=>$this->getUser()
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/admin/post/edit", name="post_edit", methods={"GET","POST"})
+     */
+    public function editPost(Request $request, Post $post): Response
+    {
+        $form = $this->createForm(PostType::class, $post);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('post_index');
+        }
+
+        return $this->render('post/edit.html.twig', [
+            'post' => $post,
+            'form' => $form->createView(),
         ]);
     }
 

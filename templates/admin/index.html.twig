@@ -7,6 +7,7 @@
     <section class="admin-index">
         {# HEADER NAV BAR #}
         <header class='main-nav'>
+            <h2>Welcome to the Admin Dashboard</h2>
             <ul>
                 <a href="{{ path ('admin')}}">
                     <li style="background: #525252;">
@@ -30,27 +31,55 @@
         </header>
 
         <main class="container content center-align">
+            {# DISPLAY INFOS ABOUT USERS / POSTS / REVIEWS #}
             <div class="row">
                 <div class="col s12 l4">
+                    {# CARD USERS #}
                     <div class="card orange lighten-5">
                         <div class="card-content">
+                            {% set totalUser = 0 %}
+
+                            {% for user in users %}
+
+                                {% set totalUser = totalUser + 1 %}
+
+                            {% endfor %}
+                            <span class="card-title">{{ totalUser }}</span>
                             <span class="card-title">USERS</span>
                             <i class="fas fa-users"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col s12 l4">
+                    {# CARD POSTS #}
                     <div class="card brown lighten-5">
                         <div class="card-content">
+                            {% set totalPost = 0 %}
+
+                            {% for post in allPost %}
+
+                                {% set totalPost = totalPost + 1 %}
+
+                            {% endfor %}
+                            <span class="card-title">{{ totalPost }}</span>
                             <span class="card-title">POSTS</span>
                             <i class="fas fa-globe-europe"></i>
                         </div>
                     </div>
                 </div>
                 <div class="col s12 l4">
+                    {# CARD REVIEWS #}
                     <div class="card green lighten-5">
                         <div class="card-content">
-                            <span class="card-title">REVIEW</span>
+                            {% set totalReview = 0 %}
+
+                            {% for review in allReview %}
+
+                                {% set totalReview = totalReview + 1 %}
+
+                            {% endfor %}
+                            <span class="card-title">{{ totalReview }}</span>
+                            <span class="card-title">REVIEWS</span>
                             <i class="far fa-comment-dots"></i>
                         </div>
                     </div>
@@ -59,26 +88,26 @@
             <div class="row">
                 {# POSTS #}
                 <div class="col s12 l6">
-                    <div style="padding: 35px;" align="center" class="card">
+                    <div style="padding: 35px;" align="center" class="card brown lighten-5">
                         <div class="row">
                             <div class="center-align card-title">
-                                <b>Post</b>
+                                <b>POSTS</b>
                             </div>
                         </div>
                         <div class="row">
                             <a href="{{ path ('admin_post_new')}}">
-                            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-                                <i class="indigo-text text-lighten-1 large material-icons">library_add</i>
-                                <span class="indigo-text text-lighten-1"><h5>Create</h5></span>
+                            <div style="padding: 30px; border-radius:3px;" class="brown lighten-4 lighten-3 col s12 l5 waves-effect">
+                                <i class="black-text text-black large material-icons">library_add</i>
+                                <span class="black-text text-black"><h5>Create</h5></span>
                             </div>
                             </a>
                             <div class="col s1">&nbsp;</div>
                             <div class="col s1">&nbsp;</div>
 
                             <a href="{{ path ('admin_post_show_all')}}">
-                            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-                                <i class="indigo-text text-lighten-1 large material-icons">remove_red_eye</i>
-                                <span class="indigo-text text-lighten-1"><h5>Show</h5></span>
+                            <div style="padding: 30px; border-radius:3px;" class="brown lighten-4 lighten-3 col s12 l5 waves-effect">
+                                <i class="black-text text-black large material-icons">remove_red_eye</i>
+                                <span class="black-text text-black"><h5>Show</h5></span>
                             </div>
                             </a>
                         </div>
@@ -86,26 +115,26 @@
                 </div>
                 {# REVIEWS #}
                 <div class="col s12 l6">
-                    <div style="padding: 35px;" align="center" class="card">
+                    <div style="padding: 35px;" align="center" class="card green lighten-5">
                         <div class="row">
                             <div class="center-align card-title">
-                            <b>Review</b>
+                            <b>REVIEWS</b>
                             </div>
                         </div>
                         <div class="row">
                             <a href="{{ path ('admin_review_show_all')}}">
-                            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-                                <i class="indigo-text text-lighten-1 large material-icons">remove_red_eye</i>
-                                <span class="indigo-text text-lighten-1"><h5>Show</h5></span>
+                            <div style="padding: 30px; border-radius:3px;" class="green lighten-4 col s12 l5 waves-effect">
+                                <i class="black-text text-black large material-icons">remove_red_eye</i>
+                                <span class="black-text text-black"><h5>Show</h5></span>
                             </div>
                             </a>
                             <div class="col s1">&nbsp;</div>
                             <div class="col s1">&nbsp;</div>
 
                             <a href="#!">
-                            <div style="padding: 30px;" class="grey lighten-3 col s5 waves-effect">
-                                <i class="indigo-text text-lighten-1 large material-icons">mode_edit</i>
-                                <span class="indigo-text text-lighten-1"><h5>Edit</h5></span>
+                            <div style="padding: 30px; border-radius:3px;" class="green lighten-4 col s12 l5 waves-effect">
+                                <i class="black-text text-black large material-icons">mode_edit</i>
+                                <span class="black-text text-black"><h5>Edit</h5></span>
                             </div>
                             </a>
                         </div>

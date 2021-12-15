@@ -56,10 +56,8 @@
                             <td>{{ post.picture }}</td>
                             <td>{{ post.webSite }}</td>
                             <td>{{ post.phoneNumber }}</td>
-                            <td>
-                                {# <a style="width:14rem" class="btn brown lighten-2" href="{{ path('admin_customer_show', {'id': client.id}) }}">show more</a>
-                                <a style="width:14rem" class="btn brown lighten-1" href="{{ path('client_edit', {'id': client.id}) }}">edit</a> #}
-                            </td>
+                            <td><button>Delete</button></td>
+                            <td><button>Edit</button></td>
                         </tr>
                         {% else %}
                         <tr>
