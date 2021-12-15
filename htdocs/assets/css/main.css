@@ -602,6 +602,9 @@
 .admin-index .content i, .admin-reviews .content i, .admin-posts .content i {
   font-size: 3.5em;
 }
+.admin-index .content .data-graphics img, .admin-reviews .content .data-graphics img, .admin-posts .content .data-graphics img {
+  width: 100%;
+}
 
 body p, body h5, body input {
   font-family: "Catamaran", sans-serif;
