@@ -13,6 +13,15 @@
     
     .header-img {
         background: url(/assets/images/bg.png) no-repeat;
+
+        .row {
+            display: flex;
+
+            .col {
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
     }
 
     h5 span {
@@ -20,6 +29,17 @@
     }
 
 }
+
+.top-rated-explications {
+    background: url(/assets/images/badge.png) no-repeat;
+    background-position: center;
+    background-color: #e4bfad2e;
+    .container {
+        padding: 90px;
+    }
+}
+
+
 .categories {
     margin-top: 3rem;
 

@@ -368,8 +368,24 @@
 .header-tr .header-img {
   background: url(/assets/images/bg.png) no-repeat;
 }
+.header-tr .header-img .row {
+  display: flex;
+}
+.header-tr .header-img .row .col {
+  text-align: center;
+  margin: 0 auto;
+}
 .header-tr h5 span {
   font-weight: bold;
+}
+
+.top-rated-explications {
+  background: url(/assets/images/badge.png) no-repeat;
+  background-position: center;
+  background-color: #e4bfad2e;
+}
+.top-rated-explications .container {
+  padding: 90px;
 }
 
 .categories {
