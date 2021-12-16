@@ -27,10 +27,16 @@
         <div class="container">
             <div class="row">
                 <div class="col l6">
-                    <a class="red lighten-2 btn" href="{{ path ('restaurant') }}">Back to list</a>
+                    {% if post.categories == "restaurant" %}
+                        <a class="btn brown" href="{{ path ('restaurant') }}">Back to list</a>
+                        {% elseif post.categories == "activity" %}
+                            <a class="btn brown" href="{{ path ('activity') }}">Back to list</a>
+                        {% else %}
+                            <a class="btn brown" href="{{ path ('destination') }}">Back to list</a>
+                    {% endif %}
                 </div>
                 <div class="col l6">
-                    <a class="red lighten-2 btn" href="{{ path ('review_new', {'id': post.id}) }}">Add a review ?? </a>
+                    <a class="btn light-green lighten-3" href="{{ path ('review_new', {'id': post.id}) }}">Add a review ?? </a>
                 </div>
             </div>
         </div>
@@ -42,7 +48,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col s12 m7 l12">
-                        <div class="card center-align">
+                        <div class="card center-align z-depth-4">
                             <div class="card-title">
                                 <h3>{{ post.name }}</h3>
                             </div>
@@ -57,7 +63,7 @@
                                 <div class="card-action">
                                     <div class="row">
                                         <div class="col l12">
-                                            <a class="card-link-website" href="{{ post.webSite }}"><i class="material-icons">screen_share</i>Link to website</a>
+                                            <a class="card-link-website" href="{{ post.webSite }}" target="_blank"><i class="material-icons">screen_share</i>Link to website</a>
                                         </div>
                                     </div>
                                 </div>
@@ -66,7 +72,7 @@
                                     <div class="card-action">
                                         <div class="row">
                                             <div class="col l12">
-                                                <h5><i class="material-icons">contact_phone</i> {{ post.phoneNumber }}</h5>
+                                                <h5 class="card-phone"><i class="material-icons">contact_phone</i> {{ post.phoneNumber }}</h5>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +115,7 @@
                                 {% endif %}
                             </div>
                             <div class="col l2">
-                                <p class="" style="display:flex; align-items:center;">{{ review.rate }}<i class="material-icons yellow-text">grade</i></p>
+                                <p class="review-rate right" style="display:flex; align-items:center;">{{ review.rate }}<i class="material-icons amber-text">grade</i></p>
                             </div>
                         </div>
                     </li>

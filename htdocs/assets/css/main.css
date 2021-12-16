@@ -78,6 +78,7 @@
 .top-rated .carousel .card-rating {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .share-find {
@@ -87,6 +88,7 @@
   width: 25rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: auto;
 }
 .share-find h1 {
@@ -317,6 +319,7 @@
   margin: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /********** INDEX PAGE **********/
@@ -336,6 +339,7 @@
     width: 20rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: auto;
   }
 }
@@ -485,6 +489,7 @@
 .user-profile .tabs {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .user-profile .container {
   text-align: center;
@@ -500,6 +505,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .user-profile .collapsible .collapsible-header h4 {
   padding: 0 12px;
@@ -559,9 +565,28 @@
   margin-bottom: 20px;
 }
 
+.show-btn {
+  padding: 30px;
+}
 .show-btn .container {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.show-btn .container .row {
+  margin-bottom: 0;
+}
+
+.card-post .card {
+  padding: 20px;
+}
+.card-post .card .card-action a.card-link-website, .card-post .card .card-action h5.card-phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-post .card .card-action a.card-link-website i, .card-post .card .card-action h5.card-phone i {
+  margin-right: 20px;
 }
 
 .reviews-container ul.collection li.avatar {
@@ -572,6 +597,10 @@
 }
 .reviews-container ul.collection li.avatar .review-content {
   text-align: center;
+}
+.reviews-container ul.collection li.avatar p.review-rate {
+  font-size: 2em;
+  font-weight: 500;
 }
 
 .admin-index .main-nav, .admin-reviews .main-nav, .admin-posts .main-nav {
@@ -670,6 +699,14 @@ nav ul a:hover {
 .parallax-img .parallax-container img {
   width: 200px;
   object-fit: cover;
+}
+
+/**************** PAGINATION *************/
+.pagination {
+  text-align: center;
+}
+.pagination span {
+  font-size: 25px;
 }
 
 /**************** FOOTER *************/

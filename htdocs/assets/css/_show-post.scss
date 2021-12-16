@@ -1,16 +1,40 @@
 @import 'mixin';
 
+// BTN
 .show-btn {
 
+    padding: 30px;
     .container {
         @include d-flex-center;
+        .row{
+            margin-bottom: 0;
+        }
     }
 }
 
+// CARD POST SHOW
+.card-post {
+    .card {
+        padding: 20px;
+        
+        .card-action {
+            a.card-link-website, h5.card-phone {
+                @include d-flex-center;
+                i{
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+// CARD REVIEWS
 .reviews-container {
     ul.collection {
         li.avatar {
+
             padding: 20px 20px 20px 20px;
+
             .review-profile-image {
                 padding-bottom: 60px;
             }
@@ -18,16 +42,11 @@
             .review-content {
                 text-align: center;
             }
+
+            p.review-rate {
+                font-size: 2em;
+                font-weight: 500;
+            }
         }
     }
 }
-
-// .card-show {
-
-//     .card {
-//         .card-action a.card-link-website {
-//             color: #4b2a00!important;
-            
-//         }   
-//     }
-// }
