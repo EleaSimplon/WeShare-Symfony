@@ -25,16 +25,15 @@
     <!-- ********** BUTTON ADD REVIEW & BACK TO LIST **********-->
     <section class="show-btn">
         <div class="container">
-        <div class="row">
-            <div class="col l6">
-            <a class="red lighten-2 btn" href="{{ path ('review_new', {'id': post.id}) }}">Add a review ?? </a>
-            </div>
-            <div class="col l6">
-            <a class="red lighten-2 btn" href="{{ path ('restaurant') }}">Back to list</a>
+            <div class="row">
+                <div class="col l6">
+                    <a class="red lighten-2 btn" href="{{ path ('restaurant') }}">Back to list</a>
+                </div>
+                <div class="col l6">
+                    <a class="red lighten-2 btn" href="{{ path ('review_new', {'id': post.id}) }}">Add a review ?? </a>
+                </div>
             </div>
         </div>
-        </div>
-    
     </section>
        
     <!-- ********** SECTION 2 HEADER IMG PARALLAX EFFECT  **********-->
@@ -93,18 +92,24 @@
                 {% for review in reviewByPost %}
                     <li class="collection-item avatar">
                         <div class="row">
-                            <div class="col l6">
-                                <img src="{{asset('assets/images/user-picture/' ~ review.user.profilePicture) }}" alt="" class="circle">
-                                <span class="title">{{ review.user.userName }}</span>
-                                <p class="flow-text" style="margin-bottom: 20px;">{{ review.title }}</p>
-                                <p>{{ review.description }}</p>
+                            <div class="col l2">
+                                <div class="row">
+                                    <div class="review-profile-image">
+                                        <img class="circle" src="{{asset('assets/images/user-picture/' ~ review.user.profilePicture) }}" alt="">
+                                    </div>
+                                    <p><b>{{ review.user.userName }}</b></p>
+                                    <p class="">{{ review.postedAt ? review.postedAt|date('Y-m-d') : '' }}</p>
+                                </div>
                             </div>
-                            <div class="col l6">
-                                <p class="secondary-content black-text flow-text" style="display:flex; align-items:center;">{{ review.rate }}<i class="material-icons yellow-text">grade</i></p>
+                            <div class="col l8 review-content">
+                                <p class="flow-text" style="margin-bottom: 20px;"><b>{{ review.title }}</b></p>
+                                <p>{{ review.description }}</p>
                                 {% if review.picture is not empty %}
                                     <img style="width:15rem; border-radius: 30px;" src="{{asset('assets/images/picture-review/' ~ review.picture) }}">
                                 {% endif %}
-                                <p class="right">{{ review.postedAt ? review.postedAt|date('Y-m-d') : '' }}</p>
+                            </div>
+                            <div class="col l2">
+                                <p class="" style="display:flex; align-items:center;">{{ review.rate }}<i class="material-icons yellow-text">grade</i></p>
                             </div>
                         </div>
                     </li>

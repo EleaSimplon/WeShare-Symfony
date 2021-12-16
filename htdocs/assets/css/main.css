@@ -380,7 +380,7 @@
 }
 
 .top-rated-explications {
-  background: url(/assets/images/badge.png) no-repeat;
+  background: url(/assets/images/badge1.png) no-repeat;
   background-position: center;
   background-color: #e4bfad2e;
 }
@@ -507,8 +507,11 @@
 .user-profile .btn-edit {
   margin-bottom: 30px;
 }
+.user-profile .empty-post {
+  padding: 90px;
+}
 .user-profile .empty-post h3 {
-  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .edit-user-profile {
@@ -534,31 +537,41 @@
   margin: 20px 0 20px 0;
 }
 
-.card-test {
+.card-find {
   text-align: center;
   height: 100%;
 }
-.card-test .card {
+.card-find .card {
   height: 100%;
 }
-.card-test .card .card-image img {
+.card-find .card .card-image img {
   object-fit: cover;
   max-height: 17rem;
 }
-.card-test .card .card-action {
+.card-find .card .card-action {
   padding: 0px;
   padding-top: 16px;
 }
-.card-test .material-icons {
+.card-find .material-icons {
   color: #F3DE2C;
 }
-.card-test .btn-show {
+.card-find .btn-show {
   margin-bottom: 20px;
 }
 
 .show-btn .container {
   display: flex;
   justify-content: center;
+}
+
+.reviews-container ul.collection li.avatar {
+  padding: 20px 20px 20px 20px;
+}
+.reviews-container ul.collection li.avatar .review-profile-image {
+  padding-bottom: 60px;
+}
+.reviews-container ul.collection li.avatar .review-content {
+  text-align: center;
 }
 
 .admin-index .main-nav, .admin-reviews .main-nav, .admin-posts .main-nav {
@@ -629,7 +642,7 @@ body h3 {
   font-family: "Abril Fatface", cursive;
 }
 body a {
-  color: #B8685D;
+  color: black;
   outline: none;
   cursor: pointer;
   text-decoration: none;

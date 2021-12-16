@@ -8,6 +8,9 @@
                 <ul class="tabs">
                     <li class="tab col s3"><a class="active" href="#infos">Informations</a></li>
                     <li class="tab col s3"><a href="#reviews">Reviews</a></li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="tab col s3"><a href="#posts">Posts</a></li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- ****** TABS 1 PROFILE INFOS  ******-->
@@ -58,9 +61,11 @@
                     {% if allReview is null or allReview is empty %}
                         <div class="card empty-post">
                             <h3>Share your first story with the community !</h3>
-                            <p>You've experienced a great moment ? Or a bad one ? We want to know everything about it </p>
-                            <p> Wonder around to find a place you've been to share your experience </p>
-                            <p> Or Wonder around and plan your next trip according to the community reviews !</p>
+                            <p>You've experienced a great moment ? Or a bad one ? We want to know everything about it.</p>
+                            <p>Sharying stories is what connects and brings us together.</p>
+                            <p>The community is made up of amazing people, from the individuals and families who benefit from your story to plan their next trip !</p>
+                            <p>Wonder around to find a place you've been to share your experience.</p>
+                            <p>Or Wonder around and plan your next trip according to the community reviews !</p>
                             <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('find') }}">Share !</a>
                         </div>
                     {% endif %}
@@ -78,6 +83,37 @@
                     {% endfor %}
                 </div>
             </div>
+            <!-- ****** TABS 3 POSTS ONLY IF ADMIN  ******-->
+            {% if is_granted('ROLE_ADMIN') %}
+                <div id="posts" class="col s12">
+                    <div class="container">
+                        {# IF ADMIN HAS NO POST POSTED YET #}
+                        {% if allPost is null or allPost is empty %}
+                            <div class="card empty-post">
+                                <h3>Share your first story with the community !</h3>
+                                <p>You've experienced a great moment ? Or a bad one ? We want to know everything about it.</p>
+                                <p>Sharying stories is what connects and brings us together.</p>
+                                <p>The community is made up of amazing people, from the individuals and families who benefit from your story to plan their next trip !</p>
+                                <p>Wonder around to find a place you've been to share your experience.</p>
+                                <p>Or Wonder around and plan your next trip according to the community reviews !</p>
+                                <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('find') }}">Share !</a>
+                            </div>
+                        {% endif %}
+                        {# LOOP IF USER HAS REVIEW POSTED #}
+                        {% for post in allPost %}
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header">
+                                        <h4> {{post.name}} </h4>
+                                        <h4> {{post.categories}} </h4>
+                                    </div>
+                                    <div class="collapsible-body"><span>{{post.description}}</span></div>
+                                </li>
+                            </ul>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </section>
 

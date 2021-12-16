@@ -46,8 +46,8 @@
             <div class="row">
                 {% for post in allRestau %}
                     <div class="col s12 m12 l6">
-                        <div class="card-test">
-                            <div class="card">
+                        <a class="card-find" href="{{ path('post_show', {'id': post.id}) }}">
+                            <div class="card hoverable">
                                 <div class="card-image">
                                     <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
                                 </div>
@@ -62,14 +62,12 @@
                                         <div class="row">
                                             <div class="col l12">
                                                 <h5>{{ post.city }}, {{ post.country }}</h5>
-                                                <a class="btn-show red lighten-2 btn" href="{{ path('post_show', {'id': post.id}) }}">show</a>
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 {% endfor %}
             </div>

@@ -7,6 +7,21 @@
     }
 }
 
+.reviews-container {
+    ul.collection {
+        li.avatar {
+            padding: 20px 20px 20px 20px;
+            .review-profile-image {
+                padding-bottom: 60px;
+            }
+
+            .review-content {
+                text-align: center;
+            }
+        }
+    }
+}
+
 // .card-show {
 
 //     .card {
