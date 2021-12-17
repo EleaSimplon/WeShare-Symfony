@@ -4,7 +4,13 @@
     align-items: center;
 }
 
-@mixin span-h() {
+@mixin title-style {
+    font-size: 50px;
+    line-height: 1.3;
+    font-family: 'Abril Fatface', cursive;
+}
+
+@mixin span-title() {
     font-size: 50px;
     padding-bottom: 12px;
     line-height: 3;
@@ -23,7 +29,7 @@
     h1 {
         margin: 0;
         span {
-            @include span-h;
+            @include span-title;
             border-color: #e8f380;
         }
     }
@@ -46,12 +52,10 @@
         letter-spacing: 2px;
     
         h1 {
-            font-size: 50px;
-            line-height: 1.3;
-            font-family: 'Abril Fatface', cursive;
+            @include title-style;
     
             span {
-                @include span-h;
+                @include span-title;
                 color: #E4BFAD;
                 border-color: #e8f380;
             }

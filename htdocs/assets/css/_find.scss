@@ -3,53 +3,77 @@
 
 .section-find {
     overflow: hidden;
-}
-
-.header-find {
-
-    padding: 0;
-
-    img {
-        width: 28rem;
-    }
+    .header-find {
     
-    @include header-img;
+        padding: 0;
     
-    .header-img {
-        background: url(/assets/images/bg.png) no-repeat;
-        background-size: cover;
-        position: relative;
-
         img {
-            position: absolute;
-            bottom: 1.5px;
+            width: 28rem;
         }
-    }
-
-    h5 span {
-        font-weight: bold;
-    }
-
-}
-
-.categories {
- 
-    a {
-        color: black;
-    }
-
-    margin-top: 3rem;
-
-    .inspi {
-        margin-top: 5rem;
-        font-weight: bold
-    }
-
-    h3 {
-        span {
-            @include span-h;
-            border-color: #e8f380;
+        
+        @include header-img;
+        
+        .header-img {
+            background: url(/assets/images/header-find.png) no-repeat;
+            background-size: cover;
+            position: relative;
+    
+            h1 {
+                margin: 0 auto;
+            }
+    
+            img {
+                position: absolute;
+                bottom: 1.5px;
+            }
         }
+    
+        h5 span {
+            font-weight: bold;
+        }
+    
     }
+    
+    .categories {
+     
+        a {
+            color: black;
+        }
+    
+        margin-top: 3rem;
+    
+        .inspi {
+            margin-top: 5rem;
+            font-weight: bold
+        }
+    
+        h3 {
+            span {
+                border-color: #e8f380;
+            }
+        }
+    
+    }
+    
+    .find-numbers {
+        background-color: #efd4c5;
+        img {
+            width: 5rem;
+        }
+       
+        .row {
+            margin-bottom: auto;
+        }
 
+        h1 {
+            span {
+                border-color: #ffffff;
+            }
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    
+    }
 }

@@ -7,7 +7,6 @@
 @import 'find';
 @import 'profile';
 @import 'card-post';
-@import 'sign';
 @import 'show-post';
 @import 'admin';
 
@@ -19,8 +18,14 @@ body {
         font-family: 'Catamaran', sans-serif;
     }
 
-    h3 {
-        font-family: 'Abril Fatface', cursive;
+    h1, h2, h3 {
+        @include title-style;
+    }
+
+    h1 {
+        span {
+            @include span-title;
+        }
     }
 
     a {
@@ -45,7 +50,7 @@ nav {
         margin-left: 1rem;
     }
     ul a:hover {
-        background-color: #b8685d2b!important;
+        background-color: #FAF7F5!important;
     }
 }
 
@@ -61,6 +66,20 @@ nav {
             object-fit: cover;
         }
     } 
+}
+
+/**************** TABS *************/
+
+.tabs {
+    @include d-flex-center;
+    .tab {
+        a, a.active {
+            color: #B8685D;
+        }
+    }
+    li.indicator {
+        background-color: #795548;
+    }
 }
 
 /**************** PAGINATION *************/
@@ -95,9 +114,12 @@ nav {
             }
         }
         .footer-social-net {
-            i{
-                font-size: 30px;
-                margin-right: 10px;
+            a {
+                color: white;
+                i{
+                    font-size: 30px;
+                    margin-right: 10px;
+                }
             }
         }
     }

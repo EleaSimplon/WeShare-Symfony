@@ -44,13 +44,12 @@
     margin-top: 3rem;
 
     h2 {
-        font-family: 'Abril Fatface', cursive;
         color: #B9685D;
     }
 
     h3 {
         span {
-            @include span-h;
+            @include span-title;
             border-color: #e8f380;
         }
     }

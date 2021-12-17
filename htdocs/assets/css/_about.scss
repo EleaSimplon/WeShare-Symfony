@@ -2,8 +2,14 @@
 
 .about-header {
     @include header-img;
+    .header-img {
+        background: url(/assets/images/bg.png) no-repeat;
+        background-size: cover;
+        position: relative;
+    }
     h1{
         padding-top: 105px;
+        margin: 0 auto;
     }
 }
 
@@ -15,7 +21,7 @@
         color: #B8685D;
 
         span {
-            @include span-h;
+            @include span-title;
             color: #E4BFAD;
             border-color: #e8f380;
         }
@@ -60,7 +66,6 @@
 
         h1 {
             span {
-                @include span-h;
                 border-color: #ffffff;
             }
         }
@@ -83,7 +88,7 @@
         
         h1 {
             span {
-                @include span-h;
+                @include span-title;
                 border-color: #e4bfad;
             }
         }
@@ -94,8 +99,8 @@
     }
 }
 
-.about-share {
-    .row {
-        margin-bottom: 0;
+.about-faq {
+    h1 {
+        @include title-style;
     }
 }

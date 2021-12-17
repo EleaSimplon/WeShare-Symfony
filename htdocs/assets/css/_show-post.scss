@@ -28,6 +28,17 @@
     }
 }
 
+// IMAGE CERCLE MATERIALIZE
+.collection .collection-item.avatar:not(.circle-clipper)>.circle, .collection .collection-item.avatar :not(.circle-clipper)>.circle {
+    position: absolute;
+    width: 65px;
+    height: auto;
+    overflow: hidden;
+    left: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 // CARD REVIEWS
 .reviews-container {
     ul.collection {
@@ -36,7 +47,8 @@
             padding: 20px 20px 20px 20px;
 
             .review-profile-image {
-                padding-bottom: 60px;
+                padding-bottom: 80px;
+                position: relative;
             }
 
             .review-content {
