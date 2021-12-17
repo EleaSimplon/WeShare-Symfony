@@ -1,5 +1,5 @@
 // NAV BAR
-.admin-index, .admin-reviews, .admin-posts {
+.admin-index, .admin-reviews, .admin-posts, .admin-post-show, .admin-post-edit {
 
   .main-nav {
     background: #404040;
@@ -44,7 +44,7 @@
   }
       
   .content {
-    width: 100% ;
+    width: 97% ;
     height: auto;
     background: #fff;
     margin: 0 auto;
@@ -69,4 +69,10 @@
     }
   }
    
+}
+
+.admin-posts, .admin-reviews {
+  tr {
+    cursor: pointer;
+  }
 }

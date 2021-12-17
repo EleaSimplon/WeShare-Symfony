@@ -77,3 +77,20 @@
     
     }
 }
+
+// FIND // RESTAURANT
+
+.header-find-cat {
+    @include header-img;
+    
+    .header-img {
+        background: url(/assets/images/find-cat.jpg) no-repeat;
+        @include bck-img;
+        
+
+        h1 {
+            margin: 0 auto;
+        }
+    }
+
+}

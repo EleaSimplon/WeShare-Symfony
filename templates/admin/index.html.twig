@@ -88,28 +88,29 @@
             <div class="row">
                 {# POSTS #}
                 <div class="col s12 l6">
-                    <div style="padding: 35px;" align="center" class="card brown lighten-5">
+                    <div class="card brown lighten-5" style="padding: 35px;" align="center">
                         <div class="row">
                             <div class="center-align card-title">
                                 <b>POSTS</b>
                             </div>
                         </div>
                         <div class="row">
-                            <a href="{{ path ('admin_post_new')}}">
-                            <div style="padding: 30px; border-radius:3px;" class="brown lighten-4 lighten-3 col s12 l5 waves-effect">
-                                <i class="black-text text-black large material-icons">library_add</i>
-                                <span class="black-text text-black"><h5>Create</h5></span>
+                            <div class="col l6 s12">
+                                <a href="{{ path ('admin_post_new')}}">
+                                    <div style="padding: 30px; border-radius:3px; width:100%;" class="brown lighten-4 lighten-3 col waves-effect">
+                                        <i class="black-text text-black large material-icons">library_add</i>
+                                        <span class="black-text text-black"><h5>Create</h5></span>
+                                    </div>
+                                </a>
                             </div>
-                            </a>
-                            <div class="col s1">&nbsp;</div>
-                            <div class="col s1">&nbsp;</div>
-
-                            <a href="{{ path ('admin_post_show_all')}}">
-                            <div style="padding: 30px; border-radius:3px;" class="brown lighten-4 lighten-3 col s12 l5 waves-effect">
-                                <i class="black-text text-black large material-icons">remove_red_eye</i>
-                                <span class="black-text text-black"><h5>Show</h5></span>
+                            <div class="col l6 s12">
+                                <a href="{{ path ('admin_post_show_all')}}">
+                                    <div style="padding: 30px; border-radius:3px; width:100%;" class="brown lighten-4 lighten-3 col waves-effect">
+                                        <i class="black-text text-black large material-icons">remove_red_eye</i>
+                                        <span class="black-text text-black"><h5>Show</h5></span>
+                                    </div>
+                                </a>
                             </div>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -118,28 +119,21 @@
                     <div style="padding: 35px;" align="center" class="card green lighten-5">
                         <div class="row">
                             <div class="center-align card-title">
-                            <b>REVIEWS</b>
+                                <b>REVIEWS</b>
                             </div>
                         </div>
                         <div class="row">
+                        <div class="col l12">
+                        
                             <a href="{{ path ('admin_review_show_all')}}">
-                            <div style="padding: 30px; border-radius:3px;" class="green lighten-4 col s12 l5 waves-effect">
-                                <i class="black-text text-black large material-icons">remove_red_eye</i>
-                                <span class="black-text text-black"><h5>Show</h5></span>
-                            </div>
-                            </a>
-                            <div class="col s1">&nbsp;</div>
-                            <div class="col s1">&nbsp;</div>
-
-                            <a href="#!">
-                            <div style="padding: 30px; border-radius:3px;" class="green lighten-4 col s12 l5 waves-effect">
-                                <i class="black-text text-black large material-icons">mode_edit</i>
-                                <span class="black-text text-black"><h5>Edit</h5></span>
-                            </div>
+                                <div style="padding: 30px; border-radius:3px; width:100%;" class="green lighten-4 waves-effect">
+                                    <i class="black-text text-black large material-icons">remove_red_eye</i>
+                                    <span class="black-text text-black"><h5>Show</h5></span>
+                                </div>
                             </a>
                         </div>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             {# GRAPHIC DATA GIF #}

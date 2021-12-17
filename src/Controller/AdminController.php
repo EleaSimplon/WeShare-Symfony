@@ -67,7 +67,7 @@ class AdminController extends AbstractController
             $entityManager->persist($post);
             $entityManager->flush();
 
-            return $this->redirectToRoute('post_show', [
+            return $this->redirectToRoute('admin_post_show', [
                 'id' => $post->getId()
             ]);
         }
@@ -80,7 +80,27 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/admin/post/edit", name="post_edit", methods={"GET","POST"})
+     * @Route("/{id}/admin/post/show", name="admin_post_show", methods={"GET"})
+     */
+    public function showPost(Post $post, Request $request, ReviewRepository $reviewRepository): Response
+    {
+
+        $rateAvg = $reviewRepository->findByAvgReviewRate(
+            $post->getId()
+        );
+        
+        // POUR REGLER LE PROBLEM "ARRAY CONVERT TO STRING"
+        $rateAvg = implode($rateAvg[0]);
+
+        return $this->render('admin/post_show.html.twig', [
+            'post' => $post,
+            'user'=>$this->getUser(),
+            'rateAvg' => $rateAvg
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/admin/post/edit", name="admin_post_edit", methods={"GET","POST"})
      */
     public function editPost(Request $request, Post $post): Response
     {
@@ -90,12 +110,15 @@ class AdminController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('post_index');
+            return $this->redirectToRoute('admin_post_show', [
+                'id' => $post->getId()
+            ]);
         }
 
-        return $this->render('post/edit.html.twig', [
+        return $this->render('admin/post_edit.html.twig', [
             'post' => $post,
             'form' => $form->createView(),
+            'user'=>$this->getUser()
         ]);
     }
 
@@ -133,6 +156,17 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/{id}/admin/review/show", name="admin_review_show", methods={"GET"})
+     */
+    public function showReview(Review $review): Response
+    {
+
+        return $this->render('admin/review_show.html.twig', [
+            'review' => $review,
+        ]);
+    }
+
+    /**
     * @Route("admin/review/show/all", name="admin_review_show_all")
     */
     public function reviewShowAll(ReviewRepository $customer)
@@ -141,6 +175,26 @@ class AdminController extends AbstractController
 
         return $this->render('admin/review_show_all.html.twig', [
             'reviews' => $review->findAll()
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/admin/review/edit", name="admin_review_edit", methods={"GET","POST"})
+     */
+    public function editReview(Request $request, Review $review): Response
+    {
+        $form = $this->createForm(ReviewType::class, $review);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('review_index');
+        }
+
+        return $this->render('review/edit.html.twig', [
+            'review' => $review,
+            'form' => $form->createView(),
         ]);
     }
     

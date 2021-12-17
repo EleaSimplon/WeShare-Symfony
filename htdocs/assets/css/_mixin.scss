@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+@mixin bck-img {
+    background-size: cover;
+}
+
 @mixin title-style {
     font-size: 50px;
     line-height: 1.3;

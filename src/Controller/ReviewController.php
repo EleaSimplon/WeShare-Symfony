@@ -120,7 +120,7 @@ class ReviewController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('review_index');
+        return $this->redirectToRoute('admin_review_show_all');
     }
 
     // UPLOAD PICTURE IN NEW REVIEW

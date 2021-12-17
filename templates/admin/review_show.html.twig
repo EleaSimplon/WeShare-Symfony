@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Review Show{% endblock %}
+
+{% block body %}
+
+    <section class="admin-post-show">
+        {# HEADER NAV BAR #}
+        <header class='main-nav'>
+            <ul>
+                <a href="{{ path ('admin')}}">
+                    <li>
+                    <i class='fa fa-tachometer'></i>
+                    <span>Dashboard</span>
+                    </li>
+                </a>
+                <a href="{{ path ('admin_post_show_all')}}">
+                    <li>
+                    <i class="far fa-file-image"></i>
+                    <span>Post</span>
+                    </li>
+                </a>
+                <a href="{{ path ('admin_review_show_all')}}">
+                    <li style="background: #525252;">
+                    <i class="fas fa-comments"></i>
+                    <span>Review</span>
+                    </li>
+                </a>
+            </ul>
+        </header>
+    </section>
+
+    <main class="container content center-align">
+        <!-- ********** SECTION 2 HEADER IMG PARALLAX EFFECT  **********-->
+        <section>
+            <div class="card-post">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m7 l12">
+                            <div class="card center-align z-depth-4">
+                                <div class="card-image">
+                                    <img src="{{asset('assets/images/picture-review/' ~ review.picture) }}">
+                                </div>
+                                <div class="card-title">
+                                    <h3>{{ review.title }}</h3>
+                                </div>
+                                <div class="card-content center-align">
+                                    <p>{{ review.description }}</p>
+                                    <div class="card-action">
+                                        <p class="review-rate" style="display:flex; align-items:center; justify-content:center;">{{ review.rate }}<i class="material-icons amber-text">grade</i></p>
+                                    </div>
+                                    <div class="card-action">
+                                        <h5>By {{ review.user.userName }}</h5>
+                                    </div>
+                                    <div class="card-action">
+                                        <p>{{ review.postedAt ? review.postedAt|date('Y-m-d') : '' }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

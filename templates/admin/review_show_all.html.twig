@@ -42,14 +42,13 @@
                 </thead>
                 <tbody>
                     {% for review in reviews %}
-                        <tr>
+                        <tr data-href="{{ path('admin_review_show', {'id': review.id}) }}">
                             <td>{{ review.title }}</td>
                             <td>{{ review.description }}</td>
                             <td>{{ review.picture }}</td>
                             <td>{{ review.rate }}</td>
                             <td>{{ review.postedAt ? review.postedAt|date('Y-m-d') : '' }}</td>
-                            <td><button>Delete</button></td>
-                            <td><button>Edit</button></td>
+                            <td>{{ include('admin/review_delete.html.twig') }}</td>
                         </tr>
                         {% else %}
                         <tr>
@@ -61,4 +60,14 @@
         </div>
     </section>
     
+{% endblock %}
+
+{# FONCTION JQUERY TO ADD A HREF TO THE TR #}
+{% block javascripts %}
+    <script>
+        $('tr[data-href]').on("click", function() {
+            document.location = $(this).data('href');
+        });
+    </script>
+
 {% endblock %}

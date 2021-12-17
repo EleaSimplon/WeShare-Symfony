@@ -15,8 +15,6 @@ include '../include/header.php';
     </div>
 
     </div> 
-
-    
     
     <!-- ********** FORM TO SHARE EXPERIENCE ********** -->
     

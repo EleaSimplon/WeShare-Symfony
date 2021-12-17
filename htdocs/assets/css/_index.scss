@@ -8,7 +8,7 @@
     
     .header-img {
         background: url(/assets/images/bk-home.png) no-repeat;
-        background-size: cover;
+        @include bck-img;
 
         .row {
             display: flex;

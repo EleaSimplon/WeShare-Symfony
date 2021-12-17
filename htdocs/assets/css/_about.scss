@@ -3,9 +3,8 @@
 .about-header {
     @include header-img;
     .header-img {
-        background: url(/assets/images/bg.png) no-repeat;
-        background-size: cover;
-        position: relative;
+        background: url(/assets/images/test3.jpg) no-repeat;
+        @include bck-img;
     }
     h1{
         padding-top: 105px;

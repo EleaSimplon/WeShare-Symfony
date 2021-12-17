@@ -133,7 +133,7 @@ class PostController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('post_index');
+        return $this->redirectToRoute('admin_post_show_all');
     }
 
     // UPLOAD PICTURE IN NEW REVIEW

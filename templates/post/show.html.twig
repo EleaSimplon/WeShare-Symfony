@@ -27,9 +27,9 @@
         <div class="container">
             <div class="row">
                 <div class="col l6">
-                    {% if post.categories == "restaurant" %}
+                    {% if post.categories == "Restaurant" %}
                         <a class="btn brown" href="{{ path ('restaurant') }}">Back to list</a>
-                        {% elseif post.categories == "activity" %}
+                        {% elseif post.categories == "Activity" %}
                             <a class="btn brown" href="{{ path ('activity') }}">Back to list</a>
                         {% else %}
                             <a class="btn brown" href="{{ path ('destination') }}">Back to list</a>
@@ -59,7 +59,7 @@
                                     <h5>{{ post.address }}, {{ post.city }}, {{ post.country }}</h5>
                                 </div>
                             </div>
-                            {% if post.webSite != "" %}
+                            {% if post.webSite %}
                                 <div class="card-action">
                                     <div class="row">
                                         <div class="col l12">
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                                 {% endif %}
-                                {% if post.phoneNumber != "" %}
+                                {% if post.phoneNumber %}
                                     <div class="card-action">
                                         <div class="row">
                                             <div class="col l12">
@@ -81,7 +81,6 @@
                     </div>
                 </div>
             </div>
-            
         </div>
     </section>
 
@@ -124,11 +123,5 @@
             {{ knp_pagination_render(reviewByPost) }}
         </div>
     </section>
-
-   {# <a href="{{ path('post_index') }}">back to list</a>
-
-    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
-
-    {{ include('post/_delete_form.html.twig') }} #}
     
 {% endblock %}

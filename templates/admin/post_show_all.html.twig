@@ -46,19 +46,19 @@
                 </thead>
                 <tbody>
                     {% for post in posts %}
-                        <tr>
-                            <td>{{ post.categories }}</td>
-                            <td>{{ post.name }}</td>
-                            <td>{{ post.description }}</td>
-                            <td>{{ post.address }}</td>
-                            <td>{{ post.city }}</td>
-                            <td>{{ post.country }}</td>
-                            <td>{{ post.picture }}</td>
-                            <td>{{ post.webSite }}</td>
-                            <td>{{ post.phoneNumber }}</td>
-                            <td><button>Delete</button></td>
-                            <td><button>Edit</button></td>
-                        </tr>
+                            <tr data-href="{{ path('admin_post_show', {'id': post.id}) }}">
+                                <td>{{ post.categories }}</td>
+                                <td>{{ post.name }}</td>
+                                <td>{{ post.description }}</td>
+                                <td>{{ post.address }}</td>
+                                <td>{{ post.city }}</td>
+                                <td>{{ post.country }}</td>
+                                <td>{{ post.picture }}</td>
+                                <td>{{ post.webSite }}</td>
+                                <td>{{ post.phoneNumber }}</td>
+                                <td><a class="btn green lighten-4" href="{{ path('admin_post_edit', {'id': post.id}) }}">Edit</a></td>
+                                <td>{{ include('admin/post_delete.html.twig') }}</td>
+                            </tr>
                         {% else %}
                         <tr>
                             <td colspan="8">no records found</td>
@@ -69,4 +69,14 @@
         </div>
     </section>
     
+{% endblock %}
+
+{# FONCTION JQUERY TO ADD A HREF TO THE TR #}
+{% block javascripts %}
+    <script>
+        $('tr[data-href]').on("click", function() {
+            document.location = $(this).data('href');
+        });
+    </script>
+
 {% endblock %}
