@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Admin All Review{% endblock %}
+{% block title %}Admin All User{% endblock %}
 
 {% block body %}
 
-    <section class="admin-reviews">
+    <section class="admin-users">
         {# HEADER NAV BAR #}
         <header class='main-nav'>
             <ul>
@@ -15,19 +15,19 @@
                     </li>
                 </a>
                 <a href="{{ path ('admin_user_show_all')}}">
-                    <li>
+                    <li style="background: #525252;">
                     <i class="far fa-user"></i>
                     <span>User</span>
                     </li>
                 </a>
-               <a href="{{ path ('admin_post_show_all')}}">
+                <a href="{{ path ('admin_post_show_all')}}">
                     <li>
                     <i class="far fa-file-image"></i>
                     <span>Post</span>
                     </li>
                 </a>
                 <a href="{{ path ('admin_review_show_all')}}">
-                    <li style="background: #525252;">
+                    <li>
                     <i class="fas fa-comments"></i>
                     <span>Review</span>
                     </li>
@@ -39,23 +39,19 @@
             <table class="responsive-table highlight">
                 <thead>
                     <tr>
-                        <th>Title</th>
+                        <th>Name</th>
+                        <th>Email</th>
                         <th>Description</th>
-                        <th>Picture</th>
-                        <th>Rate</th>
-                        <th>Posted At</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for review in reviews %}
-                        <tr data-href="{{ path('admin_review_show', {'id': review.id}) }}">
-                            <td>{{ review.title }}</td>
-                            <td>{{ review.description }}</td>
-                            <td>{{ review.picture }}</td>
-                            <td>{{ review.rate }}</td>
-                            <td>{{ review.postedAt ? review.postedAt|date('Y-m-d') : '' }}</td>
-                            <td>{{ include('admin/review_delete.html.twig') }}</td>
-                        </tr>
+                    {% for user in users %}
+                            <tr data-href="{{ path('admin_user_show', {'id': user.id}) }}">
+                                <td>{{ user.userName }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>{{ user.userDescription }}</td>
+                                <td>{{ include('admin/user_delete.html.twig') }}</td>
+                            </tr>
                         {% else %}
                         <tr>
                             <td colspan="8">no records found</td>

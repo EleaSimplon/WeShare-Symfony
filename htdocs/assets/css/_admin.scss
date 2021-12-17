@@ -1,5 +1,11 @@
 // NAV BAR
-.admin-index, .admin-reviews, .admin-posts, .admin-post-show, .admin-post-edit {
+.admin-index,
+.admin-reviews,
+.admin-posts,
+.admin-post-show,
+.admin-post-edit,
+.admin-users,
+.admin-user-show  {
 
   .main-nav {
     background: #404040;
@@ -68,10 +74,9 @@
       }
     }
   }
-   
 }
 
-.admin-posts, .admin-reviews {
+.admin-posts, .admin-reviews, .admin-users {
   tr {
     cursor: pointer;
   }

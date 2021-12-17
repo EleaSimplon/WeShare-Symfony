@@ -19,26 +19,26 @@ class ReviewType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('rate', RangeType::class, [
-                'attr' => [
-                    'min' => 0,
-                    'max' => 5
-                ]
-            ])
-            ->add('title')
-            ->add('description',TextareaType::class, [
-                'required' => false,
-            ])
-            ->add('picture', FileType::class, [
-                'mapped' => false,
-                'required' => false,
-                'label' => ' ',
-                'constraints' => [
-                    new File([
-                        'mimeTypesMessage' => 'Please upload a valid document',
-                    ])
-                ],
-            ]);
+        ->add('rate', RangeType::class, [
+            'attr' => [
+                'min' => 0,
+                'max' => 5
+            ]
+        ])
+        ->add('title')
+        ->add('description',TextareaType::class, [
+            'required' => false,
+        ])
+        ->add('picture', FileType::class, [
+            'mapped' => false,
+            'required' => false,
+            'label' => ' ',
+            'constraints' => [
+                new File([
+                    'mimeTypesMessage' => 'Please upload a valid document',
+                ])
+            ],
+        ]);
             
     }
 

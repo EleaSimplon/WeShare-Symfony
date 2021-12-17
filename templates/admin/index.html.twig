@@ -15,6 +15,12 @@
                     <span>Dashboard</span>
                     </li>
                 </a>
+                 <a href="{{ path ('admin_user_show_all')}}">
+                    <li>
+                    <i class="far fa-user"></i>
+                    <span>User</span>
+                    </li>
+                </a>
                 <a href="{{ path ('admin_post_show_all')}}">
                     <li>
                     <i class="far fa-file-image"></i>
@@ -35,7 +41,7 @@
             <div class="row">
                 <div class="col s12 l4">
                     {# CARD USERS #}
-                    <div class="card orange lighten-5">
+                    <div class="card purple lighten-4">
                         <div class="card-content">
                             {% set totalUser = 0 %}
 
@@ -52,7 +58,7 @@
                 </div>
                 <div class="col s12 l4">
                     {# CARD POSTS #}
-                    <div class="card brown lighten-5">
+                    <div class="card light-blue lighten-4">
                         <div class="card-content">
                             {% set totalPost = 0 %}
 
@@ -86,9 +92,29 @@
                 </div>
             </div>
             <div class="row">
+                {# USERS #}
+                <div class="col s12 m12 l4">
+                    <div style="padding: 35px;" align="center" class="card purple lighten-4">
+                        <div class="row">
+                            <div class="center-align card-title">
+                                <b>USERS</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 l12">
+                                <a href="{{ path ('admin_user_show_all')}}">
+                                    <div style="padding: 30px; border-radius:3px; width:100%;" class="purple lighten-3 waves-effect">
+                                        <i class="black-text text-black large material-icons">remove_red_eye</i>
+                                        <span class="black-text text-black"><h5>Show</h5></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 {# POSTS #}
-                <div class="col s12 l6">
-                    <div class="card brown lighten-5" style="padding: 35px;" align="center">
+                <div class="col s12 m12 l4">
+                    <div class="card light-blue lighten-4" style="padding: 35px;" align="center">
                         <div class="row">
                             <div class="center-align card-title">
                                 <b>POSTS</b>
@@ -97,7 +123,7 @@
                         <div class="row">
                             <div class="col l6 s12">
                                 <a href="{{ path ('admin_post_new')}}">
-                                    <div style="padding: 30px; border-radius:3px; width:100%;" class="brown lighten-4 lighten-3 col waves-effect">
+                                    <div style="padding: 30px; border-radius:3px; width:100%;" class="light-blue lighten-3 lighten-3 col waves-effect">
                                         <i class="black-text text-black large material-icons">library_add</i>
                                         <span class="black-text text-black"><h5>Create</h5></span>
                                     </div>
@@ -105,7 +131,7 @@
                             </div>
                             <div class="col l6 s12">
                                 <a href="{{ path ('admin_post_show_all')}}">
-                                    <div style="padding: 30px; border-radius:3px; width:100%;" class="brown lighten-4 lighten-3 col waves-effect">
+                                    <div style="padding: 30px; border-radius:3px; width:100%;" class="light-blue lighten-3 col waves-effect">
                                         <i class="black-text text-black large material-icons">remove_red_eye</i>
                                         <span class="black-text text-black"><h5>Show</h5></span>
                                     </div>
@@ -115,7 +141,7 @@
                     </div>
                 </div>
                 {# REVIEWS #}
-                <div class="col s12 l6">
+                <div class="col s12 m12 l4">
                     <div style="padding: 35px;" align="center" class="card green lighten-5">
                         <div class="row">
                             <div class="center-align card-title">
@@ -123,15 +149,14 @@
                             </div>
                         </div>
                         <div class="row">
-                        <div class="col l12">
-                        
-                            <a href="{{ path ('admin_review_show_all')}}">
-                                <div style="padding: 30px; border-radius:3px; width:100%;" class="green lighten-4 waves-effect">
-                                    <i class="black-text text-black large material-icons">remove_red_eye</i>
-                                    <span class="black-text text-black"><h5>Show</h5></span>
-                                </div>
-                            </a>
-                        </div>
+                            <div class="col s12 l12">
+                                <a href="{{ path ('admin_review_show_all')}}">
+                                    <div style="padding: 30px; border-radius:3px; width:100%;" class="green lighten-4 waves-effect">
+                                        <i class="black-text text-black large material-icons">remove_red_eye</i>
+                                        <span class="black-text text-black"><h5>Show</h5></span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

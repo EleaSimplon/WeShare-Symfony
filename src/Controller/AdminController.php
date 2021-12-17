@@ -13,6 +13,8 @@ use App\Repository\PostRepository;
 // POST
 use App\Entity\Review;
 use App\Repository\ReviewRepository;
+// USER
+use App\Repository\UserRepository;
 // UPLOAD PICTURE
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\String\Slugger\SluggerInterface;
@@ -160,7 +162,6 @@ class AdminController extends AbstractController
      */
     public function showReview(Review $review): Response
     {
-
         return $this->render('admin/review_show.html.twig', [
             'review' => $review,
         ]);
@@ -197,5 +198,25 @@ class AdminController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    
+
+    /**
+    * @Route("admin/user/show/all", name="admin_user_show_all")
+    */
+    public function userShowAll(UserRepository $userRepository)
+    {
+
+        return $this->render('admin/user_show_all.html.twig', [
+            'users' => $userRepository->findAll(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/admin/user/show", name="admin_user_show", methods={"GET"})
+     */
+    public function showUser(User $user): Response
+    {
+        return $this->render('admin/user_show.html.twig', [
+            'user' => $user,
+        ]);
+    }
 }

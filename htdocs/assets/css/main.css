@@ -650,22 +650,46 @@
   font-weight: 500;
 }
 
-.admin-index .main-nav, .admin-reviews .main-nav, .admin-posts .main-nav, .admin-post-show .main-nav, .admin-post-edit .main-nav {
+.admin-index .main-nav,
+.admin-reviews .main-nav,
+.admin-posts .main-nav,
+.admin-post-show .main-nav,
+.admin-post-edit .main-nav,
+.admin-users .main-nav,
+.admin-user-show .main-nav {
   background: #404040;
   padding: 1em;
   padding-bottom: 4em;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
-.admin-index .main-nav h2, .admin-reviews .main-nav h2, .admin-posts .main-nav h2, .admin-post-show .main-nav h2, .admin-post-edit .main-nav h2 {
+.admin-index .main-nav h2,
+.admin-reviews .main-nav h2,
+.admin-posts .main-nav h2,
+.admin-post-show .main-nav h2,
+.admin-post-edit .main-nav h2,
+.admin-users .main-nav h2,
+.admin-user-show .main-nav h2 {
   color: white;
 }
-.admin-index .main-nav ul, .admin-reviews .main-nav ul, .admin-posts .main-nav ul, .admin-post-show .main-nav ul, .admin-post-edit .main-nav ul {
+.admin-index .main-nav ul,
+.admin-reviews .main-nav ul,
+.admin-posts .main-nav ul,
+.admin-post-show .main-nav ul,
+.admin-post-edit .main-nav ul,
+.admin-users .main-nav ul,
+.admin-user-show .main-nav ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-.admin-index .main-nav ul li, .admin-reviews .main-nav ul li, .admin-posts .main-nav ul li, .admin-post-show .main-nav ul li, .admin-post-edit .main-nav ul li {
+.admin-index .main-nav ul li,
+.admin-reviews .main-nav ul li,
+.admin-posts .main-nav ul li,
+.admin-post-show .main-nav ul li,
+.admin-post-edit .main-nav ul li,
+.admin-users .main-nav ul li,
+.admin-user-show .main-nav ul li {
   width: 100px;
   display: inline-block;
   color: #fff;
@@ -675,21 +699,51 @@
   margin-right: 1em;
   cursor: pointer;
 }
-.admin-index .main-nav ul li:last-of-type, .admin-reviews .main-nav ul li:last-of-type, .admin-posts .main-nav ul li:last-of-type, .admin-post-show .main-nav ul li:last-of-type, .admin-post-edit .main-nav ul li:last-of-type {
+.admin-index .main-nav ul li:last-of-type,
+.admin-reviews .main-nav ul li:last-of-type,
+.admin-posts .main-nav ul li:last-of-type,
+.admin-post-show .main-nav ul li:last-of-type,
+.admin-post-edit .main-nav ul li:last-of-type,
+.admin-users .main-nav ul li:last-of-type,
+.admin-user-show .main-nav ul li:last-of-type {
   margin-right: 0;
 }
-.admin-index .main-nav ul li:hover, .admin-reviews .main-nav ul li:hover, .admin-posts .main-nav ul li:hover, .admin-post-show .main-nav ul li:hover, .admin-post-edit .main-nav ul li:hover {
+.admin-index .main-nav ul li:hover,
+.admin-reviews .main-nav ul li:hover,
+.admin-posts .main-nav ul li:hover,
+.admin-post-show .main-nav ul li:hover,
+.admin-post-edit .main-nav ul li:hover,
+.admin-users .main-nav ul li:hover,
+.admin-user-show .main-nav ul li:hover {
   background: #525252;
 }
-.admin-index .main-nav ul li i, .admin-reviews .main-nav ul li i, .admin-posts .main-nav ul li i, .admin-post-show .main-nav ul li i, .admin-post-edit .main-nav ul li i {
+.admin-index .main-nav ul li i,
+.admin-reviews .main-nav ul li i,
+.admin-posts .main-nav ul li i,
+.admin-post-show .main-nav ul li i,
+.admin-post-edit .main-nav ul li i,
+.admin-users .main-nav ul li i,
+.admin-user-show .main-nav ul li i {
   display: block;
   font-size: 2.5em;
 }
-.admin-index .main-nav ul li span, .admin-reviews .main-nav ul li span, .admin-posts .main-nav ul li span, .admin-post-show .main-nav ul li span, .admin-post-edit .main-nav ul li span {
+.admin-index .main-nav ul li span,
+.admin-reviews .main-nav ul li span,
+.admin-posts .main-nav ul li span,
+.admin-post-show .main-nav ul li span,
+.admin-post-edit .main-nav ul li span,
+.admin-users .main-nav ul li span,
+.admin-user-show .main-nav ul li span {
   display: block;
   margin-top: 1em;
 }
-.admin-index .content, .admin-reviews .content, .admin-posts .content, .admin-post-show .content, .admin-post-edit .content {
+.admin-index .content,
+.admin-reviews .content,
+.admin-posts .content,
+.admin-post-show .content,
+.admin-post-edit .content,
+.admin-users .content,
+.admin-user-show .content {
   width: 97%;
   height: auto;
   background: #fff;
@@ -699,19 +753,37 @@
   border-radius: 5px;
   padding: 1em;
 }
-.admin-index .content h1.title, .admin-reviews .content h1.title, .admin-posts .content h1.title, .admin-post-show .content h1.title, .admin-post-edit .content h1.title {
+.admin-index .content h1.title,
+.admin-reviews .content h1.title,
+.admin-posts .content h1.title,
+.admin-post-show .content h1.title,
+.admin-post-edit .content h1.title,
+.admin-users .content h1.title,
+.admin-user-show .content h1.title {
   margin: 0;
   padding-bottom: 0.4em;
   border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
 }
-.admin-index .content i, .admin-reviews .content i, .admin-posts .content i, .admin-post-show .content i, .admin-post-edit .content i {
+.admin-index .content i,
+.admin-reviews .content i,
+.admin-posts .content i,
+.admin-post-show .content i,
+.admin-post-edit .content i,
+.admin-users .content i,
+.admin-user-show .content i {
   font-size: 3.5em;
 }
-.admin-index .content .data-graphics img, .admin-reviews .content .data-graphics img, .admin-posts .content .data-graphics img, .admin-post-show .content .data-graphics img, .admin-post-edit .content .data-graphics img {
+.admin-index .content .data-graphics img,
+.admin-reviews .content .data-graphics img,
+.admin-posts .content .data-graphics img,
+.admin-post-show .content .data-graphics img,
+.admin-post-edit .content .data-graphics img,
+.admin-users .content .data-graphics img,
+.admin-user-show .content .data-graphics img {
   width: 100%;
 }
 
-.admin-posts tr, .admin-reviews tr {
+.admin-posts tr, .admin-reviews tr, .admin-users tr {
   cursor: pointer;
 }
 
