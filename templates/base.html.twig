@@ -32,8 +32,8 @@
         <nav class="transparent">
             <div class="nav-wrapper">
                 <a href="{{ path ('home') }}" class="brand-logo">We Share®</a>   
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="hide-on-med-and-down right" id="nav-mobile">
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="hide-on-med-and-down right" id="nav-desk">
                     <li><a href="{{ path ('about') }}" class="black-text">About</a></li>
                     <li><a href="{{ path ('find') }}" class="black-text">Find</a></li>
                     <li><a href="{{ path ('top_ten') }}" class="black-text">Top Rated</a></li>
@@ -41,17 +41,17 @@
                     {# IF CONNECTED LOGOUT ELSE LOGIN #}
                     {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                     
-                        <li>
+                        <li class="nav-profile">
                             <a class="btn-floating btn-medium waves-effect waves-light brown lighten-3" href="{{ path('my_profile') }}"><i class="material-icons">account_circle</i></a>
                         </li>
 
-                        <li>
+                        <li class="nav-logout">
                             <a class="waves-effect waves-light btn-small blue-grey darken-4" href="{{ path('app_logout') }}">Logout</a>
                         </li>
 
                         {% else %}
 
-                        <li>
+                        <li class="nav-login">
                             <a class="btn-floating btn-medium waves-effect waves-light brown lighten-3" href="{{ path('app_login') }}"><i class="material-icons">account_circle</i></a>
                         </li>
 
@@ -60,7 +60,7 @@
                     {# IF NOT CONNECTED REGISTER BTN APPEARS #}
                     {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 
-                        <li>
+                        <li class="nav-register">
                             <a class="waves-effect waves-light btn blue-grey darken-4" href="{{ path('app_register') }}">Register</a>
                         </li>
                         
@@ -69,13 +69,39 @@
                 </ul>
             </div>
         </nav> 
-        {# TEST NAV BAR RESPONSIVE DOESNT WORK #}
-        {# <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">Javascript</a></li>
-            <li><a href="mobile.html">Mobile</a></li>
-        </ul> #}
+        {# NAV BAR RESPONSIVE #}
+        <ul class="sidenav" id="nav-mobile">
+            <li><a href="{{ path ('about') }}" class="black-text">About</a></li>
+            <li><a href="{{ path ('find') }}" class="black-text">Find</a></li>
+            <li><a href="{{ path ('top_ten') }}" class="black-text">Top Rated</a></li>
+            {# IF CONNECTED LOGOUT ELSE LOGIN #}
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+            
+                <li class="nav-mobile-profile">
+                    <a class="btn-small btn-medium waves-effect waves-light brown lighten-3" href="{{ path('my_profile') }}">My Profile</a>
+                </li>
+
+                <li class="nav-mobile-logout">
+                    <a class="waves-effect waves-light btn-small blue-grey darken-4" href="{{ path('app_logout') }}">Logout</a>
+                </li>
+
+                {% else %}
+
+                <li class="nav-mobile-login">
+                    <a class="btn-small btn-medium waves-effect waves-light brown lighten-3" href="{{ path('app_login') }}">Login</a>
+                </li>
+
+            {% endif %}
+
+            {# IF NOT CONNECTED REGISTER BTN APPEARS #}
+            {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+
+                <li class="nav-mobile-register">
+                    <a class="waves-effect waves-light btn blue-grey darken-4" href="{{ path('app_register') }}">Register</a>
+                </li>
+                
+            {% endif %}
+        </ul>
 
         <!-- ***** BLOCK BODY ***** -->
         {% block body %}{% endblock %}
@@ -103,10 +129,10 @@
                 <div class="container">
                     {# FOLLOW US #}
                         <div class="footer-social-net">
-                            <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
-                            <a href="" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/leonardodicaprio/?hl=fr" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                 </div>
             </div>

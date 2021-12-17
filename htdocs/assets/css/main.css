@@ -84,7 +84,10 @@
 .home-text {
   background-color: #EFE3DE;
   text-align: center;
-  padding: 90px;
+  padding: 35px;
+}
+.home-text h1 {
+  margin: 0;
 }
 
 .share-find {
