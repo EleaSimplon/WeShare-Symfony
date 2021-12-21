@@ -1,13 +1,13 @@
 @import 'index';
 @import 'mixin';
 @import 'about';
-@import 'share';
 @import 'media';
 @import 'topRated';
 @import 'find';
 @import 'profile';
 @import 'card-post';
 @import 'show-post';
+@import 'new-review';
 @import 'admin';
 
 
@@ -137,4 +137,15 @@ nav {
     bottom: 25px;
     right: 25px;
     display: none;
+}
+
+/**************** SEARCH BAR *************/
+.search-bar {
+    background-color: rgb(227, 241, 253);
+
+    .container {
+        margin: auto;
+        @include d-flex-center;
+    }
+
 }

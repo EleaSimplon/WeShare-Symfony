@@ -85,9 +85,18 @@ class FindController extends AbstractController
             5
         );
 
+        // $rateAvg = $reviewRepository->findByAvgReviewRate(
+        //     $post->getId()
+        // );
+        
+        // // POUR REGLER LE PROBLEM "ARRAY CONVERT TO STRING"
+        // $rateAvg = implode($rateAvg[0]);
+
         return $this->render('find/activity.html.twig', [
             'controller_name' => 'FindController',
             'allActiv' => $allActiv,
+            'user'=>$this->getUser(),
+            // 'rateAvg' => $rateAvg
         ]);
     }
 

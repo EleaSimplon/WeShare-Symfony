@@ -82,9 +82,9 @@ class AdminController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/admin/post/show", name="admin_post_show", methods={"GET"})
+     * @Route("/{id}/admin/post/show", name="admin_post_show", methods={"GET", "POST"})
      */
-    public function showPost(Post $post, Request $request, ReviewRepository $reviewRepository): Response
+    public function showPost(Post $post, ReviewRepository $reviewRepository): Response
     {
 
         $rateAvg = $reviewRepository->findByAvgReviewRate(

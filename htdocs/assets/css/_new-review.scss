@@ -1,63 +1,52 @@
 @import 'mixin';
 
-.share-page {
-
+.review-page {
+    
     @include header-img;
-
     .header-img {
-        background: url(/assets/images/header-share.png) no-repeat;
-        padding-top: 110px;
+        background: url(/assets/images/test3.jpg) no-repeat;
+        @include bck-img;
     }
 
-    .share-container {
+    .new-review {
         // .card {
-        //     background-color: #e4bfad85;
+        //     background-color: #e4bfad65;
         // }
-
+    
         margin-top: 5rem;
         margin-bottom: 5rem;
-
+    
         h5 {
             padding: 2rem;
             text-align: center;
         }
-
+    
         p .range-field {
             margin: auto;
             text-align: center;
         }
         
         // ********* RATE RANGE 
-
+    
         // TO PUT THE ROUND BLACK
         input[type=range]::-webkit-slider-thumb {
             background-color: #563428;
         }
-
+    
         // TO PUT THE ROUND WHEN CLICKED BLACK
         input[type=range]+.thumb.active {
             background-color: #563428;
         }
-
+    
         // TO ERASE THE WHITE BORDER OF RATE
         input[type=range] {
             border: 1px solid;
         }
-
+    
         .card {
             .card-content {
                 padding: 70px;
             }
         }
     }
-}
-
-.search-bar {
-    background-color: rgb(227, 241, 253);
-
-    .container {
-        margin: auto;
-        @include d-flex-center;
-    }
-
 }

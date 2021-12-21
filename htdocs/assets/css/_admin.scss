@@ -5,7 +5,8 @@
 .admin-post-show,
 .admin-post-edit,
 .admin-users,
-.admin-user-show  {
+.admin-user-show,
+.admin-new-post {
 
   .main-nav {
     background: #404040;
@@ -80,4 +81,8 @@
   tr {
     cursor: pointer;
   }
+}
+
+.admin-new-post-form {
+  text-align: center;
 }

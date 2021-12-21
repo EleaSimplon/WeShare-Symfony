@@ -4,17 +4,39 @@
 
 {% block body %}
 
-    <section class="share-page">
-
-        <div class="header-img">
-            <div class="row">
-                <div class="col s12 m6 l4 right">
-                    <h1><span>SHARE</span><br>your experience</h1>
-                </div>
-            </div>
-        </div> 
+    <section class="admin-new-post">
+        {# HEADER NAV BAR #}
+        <header class='main-nav'>
+            <h2>Create a new post</h2>
+            <ul>
+                <a href="{{ path ('admin')}}">
+                    <li>
+                    <i class='fa fa-tachometer'></i>
+                    <span>Dashboard</span>
+                    </li>
+                </a>
+                <a href="{{ path ('admin_user_show_all')}}">
+                    <li>
+                    <i class="far fa-user"></i>
+                    <span>User</span>
+                    </li>
+                </a>
+                <a href="{{ path ('admin_post_show_all')}}">
+                    <li style="background: #525252;">
+                    <i class="far fa-file-image"></i>
+                    <span>Post</span>
+                    </li>
+                </a>
+                <a href="{{ path ('admin_review_show_all')}}">
+                    <li>
+                    <i class="fas fa-comments"></i>
+                    <span>Review</span>
+                    </li>
+                </a>
+            </ul>
+        </header>
         <!-- ********** FORM TO SHARE EXPERIENCE ********** -->
-        <div class="container share-container">
+        <div class="container content admin-new-post-form">
             <!--   Form Section   -->
             <div class="card">
                 <div class="card-content">
@@ -22,7 +44,6 @@
                         <!-- ********** NICK NAME **********-->
                         <div class="row">
                             <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">account_circle</i>
                                 <input type="text" id="autocomplete-input" class="autocomplete" disabled="true">
                                 <label for="autocomplete-input">{{user.userName}}</label>
                             </div>
@@ -36,7 +57,6 @@
                         <!-- ********** NAME OF **********-->
                         <div class="row">
                             <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">Name</i>
                                 {{ form_label(form.name, 'Name *') }}
                                 {{ form_widget(form.name) }}
                             </div>
@@ -44,7 +64,6 @@
                         <!-- ********** ADDRESS **********-->
                         <div class="row">
                             <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">address</i>
                                 {{ form_label(form.address, 'Address *') }}
                                 {{ form_widget(form.address) }}
                             </div>
@@ -52,7 +71,6 @@
                         <!-- ********** PHONE NUMBER **********-->
                         <div class="row">
                             <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">phone</i>
                                 {{ form_label(form.phone_number) }}
                                 {{ form_widget(form.phone_number) }}
                             </div>
@@ -60,7 +78,6 @@
                         <!-- ********** CITY **********-->
                         <div class="row">
                             <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">place</i>
                                 {{ form_label(form.city, 'City *') }}
                                 {{ form_widget(form.city) }}
                             </div>
@@ -68,21 +85,18 @@
                         <!-- ********** COUNTRY **********-->
                         <div class="row">
                             <div class="input-field col s12 l12">
-                                <i class="material-icons prefix">place</i>
                                 {{ form_label(form.country, 'Country *') }}
                                 {{ form_widget(form.country) }}
                             </div>
                         </div>
                         <!-- ********** WEBSITE **********-->
                         <div class="input-field col s12 l12">
-                            <i class="material-icons prefix">http</i>
                             {{ form_label(form.web_site) }}
                             {{ form_widget(form.web_site) }}
                         </div>
                         <h5><box-icon name='message-dots'></box-icon> Add a description !</h5>
                         <!-- ********** DESCRIPTION **********-->
                         <div class="input-field col s12 l12">
-                            <i class="material-icons prefix">border_color</i>
                             {{ form_label(form.description, 'Description *') }}
                             {{ form_widget(form.description) }}
                         </div>
@@ -106,7 +120,7 @@
                         <!-- ********** BTN **********-->
                         <div class="row">
                             <div class="input-field col s12 l12">    
-                                <button class="btn btn-large waves-effect waves-light brown darken-2 col s12" style="margin-top: 20px;" type="submit" name="action">
+                                <button class="btn btn-large waves-effect waves-light green lighten-3 col s12" style="margin-top: 20px;" type="submit" name="action">
                                     {{ button_label|default('Save') }}
                                     <i class="material-icons right">send</i>
                                 </button>
@@ -120,7 +134,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
 {% endblock %}
