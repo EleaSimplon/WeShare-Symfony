@@ -45,15 +45,21 @@ class FindController extends AbstractController
     /**
      * @Route("restaurant", name="restaurant")
      */
-    public function restaurant(Request $request, PostRepository $postRepository, PaginatorInterface $paginator): Response
+    public function restaurant(Request $request, PostRepository $postRepository, ReviewRepository $reviewRepository, PaginatorInterface $paginator): Response
     {
-
         // TO DISPLAY ALL THE POST WITH THE CATEGORY "RESTAURANT"
         // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
-        $allPostRestau = $postRepository->findBy([
-            'categories'=>'Restaurant'
-        ]);
+        $allPostRestau = $postRepository->findBy(['categories'=>'Restaurant']);
 
+        foreach ($allPostRestau as $post) {
+            $reviews=$post->getReviews()->getValues();
+            $sumRate = 0;
+            foreach ($reviews as $review) {
+                $sumRate += $review->getRate();
+            }
+            $avg = $sumRate / count($reviews);
+            $post->setAvgReviews($avg);
+        }
         // TO PAGINATE ALL RESTAU CATEGORY
         $allPostRestau = $paginator->paginate(
             $allPostRestau, /* query NOT result */// REQUEST CONTAINS DATA TO PAGINATE (OFFRES) //

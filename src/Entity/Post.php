@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PostRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -67,6 +69,18 @@ class Post
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $web_site;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Review::class, mappedBy="post")
+     */
+    private $reviews;
+
+    private $avgReviews;
+
+    public function __construct()
+    {
+        
+    }
 
     public function getId(): ?int
     {
@@ -189,6 +203,48 @@ class Post
     public function setWebSite(?string $web_site): self
     {
         $this->web_site = $web_site;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Review[]
+     */
+    public function getReviews(): Collection
+    {
+        return $this->reviews;
+    }
+
+    public function addReview(Review $review): self
+    {
+        if (!$this->reviews->contains($review)) {
+            $this->reviews[] = $review;
+            $review->setPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReview(Review $review): self
+    {
+        if ($this->reviews->removeElement($review)) {
+            // set the owning side to null (unless already changed)
+            if ($review->getPost() === $this) {
+                $review->setPost(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getAvgReviews(): float
+    {
+        return (float) $this->avgReviews;
+    }
+
+    public function setAvgReviews($avgReviews): self
+    {
+        $this->avgReviews = $avgReviews;
 
         return $this;
     }

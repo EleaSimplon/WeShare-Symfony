@@ -30,7 +30,7 @@ class Review
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=600)
      */
     private $description;
 
@@ -52,7 +52,7 @@ class Review
     private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Post::class)
+     * @ORM\ManyToOne(targetEntity=Post::class, inversedBy="reviews")
      * @ORM\JoinColumn(nullable=false)
      */
     private $post;
@@ -154,5 +154,6 @@ class Review
     {
         return $this->rate;
     }
+
 
 }
