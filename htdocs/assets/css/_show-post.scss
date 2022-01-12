@@ -8,6 +8,9 @@
         @include d-flex-center;
         .row{
             margin-bottom: 0;
+            a {
+                width: 100%;
+            }
         }
     }
 }

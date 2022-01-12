@@ -45,7 +45,7 @@ class FindController extends AbstractController
     /**
      * @Route("restaurant", name="restaurant")
      */
-    public function restaurant(Request $request, PostRepository $postRepository, ReviewRepository $reviewRepository, PaginatorInterface $paginator): Response
+    public function restaurant(Request $request, PostRepository $postRepository, PaginatorInterface $paginator): Response
     {
         // TO DISPLAY ALL THE POST WITH THE CATEGORY "RESTAURANT"
         // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
@@ -60,6 +60,7 @@ class FindController extends AbstractController
             $avg = $sumRate / count($reviews);
             $post->setAvgReviews($avg);
         }
+        
         // TO PAGINATE ALL RESTAU CATEGORY
         $allPostRestau = $paginator->paginate(
             $allPostRestau, /* query NOT result */// REQUEST CONTAINS DATA TO PAGINATE (OFFRES) //
@@ -80,9 +81,17 @@ class FindController extends AbstractController
     {
 
        // TO DISPLAY ALL THE POST WITH THE CATEGORY "ACTIVITIY"
-       $allActiv = $postRepository->findBy([
-        'categories'=>'Activity'
-        ]);
+       $allActiv = $postRepository->findBy(['categories'=>'Activity']);
+
+        foreach ($allActiv as $post) {
+            $reviews=$post->getReviews()->getValues();
+            $sumRate = 0;
+            foreach ($reviews as $review) {
+                $sumRate += $review->getRate();
+            }
+            $avg = $sumRate / count($reviews);
+            $post->setAvgReviews($avg);
+        }
 
         // TO PAGINATE ALL ACTIVITY CATEGORY
         $allActiv = $paginator->paginate(
@@ -91,12 +100,6 @@ class FindController extends AbstractController
             5
         );
 
-        // $rateAvg = $reviewRepository->findByAvgReviewRate(
-        //     $post->getId()
-        // );
-        
-        // // POUR REGLER LE PROBLEM "ARRAY CONVERT TO STRING"
-        // $rateAvg = implode($rateAvg[0]);
 
         return $this->render('find/activity.html.twig', [
             'controller_name' => 'FindController',
@@ -113,9 +116,17 @@ class FindController extends AbstractController
     {
 
        // TO DISPLAY ALL THE POST WITH THE CATEGORY "DESTINATION"
-        $allDesti = $postRepository->findBy([
-            'categories'=>'Destination'
-        ]);
+        $allDesti = $postRepository->findBy(['categories'=>'Destination']);
+
+        foreach ($allDesti as $post) {
+            $reviews=$post->getReviews()->getValues();
+            $sumRate = 0;
+            foreach ($reviews as $review) {
+                $sumRate += $review->getRate();
+            }
+            $avg = $sumRate / count($reviews);
+            $post->setAvgReviews($avg);
+        }
 
         // TO PAGINATE ALL DESTINATION CATEGORY
         $allDesti = $paginator->paginate(

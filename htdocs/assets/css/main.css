@@ -556,6 +556,9 @@
 .show-btn .container .row {
   margin-bottom: 0;
 }
+.show-btn .container .row a {
+  width: 100%;
+}
 
 .card-post .card {
   padding: 20px;
@@ -830,6 +833,15 @@ nav .brand-logo {
 }
 nav ul a:hover {
   background-color: #FAF7F5 !important;
+}
+
+.sidenav {
+  text-align: center;
+}
+.sidenav .brand-logo {
+  font-family: "Abril Fatface", cursive;
+  color: #B8685D;
+  margin-left: 1rem;
 }
 
 /**************** PARALLAX *************/

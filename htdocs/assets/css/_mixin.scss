@@ -1,3 +1,11 @@
+@mixin nav-brand-logo {
+    .brand-logo {
+        font-family: 'Abril Fatface', cursive;
+        color: #B8685D;
+        margin-left: 1rem;
+    }
+    
+}
 @mixin d-flex-center() {
     display: flex;
     justify-content: center;

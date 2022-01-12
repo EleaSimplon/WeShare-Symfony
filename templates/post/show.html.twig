@@ -26,7 +26,7 @@
     <section class="show-btn">
         <div class="container">
             <div class="row">
-                <div class="col l6">
+                <div class="col l6 s12">
                     {% if post.categories == "Restaurant" %}
                         <a class="btn brown" href="{{ path ('restaurant') }}">Back to list</a>
                         {% elseif post.categories == "Activity" %}
@@ -35,7 +35,7 @@
                             <a class="btn brown" href="{{ path ('destination') }}">Back to list</a>
                     {% endif %}
                 </div>
-                <div class="col l6">
+                <div class="col l6 s12">
                     <a class="btn light-green lighten-3" href="{{ path ('review_new', {'id': post.id}) }}">Add a review ?? </a>
                 </div>
             </div>
@@ -67,15 +67,15 @@
                                         </div>
                                     </div>
                                 </div>
-                                {% endif %}
-                                {% if post.phoneNumber %}
-                                    <div class="card-action">
-                                        <div class="row">
-                                            <div class="col l12">
-                                                <h5 class="card-phone"><i class="material-icons">contact_phone</i> {{ post.phoneNumber }}</h5>
-                                            </div>
+                            {% endif %}
+                            {% if post.phoneNumber %}
+                                <div class="card-action">
+                                    <div class="row">
+                                        <div class="col l12">
+                                            <h5 class="card-phone"><i class="material-icons">contact_phone</i> {{ post.phoneNumber }}</h5>
                                         </div>
                                     </div>
+                                </div>
                             {% endif %}
                         </div>
                     </div>

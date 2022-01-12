@@ -64,12 +64,12 @@ class Review
         return $this->id;
     }
 
-    public function getRate(): ?int
+    public function getRate(): float
     {
-        return $this->rate;
+        return (float) $this->rate;
     }
 
-    public function setRate(int $rate): self
+    public function setRate($rate): self
     {
         $this->rate = $rate;
 

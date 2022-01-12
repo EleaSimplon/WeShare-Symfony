@@ -44,14 +44,17 @@ body {
 /**************** NAV *************/
 
 nav {
-    .brand-logo {
-        font-family: 'Abril Fatface', cursive;
-        color: #B8685D;
-        margin-left: 1rem;
-    }
+    @include nav-brand-logo;
+
     ul a:hover {
         background-color: #FAF7F5!important;
     }
+}
+
+// RESPONSIVE 
+.sidenav {
+    @include nav-brand-logo;
+    text-align: center;
 }
 
 /**************** PARALLAX *************/
