@@ -57,7 +57,8 @@ class FindController extends AbstractController
             foreach ($reviews as $review) {
                 $sumRate += $review->getRate();
             }
-            $avg = $sumRate / count($reviews);
+            $avg = $sumRate / 1;
+            //$avg = $sumRate / count($reviews);
             $post->setAvgReviews($avg);
         }
         
@@ -65,7 +66,7 @@ class FindController extends AbstractController
         $allPostRestau = $paginator->paginate(
             $allPostRestau, /* query NOT result */// REQUEST CONTAINS DATA TO PAGINATE (OFFRES) //
             $request->query->getInt('page', 1),// NUM PAGE EN COURS(URL) OU 1 SI AUCUNE PAGE
-            5 // NUM DE RESULT PAR PAGE
+            6 // NUM DE RESULT PAR PAGE
         );
 
         return $this->render('find/restaurant.html.twig', [
@@ -89,7 +90,7 @@ class FindController extends AbstractController
             foreach ($reviews as $review) {
                 $sumRate += $review->getRate();
             }
-            $avg = $sumRate / count($reviews);
+            $avg = $sumRate / 1;
             $post->setAvgReviews($avg);
         }
 
@@ -97,7 +98,7 @@ class FindController extends AbstractController
         $allActiv = $paginator->paginate(
             $allActiv,
             $request->query->getInt('page', 1),
-            5
+            6
         );
 
 
@@ -132,7 +133,7 @@ class FindController extends AbstractController
         $allDesti = $paginator->paginate(
             $allDesti,
             $request->query->getInt('page', 1),
-            5
+            6
         );
 
         return $this->render('find/destination.html.twig', [

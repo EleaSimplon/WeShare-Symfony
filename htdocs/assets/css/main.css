@@ -796,6 +796,24 @@
 .admin-new-post .content .data-graphics img {
   width: 100%;
 }
+.admin-index td, .admin-index th,
+.admin-reviews td,
+.admin-reviews th,
+.admin-posts td,
+.admin-posts th,
+.admin-post-show td,
+.admin-post-show th,
+.admin-post-edit td,
+.admin-post-edit th,
+.admin-users td,
+.admin-users th,
+.admin-user-show td,
+.admin-user-show th,
+.admin-new-post td,
+.admin-new-post th {
+  padding: 15px 2px;
+  text-align: center;
+}
 
 .admin-posts tr, .admin-reviews tr, .admin-users tr {
   cursor: pointer;

@@ -105,7 +105,7 @@ class PostController extends AbstractController
     /**
      * @Route("/{id}/edit", name="post_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Post $post): Response
+    public function edit(Request $request, Post $post, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);

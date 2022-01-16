@@ -41,13 +41,12 @@
                     <tr>
                         <th>Category</th>
                         <th>Name</th>
-                        <th>Description</th>
                         <th>Address</th>
                         <th>City</th>
                         <th>Country</th>
                         <th>Picture</th>
                         <th>Web Site</th>
-                        <th>Phone Number</th>
+                        <th>Phone</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,7 +54,6 @@
                             <tr data-href="{{ path('admin_post_show', {'id': post.id}) }}">
                                 <td>{{ post.categories }}</td>
                                 <td>{{ post.name }}</td>
-                                <td>{{ post.description }}</td>
                                 <td>{{ post.address }}</td>
                                 <td>{{ post.city }}</td>
                                 <td>{{ post.country }}</td>

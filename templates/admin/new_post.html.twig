@@ -68,13 +68,6 @@
                                 {{ form_widget(form.address) }}
                             </div>
                         </div>
-                        <!-- ********** PHONE NUMBER **********-->
-                        <div class="row">
-                            <div class="input-field col s12 l12">
-                                {{ form_label(form.phone_number) }}
-                                {{ form_widget(form.phone_number) }}
-                            </div>
-                        </div>
                         <!-- ********** CITY **********-->
                         <div class="row">
                             <div class="input-field col s12 l12">
@@ -94,6 +87,13 @@
                             {{ form_label(form.web_site) }}
                             {{ form_widget(form.web_site) }}
                         </div>
+                        <!-- ********** PHONE NUMBER **********-->
+                        <div class="row">
+                            <div class="input-field col s12 l12">
+                                {{ form_label(form.phone_number) }}
+                                {{ form_widget(form.phone_number) }}
+                            </div>
+                        </div>
                         <h5><box-icon name='message-dots'></box-icon> Add a description !</h5>
                         <!-- ********** DESCRIPTION **********-->
                         <div class="input-field col s12 l12">
@@ -101,7 +101,7 @@
                             {{ form_widget(form.description) }}
                         </div>
                         <!-- ********** UPLOAD PHOTO **********-->
-                        <h5><box-icon name='upload'></box-icon> Upload a picture</h5>
+                        <h5><box-icon name='upload'></box-icon> Upload a picture *</h5>
                         <div class="row">
                             <div class="input-field col s12 l12">    
                                 <div class="file-field input-field">
@@ -110,7 +110,6 @@
                                         {{ form_widget(form.picture) }}
                                         {{ form_label(form.picture) }}
                                     </div>
-                                    
                                     <div class="file-path-wrapper">
                                         <input class="file-path validate" type="text" placeholder="Upload file" />
                                     </div>

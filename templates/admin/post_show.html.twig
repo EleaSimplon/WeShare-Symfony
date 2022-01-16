@@ -51,8 +51,12 @@
                                     <h3>{{ post.name }}</h3>
                                 </div>
                                 <div class="card-content center-align">
-                                    <p>{{ post.description }}</p>
-                                    <h4> {{rateAvg|number_format(1)}} / 5  <i class="material-icons amber-text">star</i></h4>
+                                    <p class="truncate">{{ post.description }}</p>
+                                    {% if rateAvg is empty %}
+                                        <h4>No review yet <i class="material-icons amber-text">star</i></h4>
+                                        {% else %}
+                                            <h4> {{rateAvg|number_format(1)}} / 5  <i class="material-icons amber-text">star</i></h4>
+                                    {% endif %}
                                     <div class="card-action">
                                         <h5>{{ post.address }}, {{ post.city }}, {{ post.country }}</h5>
                                     </div>
