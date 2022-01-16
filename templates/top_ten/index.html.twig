@@ -43,28 +43,30 @@
     <!-- ********** SECTION 3 CAROUSEL CARDS RESTAU LIMIT 10 **********-->
     <section class="top-10-restaurant top-rated">
         <!-- **** CAROUSEL ****-->
-        <div class="carousel" data-flickity='{ "groupCells": true }'>
+        <div class="carousel" data-flickity='{ "freeScroll": true, "wrapAround": true }'>
             {% for post in allRestau %}
                 <div class="carousel-cell">
                     <div class="row">
                         <div class="col s12">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
+                           <a href="{{ path('post_show', {'id': post.id}) }}">
+                                <div class="card hoverable">
+                                    <div class="card-image">
+                                        <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5>{{ post.name }}</h5>
+                                        <p>{{ post.categories }}</p>
+                                        <p class="truncate">{{ post.description }}</p>
+                                    </div>
+                                    <div class="card-rating">
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <h5>{{ post.name }}</h5>
-                                    <p>{{ post.categories }}</p>
-                                    <p class="truncate">{{ post.description }}</p>
-                                </div>
-                                <div class="card-rating">
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -89,23 +91,25 @@
                 <div class="carousel-cell">
                     <div class="row">
                         <div class="col s12">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
+                            <a href="{{ path('post_show', {'id': post.id}) }}">
+                                <div class="card hoverable">
+                                    <div class="card-image">
+                                        <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5>{{ post.name }}</h5>
+                                        <p>{{ post.categories }}</p>
+                                        <p class="truncate">{{ post.description }}</p>
+                                    </div>
+                                    <div class="card-rating">
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <h5>{{ post.name }}</h5>
-                                    <p>{{ post.categories }}</p>
-                                    <p class="truncate">{{ post.description }}</p>
-                                </div>
-                                <div class="card-rating">
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -129,23 +133,25 @@
                 <div class="carousel-cell">
                     <div class="row">
                         <div class="col s12">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
+                            <a href="{{ path('post_show', {'id': post.id}) }}">
+                                <div class="card hoverable">
+                                    <div class="card-image">
+                                        <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
+                                    </div>
+                                    <div class="card-content">
+                                        <h5>{{ post.name }}</h5>
+                                        <p>{{ post.categories }}</p>
+                                        <p class="truncate">{{ post.description }}</p>
+                                    </div>
+                                    <div class="card-rating">
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                    </div>
                                 </div>
-                                <div class="card-content">
-                                    <h5>{{ post.name }}</h5>
-                                    <p>{{ post.categories }}</p>
-                                    <p class="truncate">{{ post.description }}</p>
-                                </div>
-                                <div class="card-rating">
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                    <i class="material-icons">star</i>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

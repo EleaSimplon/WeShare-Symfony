@@ -21,40 +21,40 @@
     {#********** SECTION 2 TOP RATED PLACES **********#}
     <section class="top-rated pt-5 pb-5">
         <!-- **** CAROUSEL ****-->
-        <div class="carousel" data-flickity='{ "groupCells": true }'>
-
+        <div class="carousel" data-flickity='{ "freeScroll": true, "wrapAround": true }'>
             {% for post in allPost %}
                 <div class="carousel-cell">
                     <div class="row">
                         <div class="col s12">
-                            <div class="card">
-                                <div class="card-image">
-                                    <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
-                                </div>
-                                <div class="card-content">
-                                    <h5>{{ post.name }}</h5>
-                                    <p>{{ post.categories }}</p>
-                                    <p class="truncate">{{ post.description }}</p>
-                                </div>
-                                {# {% if post.review.rate == 5 %}
-                                    <div class="card-rating">
-                                        <i class="material-icons">star</i>
-                                        <i class="material-icons">star</i>
-                                        <i class="material-icons">star</i>
-                                        <i class="material-icons">star</i>
-                                        <i class="material-icons">star</i>
+                            <a href="{{ path('post_show', {'id': post.id}) }}">
+                                <div class="card hoverable">
+                                    <div class="card-image">
+                                        <img src="{{asset('assets/images/picture-post/' ~ post.picture) }}">
                                     </div>
-                                    {% elseif post.review.rate == 4 %}
-                                    <div class="card-rating">
-                                        <i class="material-icons">star</i>
-                                        <i class="material-icons">star</i>
-                                        <i class="material-icons">star</i>
-                                        <i class="material-icons">star</i>
-                                        <i class="material-icons">star_border</i>
+                                    <div class="card-content">
+                                        <h5>{{ post.name }}</h5>
+                                        <p>{{ post.categories }}</p>
+                                        <p class="truncate">{{ post.description }}</p>
                                     </div>
-                                    
-                                {% endif %} #}
-                            </div>
+                                    {# {% if post.review.rate == 5 %}
+                                        <div class="card-rating">
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                        </div>
+                                        {% elseif post.review.rate == 4 %}
+                                        <div class="card-rating">
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star_border</i>
+                                        </div>
+                                    {% endif %} #}
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>

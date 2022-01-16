@@ -1,5 +1,9 @@
-$(document).ready(function(){
+// $(document).ready(function(){
  
-    $('#demo-carousel-indicators').carousel({fullWidth: true});
+//     $('.carousel').flickity({
+//         fullWidth: true,
+//         freeScroll: true,
+//         wrapAround: true
+//     });
     
-});
+// });
