@@ -5,9 +5,9 @@
     .header-img {
         background: url(/assets/images/test3.jpg) no-repeat;
         @include bck-img;
+        min-height: 345px;
     }
     h1{
-        padding-top: 105px;
         margin: 0 auto;
     }
 }

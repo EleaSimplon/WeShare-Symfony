@@ -158,9 +158,9 @@
 .about-header .header-img {
   background: url(/assets/images/test3.jpg) no-repeat;
   background-size: cover;
+  min-height: 345px;
 }
 .about-header h1 {
-  padding-top: 105px;
   margin: 0 auto;
 }
 
@@ -317,6 +317,7 @@
 }
 .header-tr .header-img {
   background: url(/assets/images/bg.png) no-repeat;
+  min-height: 345px;
 }
 .header-tr .header-img .row {
   display: flex;
@@ -394,6 +395,7 @@
   background: url(/assets/images/header-find.png) no-repeat;
   background-size: cover;
   position: relative;
+  min-height: 345px;
 }
 .section-find .header-find .header-img h1 {
   margin: 0 auto;
@@ -410,6 +412,10 @@
 }
 .section-find .categories a {
   color: black;
+}
+.section-find .categories a .card-find-category {
+  max-width: 30rem;
+  margin: 0 auto;
 }
 .section-find .categories .inspi {
   margin-top: 5rem;
@@ -488,7 +494,7 @@
   align-items: center;
 }
 .user-profile .collapsible .collapsible-header h4 {
-  padding: 0 12px;
+  padding: 0 120px;
 }
 .user-profile .btn-edit {
   margin-bottom: 30px;

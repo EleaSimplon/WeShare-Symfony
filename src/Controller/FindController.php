@@ -124,7 +124,7 @@ class FindController extends AbstractController
             foreach ($reviews as $review) {
                 $sumRate += $review->getRate();
             }
-            $avg = $sumRate / count($reviews);
+            $avg = $sumRate / 1;
             $post->setAvgReviews($avg);
         }
 

@@ -14,12 +14,14 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(): Response
+    public function index(PostRepository $postRepository): Response
     {
+        $allPost = $postRepository->findAll();
 
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
-            'user'=>$this->getUser()
+            'user'=>$this->getUser(),
+            'allPost' => $allPost
         ]);
     }
 

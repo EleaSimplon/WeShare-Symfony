@@ -13,29 +13,40 @@
         <!-- ********** SECTION 2 CATEGORIES + IMG LIKE TO PAGES **********-->
         <section class="categories">
             <div class="row center">
-                <h3>Click on the category to discover !</h3>
                 <div class="col s12 m6 l4">
                     <a href="{{ path ('restaurant') }}">
-                        <h3 id="btnRestau" name="answer"><span>Restaurants</span><box-icon name='pointer'></box-icon></h3>
-                        <img src="{{asset('assets/images/restaurant.png')}}" alt="restaurant">
+                        <div class="card hoverable card-find-category">
+                            <h3 id="btnRestau" name="answer"><span>Restaurants</span><box-icon name='pointer'></box-icon></h3>
+                            <div class="card-image">
+                                <img src="{{asset('assets/images/restaurant-find.jpg')}}" alt="restaurant">
+                            </div>
+                        </div>
                     </a>
                 </div>
                 <div class="col s12 m6 l4">
                     <a href="{{ path ('activity') }}">
-                        <h3 id="btnActiv" name="answer"><span>Activities</span><box-icon name='pointer'></box-icon></h3>
-                        <img src="{{asset('assets/images/activity.png')}}" alt="activity">
+                        <div class="card hoverable card-find-category">
+                            <h3 id="btnActiv" name="answer"><span>Activities</span><box-icon name='pointer'></box-icon></h3>
+                            <div class="card-image">
+                                <img src="{{asset('assets/images/activity-find.jpg')}}" alt="activity">
+                            </div>
+                        </div>
                     </a>
                 </div>
                 <div class="col s12 m6 l4">
                     <a href="{{ path ('destination') }}">
-                        <h3 id="btnDesti" name="answer"><span>Destinations</span><box-icon name='pointer'></box-icon></h3>
-                        <img src="{{asset('assets/images/destination.png')}}" alt="destination">
+                        <div class="card hoverable card-find-category">
+                            <h3 id="btnDesti" name="answer"><span>Destinations</span><box-icon name='pointer'></box-icon></h3>
+                            <div class="card-image">
+                                <img src="{{asset('assets/images/destination-find.jpg')}}" alt="destination">
+                            </div>
+                        </div>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- ********** CHANGE FAKE SECTION **********-->
+        <!-- ********** CATEGORIES NUMBERS **********-->
         <section class="find-numbers">
             <div class="container">
                 <div class="numbers">
@@ -97,6 +108,7 @@
                 </div>
             </div>
         </section>
+
     </section>
 
 {% endblock %}

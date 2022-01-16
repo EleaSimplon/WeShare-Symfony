@@ -50,16 +50,18 @@
                                 <h4>{{ countReview }}</h4>
                             {% endif %}
                         </div>
-                        <div class="row">
-                            {# IF REVIEW = 1 WRITE REVIEW W/OUT AN "S" #}
-                            {% if allPost <= 1 %}
-                                <h3>Post</h3>
-                                <h4>{{ countPost }}</h4>
-                                {% else %}
-                                <h3>Posts</h3>
-                                <h4>{{ countPost }}</h4>
-                            {% endif %}
-                        </div>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <div class="row">
+                                {# IF REVIEW = 1 WRITE REVIEW W/OUT AN "S" #}
+                                {% if allPost <= 1 %}
+                                    <h3>Post</h3>
+                                    <h4>{{ countPost }}</h4>
+                                    {% else %}
+                                    <h3>Posts</h3>
+                                    <h4>{{ countPost }}</h4>
+                                {% endif %}
+                            </div>
+                        {% endif %}
                         <a class="btn-edit waves-effect waves-light btn brown" href="{{ path('user_edit', {'id': user.id}) }}">Edit my profile</a>
                     </div>
                 </div>
@@ -114,8 +116,8 @@
                             <ul class="collapsible">
                                 <li>
                                     <div class="collapsible-header">
-                                        <h4> {{post.name}} </h4>
                                         <h4> {{post.categories}} </h4>
+                                        <h4> {{post.name}} </h4>
                                     </div>
                                     <div class="collapsible-body"><span>{{post.description}}</span></div>
                                 </li>
