@@ -59,14 +59,17 @@
   animation-name: scroll;
 }
 
-.top-rated {
+.top-rated,
+.carousel-home {
   text-align: center;
   margin-top: 5rem;
 }
-.top-rated .carousel {
+.top-rated .carousel,
+.carousel-home .carousel {
   height: 100%;
 }
-.top-rated .carousel .carousel-cell {
+.top-rated .carousel .carousel-cell,
+.carousel-home .carousel .carousel-cell {
   width: 28%;
   height: auto;
   margin-right: 10px;
@@ -75,10 +78,19 @@
   margin-top: 5rem;
   margin-bottom: 3rem;
 }
-.top-rated .carousel .card-rating {
+.top-rated .carousel .card-rating,
+.carousel-home .carousel .card-rating {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.carousel-home .card.hoverable {
+  height: 31rem;
+}
+.carousel-home .card.hoverable .card-image img {
+  height: 17rem;
+  object-fit: cover;
 }
 
 .home-text {
@@ -362,6 +374,14 @@
   font-weight: bold;
 }
 
+.top-rated .card.hoverable {
+  height: 31rem;
+}
+.top-rated .card.hoverable .card-image img {
+  height: 17rem;
+  object-fit: cover;
+}
+
 .section-find {
   overflow: hidden;
 }
@@ -468,6 +488,10 @@
   margin: 0 auto;
 }
 
+.card-find .card.hoverable {
+  height: 45rem;
+}
+
 .user-profile {
   margin-top: 5rem;
 }
@@ -482,6 +506,8 @@
 }
 .user-profile .row {
   text-align: center;
+  width: 100%;
+  margin: auto;
 }
 .user-profile input[type=email] {
   width: 50%;
@@ -494,7 +520,7 @@
   align-items: center;
 }
 .user-profile .collapsible .collapsible-header h4 {
-  padding: 0 120px;
+  padding: 0px 3px;
 }
 .user-profile .btn-edit {
   margin-bottom: 30px;
@@ -823,6 +849,11 @@
   text-align: center;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 body p, body h5, body input {
   font-family: "Catamaran", sans-serif;
 }
@@ -902,6 +933,7 @@ nav ul a:hover {
 .section-footer {
   background-color: #241A12;
   text-align: center;
+  flex: 1;
 }
 .section-footer .container {
   padding: 20px;

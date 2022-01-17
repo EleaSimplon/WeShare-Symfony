@@ -14,6 +14,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran&display=swap');
 
 body {
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
     p, h5, input {
         font-family: 'Catamaran', sans-serif;
     }
@@ -99,6 +104,7 @@ nav {
 .section-footer {
     background-color: #241A12;
     text-align: center;
+    flex: 1;
     
     .container {
         padding: 20px;

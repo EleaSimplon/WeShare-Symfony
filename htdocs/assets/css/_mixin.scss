@@ -74,3 +74,13 @@
         }
     }
 }
+
+@mixin carousel-card-hoverable {
+    .card.hoverable {
+        height: 31rem;
+        .card-image img {
+            height: 17rem;
+            object-fit: cover;
+        }
+    }
+}

@@ -92,11 +92,17 @@
     .header-img {
         background: url(/assets/images/find-cat.jpg) no-repeat;
         @include bck-img;
-        
 
         h1 {
             margin: 0 auto;
         }
     }
+}
 
+// CARDS
+
+.card-find {
+    .card.hoverable {
+        height: 45rem;
+    }
 }

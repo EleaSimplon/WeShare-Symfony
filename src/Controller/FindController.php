@@ -57,8 +57,11 @@ class FindController extends AbstractController
             foreach ($reviews as $review) {
                 $sumRate += $review->getRate();
             }
-            $avg = $sumRate / 1;
-            //$avg = $sumRate / count($reviews);
+            if ($reviews == null) {
+                $avg = $sumRate / 1;
+            }   else {
+                    $avg = $sumRate / count($reviews);
+                }
             $post->setAvgReviews($avg);
         }
         
@@ -90,7 +93,11 @@ class FindController extends AbstractController
             foreach ($reviews as $review) {
                 $sumRate += $review->getRate();
             }
-            $avg = $sumRate / 1;
+            if ($reviews == null) {
+                $avg = $sumRate / 1;
+            }   else {
+                    $avg = $sumRate / count($reviews);
+                }
             $post->setAvgReviews($avg);
         }
 
@@ -125,7 +132,11 @@ class FindController extends AbstractController
             foreach ($reviews as $review) {
                 $sumRate += $review->getRate();
             }
-            $avg = $sumRate / 1;
+            if ($reviews == null) {
+                $avg = $sumRate / 1;
+            }   else {
+                    $avg = $sumRate / count($reviews);
+                }
             $post->setAvgReviews($avg);
         }
 
