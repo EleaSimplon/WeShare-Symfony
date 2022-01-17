@@ -19,10 +19,16 @@
                 <div class="card-content">
                     <div class="row">
                         {{ form_start(registrationForm) }}
-                            {{ form_row(registrationForm.email) }}
-                            {{ form_row(registrationForm.user_name) }}
-                            {{ form_row(registrationForm.user_description) }}
-                            {{ form_row(registrationForm.plainPassword, {'attr' : {'class' : 'validate', 'type' : 'password', 'name' : 'confirm-password', 'id' : 'confirm-password' }} ) }}
+                            {{ form_label(registrationForm.email, 'Email *') }}
+                            {{ form_widget(registrationForm.email) }}
+
+                            {{ form_label(registrationForm.user_name, 'User Name *') }}
+                            {{ form_widget(registrationForm.user_name) }}
+
+                            {{ form_label(registrationForm.user_description, 'Description *') }}
+                            {{ form_widget(registrationForm.user_description) }}
+
+                            {{ form_row(registrationForm.Password, {'attr' : {'class' : 'validate', 'type' : 'password', 'name' : 'confirm-password', 'id' : 'confirm-password', 'placeholder' : 'Your password should be at least 6 characters' }} ) }}
                             <!-- HIDE & SHOW PASSWORD JQUERY -->
                             <span toggle="#confirm-password" type ="password" class="field-icon toggle-password"><span class="material-icons">visibility</span></span> 
 
@@ -33,9 +39,11 @@
                                 </button>
                             </div>
                             
-
                         {{ form_end(registrationForm) }}
                             
+                        <div class="links center-align">
+                            <p>* All the fields that contains the asterisk are mandatory</p>
+                        </div>
                         <div class="links center-align">
                             <a href="{{ path ('app_login') }}">Already have an account? Click here</a>
                         </div>

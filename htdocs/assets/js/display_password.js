@@ -13,7 +13,7 @@ $(".toggle-password").click(function (e) {
         clicked = 0;
     }
 
-    let inputPassword = $('#registration_form_plainPassword');
+    let inputPassword = $('#registration_form_Password');
     let inputAttr = inputPassword.attr("type");
 
     if (inputAttr == "password") {

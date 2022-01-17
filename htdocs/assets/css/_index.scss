@@ -50,8 +50,7 @@
 // ********** SECTION 2 TOP RATED **********
 
 // ********** CAROUSEL **********
-.top-rated,
-.carousel-home {
+.top-rated {
     
     text-align: center;
     margin-top: 5rem;
@@ -73,10 +72,6 @@
             @include d-flex-center;
         }
     }
-}
-
-.carousel-home {
-    @include carousel-card-hoverable;
 }
 
 // ********** SECTION 3 SHARE OR FIND **********

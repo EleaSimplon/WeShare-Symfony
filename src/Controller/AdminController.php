@@ -104,12 +104,21 @@ class AdminController extends AbstractController
     /**
      * @Route("/{id}/admin/post/edit", name="admin_post_edit", methods={"GET","POST"})
      */
-    public function editPost(Request $request, Post $post): Response
+    public function editPost(Request $request, Post $post, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $picture = $form->get('picture')->getData();
+
+            if ($picture !== null) {
+                $newFilename = $this->upload($picture, 'photo_directory', $slugger);
+                $post->setPicture($newFilename);
+            }
+
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_post_show', [

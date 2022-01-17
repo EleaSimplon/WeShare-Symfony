@@ -4,14 +4,16 @@
     
     @include header-img;
     .header-img {
-        background: url(/assets/images/test3.jpg) no-repeat;
+        background: url(/assets/images/review-new.jpg) no-repeat;
         @include bck-img;
+        min-height: 17rem;
+    }
+
+    h1{
+        margin: 0 auto;
     }
 
     .new-review {
-        // .card {
-        //     background-color: #e4bfad65;
-        // }
     
         margin-top: 5rem;
         margin-bottom: 5rem;
@@ -27,7 +29,7 @@
         }
         
         // ********* RATE RANGE 
-    
+
         // TO PUT THE ROUND BLACK
         input[type=range]::-webkit-slider-thumb {
             background-color: #563428;

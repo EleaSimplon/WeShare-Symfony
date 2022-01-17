@@ -8,6 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PostRepository;
 use App\Repository\ReviewRepository;
 use App\Repository\UserRepository;
+use App\Entity\Review;
+use App\Entity\Post;
 
 class HomeController extends AbstractController
 {
