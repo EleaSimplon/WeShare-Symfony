@@ -17,6 +17,10 @@
 
 // CARD POST SHOW
 .card-post {
+    .row{
+        display: flex;
+        justify-content: center;
+    }
     .card {
         padding: 20px;
         

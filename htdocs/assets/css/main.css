@@ -480,6 +480,14 @@
   height: 45rem;
 }
 
+.card-restaurant .card-action .row,
+.card-destination .card-action .row,
+.card-activity .card-action .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .user-profile {
   margin-top: 5rem;
 }
@@ -580,6 +588,10 @@
   width: 100%;
 }
 
+.card-post .row {
+  display: flex;
+  justify-content: center;
+}
 .card-post .card {
   padding: 20px;
 }
@@ -920,6 +932,9 @@ nav ul a:hover {
 .section-footer {
   background-color: #241A12;
   text-align: center;
+}
+.section-footer .brand-logo {
+  font-family: "Abril Fatface", cursive;
 }
 .section-footer .container {
   padding: 20px;

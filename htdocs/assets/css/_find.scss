@@ -106,3 +106,14 @@
         height: 45rem;
     }
 }
+
+.card-restaurant,
+.card-destination,
+.card-activity {
+    .card-action{
+        .row{
+            @include d-flex-center;
+        }
+        
+    }
+}
