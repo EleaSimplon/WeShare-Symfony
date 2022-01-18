@@ -58,7 +58,7 @@ class FindController extends AbstractController
                 $sumRate += $review->getRate();
             }
             if ($reviews == null) {
-                $avg = $sumRate / 1;
+                $avg = $sumRate;
             }   else {
                     $avg = $sumRate / count($reviews);
                 }

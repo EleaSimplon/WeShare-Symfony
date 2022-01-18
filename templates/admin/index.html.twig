@@ -8,32 +8,42 @@
         {# HEADER NAV BAR #}
         <header class='main-nav'>
             <h2>Welcome to the Admin Dashboard</h2>
-            <ul>
-                <a href="{{ path ('admin')}}">
-                    <li style="background: #525252;">
-                    <i class='fa fa-tachometer'></i>
-                    <span>Dashboard</span>
-                    </li>
-                </a>
-                 <a href="{{ path ('admin_user_show_all')}}">
-                    <li>
-                    <i class="far fa-user"></i>
-                    <span>User</span>
-                    </li>
-                </a>
-                <a href="{{ path ('admin_post_show_all')}}">
-                    <li>
-                    <i class="far fa-file-image"></i>
-                    <span>Post</span>
-                    </li>
-                </a>
-                <a href="{{ path ('admin_review_show_all')}}">
-                    <li>
-                    <i class="fas fa-comments"></i>
-                    <span>Review</span>
-                    </li>
-                </a>
-            </ul>
+            <div class="row">
+                <ul>
+                    <div class="col s6 m6 l3">
+                        <a href="{{ path ('admin')}}">
+                            <li style="background: #525252;">
+                            <i class='fa fa-tachometer'></i>
+                            <span>Dashboard</span>
+                            </li>
+                        </a>
+                    </div>
+                    <div class="col s6 m6 l3">
+                        <a href="{{ path ('admin_user_show_all')}}">
+                            <li>
+                            <i class="far fa-user"></i>
+                            <span>User</span>
+                            </li>
+                        </a>
+                    </div>
+                    <div class="col s6 m6 l3">
+                        <a href="{{ path ('admin_post_show_all')}}">
+                            <li>
+                            <i class="far fa-file-image"></i>
+                            <span>Post</span>
+                            </li>
+                        </a>
+                    </div>
+                    <div class="col s6 m6 l3">
+                        <a href="{{ path ('admin_review_show_all')}}">
+                            <li>
+                            <i class="fas fa-comments"></i>
+                            <span>Review</span>
+                            </li>
+                        </a>
+                    </div>
+                </ul>
+            </div>
         </header>
 
         <main class="container content center-align">
